@@ -3,24 +3,34 @@ import { TiltedCard, FadeIn } from './reactbits'
 import './Portfolio.css'
 
 const PortfolioItem = ({ image, title, description, index, size = 'medium' }) => {
+  // Use a placeholder image if no image is provided
+  const imageSrc = image || 'https://via.placeholder.com/400x600/1a1a1a/88c444?text=' + encodeURIComponent(title);
+
+  // Determine container size based on size prop
+  const containerSize = size === 'large' ? '400px' : size === 'small' ? '300px' : '350px';
+
   return (
     <FadeIn delay={index * 0.1} duration={0.5} direction="up" distance={20}>
-      <TiltedCard className={`portfolio-item portfolio-item-${size}`} intensity={25} scale={1.1}>
-        <div className="portfolio-image">
-          {image ? (
-            <img src={image} alt={title} />
-          ) : (
-            <div className="portfolio-placeholder">
-              <span className="placeholder-icon">📱</span>
-              <span className="placeholder-text">Add your app screenshot here</span>
-            </div>
-          )}
-        </div>
-        <div className="portfolio-content">
-          <h3>{title}</h3>
-          <p>{description}</p>
-        </div>
-      </TiltedCard>
+      <TiltedCard
+        imageSrc={imageSrc}
+        altText={title}
+        captionText={title}
+        containerHeight={containerSize}
+        containerWidth="100%"
+        imageHeight={containerSize}
+        imageWidth="100%"
+        rotateAmplitude={12}
+        scaleOnHover={1.05}
+        showMobileWarning={false}
+        showTooltip={false}
+        displayOverlayContent={true}
+        overlayContent={
+          <div className="portfolio-overlay-content">
+            <h3 className="portfolio-overlay-title">{title}</h3>
+            <p className="portfolio-overlay-description">{description}</p>
+          </div>
+        }
+      />
     </FadeIn>
   )
 }
