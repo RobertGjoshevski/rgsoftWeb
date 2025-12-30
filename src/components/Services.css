@@ -1,5 +1,5 @@
 .services {
-  background-color: var(--background-light);
+  background-color: var(--background-dark);
 }
 
 .services-list {
@@ -14,11 +14,11 @@
   gap: var(--spacing-xl);
   align-items: center;
   padding: var(--spacing-lg);
-  background: white;
+  background: var(--background-card);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
   position: relative;
-  border: 2px solid transparent;
   background-clip: padding-box;
   transition: all 0.3s ease;
 }
@@ -43,8 +43,9 @@
 }
 
 .service-item:hover {
-  box-shadow: 0px 8px 24px rgba(31, 16, 89, 0.15);
+  box-shadow: 0px 8px 24px rgba(124, 58, 237, 0.3);
   transform: translateY(-4px);
+  border-color: var(--secondary);
 }
 
 .service-item.reversed {

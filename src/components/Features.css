@@ -1,5 +1,5 @@
 .features {
-  background-color: #FFFFFF;
+  background-color: var(--background-section);
 }
 
 .section-header {
@@ -26,14 +26,14 @@
 }
 
 .feature-card {
-  background: var(--background-light);
+  background: var(--background-card);
+  border: 1px solid var(--border-color);
   padding: var(--spacing-lg);
   border-radius: 12px;
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
   position: relative;
-  border: 2px solid transparent;
   background-clip: padding-box;
   will-change: transform;
   height: 100%;
@@ -59,9 +59,9 @@
 }
 
 .feature-card:hover {
-  box-shadow: 0px 8px 24px rgba(31, 16, 89, 0.15);
+  box-shadow: 0px 8px 24px rgba(124, 58, 237, 0.3);
   transform: translateY(-4px);
-  border-color: transparent;
+  border-color: var(--secondary);
 }
 
 .feature-icon {

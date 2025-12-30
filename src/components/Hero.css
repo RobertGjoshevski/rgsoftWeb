@@ -1,5 +1,5 @@
 .hero {
-  background-color: var(--background-light);
+  background-color: var(--background-dark);
   padding-top: var(--spacing-xl);
   padding-bottom: var(--spacing-xl);
 }
@@ -18,7 +18,7 @@
 .hero-kicker {
   display: inline-block;
   padding: var(--spacing-xs) var(--spacing-md);
-  background-color: rgba(31, 16, 89, 0.1);
+  background-color: rgba(124, 58, 237, 0.15);
   color: var(--secondary);
   border-radius: 999px;
   font-size: 14px;
@@ -71,8 +71,8 @@
 }
 
 .btn-primary:hover {
-  background-color: #2a1a6b;
-  box-shadow: 0px 4px 12px rgba(31, 16, 89, 0.3);
+  background-color: #8B5CF6;
+  box-shadow: 0px 4px 12px rgba(124, 58, 237, 0.4);
 }
 
 .btn-secondary {
@@ -104,9 +104,10 @@
   position: absolute;
   width: 200px;
   height: 200px;
-  background: white;
+  background: var(--background-card);
+  border: 1px solid var(--border-color);
   border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;

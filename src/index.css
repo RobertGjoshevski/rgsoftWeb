@@ -1,12 +1,16 @@
 :root {
-  --primary: #030207;
-  --secondary: #1F1059;
-  --accent-1: #572E54;
-  --accent-2: #4828A8;
-  --background-light: #F4F4F5;
+  --primary: #FFFFFF;
+  --secondary: #7C3AED;
+  --accent-1: #A855F7;
+  --accent-2: #6366F1;
+  --background-dark: #030207;
+  --background-card: #0A0A0F;
+  --background-section: #050510;
   --neutral-1: #A4A4BF;
+  --neutral-2: #6B7280;
   --accent-variant: #98299E;
   --accent-variant-2: #9F4A64;
+  --border-color: rgba(255, 255, 255, 0.1);
   
   --spacing-xs: 8px;
   --spacing-sm: 16px;
@@ -37,7 +41,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--primary);
-  background-color: var(--background-light);
+  background-color: var(--background-dark);
   line-height: 1.5;
 }
 
