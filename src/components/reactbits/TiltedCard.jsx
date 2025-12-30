@@ -21,7 +21,8 @@ export default function TiltedCard({
     showMobileWarning = true,
     showTooltip = true,
     overlayContent = null,
-    displayOverlayContent = false
+    displayOverlayContent = false,
+    backgroundImage = null
 }) {
     const ref = useRef(null);
 
@@ -89,7 +90,7 @@ export default function TiltedCard({
                 <div className="tilted-card-mobile-alert">This effect is not optimized for mobile. Check on desktop.</div>
             )}
 
-            {imageSrc && (
+            {(imageSrc || backgroundImage) && (
                 <motion.div
                     className="tilted-card-inner"
                     style={{
@@ -100,16 +101,26 @@ export default function TiltedCard({
                         scale
                     }}
                 >
-                    <div className="tilted-card-background"></div>
-                    <motion.img
-                        src={imageSrc}
-                        alt={altText}
-                        className="tilted-card-img"
-                        style={{
-                            width: imageWidth,
-                            height: imageHeight
-                        }}
-                    />
+                    <div
+                        className="tilted-card-background"
+                        style={backgroundImage ? {
+                            backgroundImage: `url(${backgroundImage})`,
+                            backgroundSize: 'contain',
+                            backgroundPosition: 'center',
+                            backgroundRepeat: 'no-repeat'
+                        } : {}}
+                    ></div>
+                    {imageSrc && (
+                        <motion.img
+                            src={imageSrc}
+                            alt={altText}
+                            className="tilted-card-img"
+                            style={{
+                                width: imageWidth,
+                                height: imageHeight
+                            }}
+                        />
+                    )}
 
                     {displayOverlayContent && overlayContent && (
                         <motion.div className="tilted-card-overlay">{overlayContent}</motion.div>

@@ -6,9 +6,10 @@
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
   gap: var(--spacing-lg);
   perspective: 1000px;
+  justify-content: center;
 }
 
 .portfolio-item-wrapper {
@@ -156,23 +157,15 @@
 
 @media (max-width: 1024px) {
   .portfolio-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
+    justify-content: center;
   }
 }
 
 @media (max-width: 640px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
-  }
-  
-  .portfolio-image {
-    min-height: 150px;
-  }
-  
-  .portfolio-item-small,
-  .portfolio-item-medium,
-  .portfolio-item-large {
-    min-height: 280px;
+    justify-content: center;
   }
 }
 

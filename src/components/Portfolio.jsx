@@ -2,12 +2,20 @@ import React from 'react'
 import { TiltedCard, FadeIn } from './reactbits'
 import './Portfolio.css'
 
-const PortfolioItem = ({ image, title, description, index, size = 'medium' }) => {
-  // Use a placeholder image if no image is provided
-  const imageSrc = image || 'https://via.placeholder.com/400x600/1a1a1a/88c444?text=' + encodeURIComponent(title);
+const PortfolioItem = ({ image, title, description, index }) => {
+  // Use iPhone image as background for Portfolio cards
+  const backgroundImage = '/assets/iphone.png';
 
-  // Determine container size based on size prop
-  const containerSize = size === 'large' ? '400px' : size === 'small' ? '300px' : '350px';
+  // Use the provided image if available, otherwise null (background will show through)
+  const imageSrc = image || null;
+
+  // iPhone image dimensions: height: 2160, width: 1024
+  // Aspect ratio: 2160/1024 = 2.109375
+  const iPhoneAspectRatio = 2160 / 1024;
+
+  // All cards use the same smaller size
+  const containerWidth = '280px';
+  const containerHeight = `${Math.round(280 * iPhoneAspectRatio)}px`; // 591px
 
   return (
     <FadeIn delay={index * 0.1} duration={0.5} direction="up" distance={20}>
@@ -15,15 +23,16 @@ const PortfolioItem = ({ image, title, description, index, size = 'medium' }) =>
         imageSrc={imageSrc}
         altText={title}
         captionText={title}
-        containerHeight={containerSize}
-        containerWidth="100%"
-        imageHeight={containerSize}
-        imageWidth="100%"
+        containerHeight={containerHeight}
+        containerWidth={containerWidth}
+        imageHeight={containerHeight}
+        imageWidth={containerWidth}
         rotateAmplitude={12}
         scaleOnHover={1.05}
         showMobileWarning={false}
         showTooltip={false}
         displayOverlayContent={true}
+        backgroundImage={backgroundImage}
         overlayContent={
           <div className="portfolio-overlay-content">
             <h3 className="portfolio-overlay-title">{title}</h3>
@@ -37,43 +46,36 @@ const PortfolioItem = ({ image, title, description, index, size = 'medium' }) =>
 
 const Portfolio = () => {
   // Placeholder portfolio items - user can add their own images
-  // size: 'small', 'medium', 'large' for tiled effect
   const portfolioItems = [
     {
       image: null, // Add image path here, e.g., '/assets/portfolio/app1.png'
       title: 'E-Commerce App',
-      description: 'A beautiful shopping experience built with Flutter',
-      size: 'large'
+      description: 'A beautiful shopping experience built with Flutter'
     },
     {
       image: null,
       title: 'Social Media Platform',
-      description: 'Engaging social features with smooth animations',
-      size: 'medium'
+      description: 'Engaging social features with smooth animations'
     },
     {
       image: null,
       title: 'Fitness Tracker',
-      description: 'Health and wellness app with real-time tracking',
-      size: 'medium'
+      description: 'Health and wellness app with real-time tracking'
     },
     {
       image: null,
       title: 'Food Delivery',
-      description: 'Seamless ordering and delivery experience',
-      size: 'small'
+      description: 'Seamless ordering and delivery experience'
     },
     {
       image: null,
       title: 'Finance Manager',
-      description: 'Secure and intuitive financial management',
-      size: 'large'
+      description: 'Secure and intuitive financial management'
     },
     {
       image: null,
       title: 'Travel Companion',
-      description: 'Plan and book your next adventure',
-      size: 'small'
+      description: 'Plan and book your next adventure'
     }
   ]
 
@@ -99,7 +101,6 @@ const Portfolio = () => {
                 title={item.title}
                 description={item.description}
                 index={index}
-                size={item.size}
               />
             ))}
           </div>

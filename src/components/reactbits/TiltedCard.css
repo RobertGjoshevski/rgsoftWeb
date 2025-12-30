@@ -53,6 +53,19 @@
     box-shadow: 0px 8px 24px rgba(136, 196, 68, 0.2);
 }
 
+/* When background image is provided, remove border and gradient */
+.tilted-card-background[style*="background-image"] {
+    border: none;
+    background: transparent;
+    background-size: contain !important;
+}
+
+.tilted-card-inner:hover .tilted-card-background[style*="background-image"] {
+    border: none;
+    background: transparent;
+    box-shadow: 0px 8px 24px rgba(136, 196, 68, 0.3);
+}
+
 .tilted-card-img {
     position: absolute;
     top: 0;
