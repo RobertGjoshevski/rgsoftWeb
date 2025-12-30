@@ -6,28 +6,26 @@ import Services from './components/Services'
 import Portfolio from './components/Portfolio'
 import Footer from './components/Footer'
 import LiquidEther from './components/reactbits/LiquidEther'
+import Plasma from './components/reactbits/Plasma'
+import LightRays from './components/reactbits/LightRays'
+
 import './App.css'
 
 function App() {
   return (
     <div className="App">
       <div style={{ width: '100%', height: '100vh', position: 'fixed', top: 0, left: 0, zIndex: 0, pointerEvents: 'none' }}>
-        <LiquidEther
-          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
-          mouseForce={20}
-          cursorSize={100}
-          isViscous={false}
-          viscous={30}
-          iterationsViscous={32}
-          iterationsPoisson={32}
-          resolution={0.5}
-          isBounce={false}
-          autoDemo={true}
-          autoSpeed={0.5}
-          autoIntensity={2.2}
-          takeoverDuration={0.25}
-          autoResumeDelay={3000}
-          autoRampDuration={0.6}
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#88c444"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="custom-rays"
         />
       </div>
       <div style={{ position: 'relative', zIndex: 1 }}>
