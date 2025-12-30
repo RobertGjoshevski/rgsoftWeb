@@ -39,8 +39,10 @@ const Features = () => {
   ]
 
   return (
-    <section className="features section">
-      <div className="container">
+    <>
+      <div className="section-divider"></div>
+      <section className="features section">
+        <div className="container">
         <FadeIn direction="up" distance={30} duration={0.6}>
           <div className="section-header">
           <h2>Why Choose Flutter?</h2>
@@ -61,8 +63,9 @@ const Features = () => {
             />
           ))}
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   )
 }
 

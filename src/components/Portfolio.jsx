@@ -6,20 +6,20 @@ const PortfolioItem = ({ image, title, description, index, size = 'medium' }) =>
   return (
     <FadeIn delay={index * 0.1} duration={0.5} direction="up" distance={20}>
       <TiltedCard className={`portfolio-item portfolio-item-${size}`} intensity={25} scale={1.1}>
-      <div className="portfolio-image">
-        {image ? (
-          <img src={image} alt={title} />
-        ) : (
-          <div className="portfolio-placeholder">
-            <span className="placeholder-icon">📱</span>
-            <span className="placeholder-text">Add your app screenshot here</span>
-          </div>
-        )}
-      </div>
-      <div className="portfolio-content">
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </div>
+        <div className="portfolio-image">
+          {image ? (
+            <img src={image} alt={title} />
+          ) : (
+            <div className="portfolio-placeholder">
+              <span className="placeholder-icon">📱</span>
+              <span className="placeholder-text">Add your app screenshot here</span>
+            </div>
+          )}
+        </div>
+        <div className="portfolio-content">
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
       </TiltedCard>
     </FadeIn>
   )
@@ -68,31 +68,34 @@ const Portfolio = () => {
   ]
 
   return (
-    <section id="portfolio" className="portfolio section">
-      <div className="container">
-        <FadeIn direction="up" distance={30} duration={0.6}>
-          <div className="section-header">
-          <h2>Our Portfolio</h2>
-          <p className="section-description">
-            Showcasing our latest Flutter applications and mobile solutions
-          </p>
-          </div>
-        </FadeIn>
+    <>
+      <div className="section-divider"></div>
+      <section id="portfolio" className="portfolio section">
+        <div className="container">
+          <FadeIn direction="up" distance={30} duration={0.6}>
+            <div className="section-header">
+              <h2>Our Portfolio</h2>
+              <p className="section-description">
+                Showcasing our latest Flutter applications and mobile solutions
+              </p>
+            </div>
+          </FadeIn>
 
-        <div className="portfolio-grid">
-          {portfolioItems.map((item, index) => (
-            <PortfolioItem
-              key={index}
-              image={item.image}
-              title={item.title}
-              description={item.description}
-              index={index}
-              size={item.size}
-            />
-          ))}
+          <div className="portfolio-grid">
+            {portfolioItems.map((item, index) => (
+              <PortfolioItem
+                key={index}
+                image={item.image}
+                title={item.title}
+                description={item.description}
+                index={index}
+                size={item.size}
+              />
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }
 

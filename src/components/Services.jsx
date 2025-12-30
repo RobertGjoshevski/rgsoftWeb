@@ -67,8 +67,10 @@ const Services = () => {
   ]
 
   return (
-    <section id="services" className="services section">
-      <div className="container">
+    <>
+      <div className="section-divider"></div>
+      <section id="services" className="services section">
+        <div className="container">
         <FadeIn direction="up" distance={30} duration={0.6}>
           <div className="section-header">
           <h2>Our Services</h2>
@@ -90,8 +92,9 @@ const Services = () => {
             />
           ))}
         </div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   )
 }
 

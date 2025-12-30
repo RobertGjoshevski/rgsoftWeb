@@ -1,10 +1,25 @@
 import React from 'react'
 import { StaggerContainer, StaggerItem } from './reactbits'
+import LightRays from './reactbits/LightRays'
 import './Hero.css'
 
 const Hero = () => {
   return (
     <section id="home" className="hero section">
+      <div className="hero-background">
+        <LightRays
+          raysOrigin="top-center"
+          raysColor="#88c444"
+          raysSpeed={1.5}
+          lightSpread={0.8}
+          rayLength={1.2}
+          followMouse={true}
+          mouseInfluence={0.1}
+          noiseAmount={0.1}
+          distortion={0.05}
+          className="hero-light-rays"
+        />
+      </div>
       <div className="container">
         <StaggerContainer className="hero-content" staggerDelay={0.2} initialDelay={0.3}>
           <div className="hero-text">

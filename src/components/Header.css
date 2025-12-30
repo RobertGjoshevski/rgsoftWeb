@@ -59,7 +59,7 @@
 
 .nav-link:hover {
   color: var(--secondary);
-  background-color: rgba(124, 58, 237, 0.15);
+  background-color: rgba(136, 196, 68, 0.15);
 }
 
 .mobile-menu-toggle {
