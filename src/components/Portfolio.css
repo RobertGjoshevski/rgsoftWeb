@@ -1,5 +1,7 @@
 .portfolio {
-  background-color: var(--background-section);
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .portfolio-grid {

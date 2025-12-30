@@ -1,5 +1,7 @@
 .services {
-  background-color: var(--background-dark);
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .services-list {

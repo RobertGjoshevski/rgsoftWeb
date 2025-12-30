@@ -1,7 +1,9 @@
 .hero {
-  background-color: var(--background-dark);
+  background-color: transparent;
   padding-top: var(--spacing-xl);
   padding-bottom: var(--spacing-xl);
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content {
