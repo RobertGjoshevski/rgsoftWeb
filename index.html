@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RGsoft — Dart & Flutter Studio</title>
+  <meta name="description" content="RGsoft builds Dart & Flutter apps: clean UI, fast delivery, modern mobile experiences." />
+
+  <style>
+    :root{
+      /* Dart-ish palette */
+      --bg0:#070A10;
+      --bg1:#0B1220;
+      --card:rgba(255,255,255,.06);
+      --stroke:rgba(255,255,255,.10);
+      --text:#EAF2FF;
+      --muted:rgba(234,242,255,.72);
+
+      --dart1:#00C4FF;  /* light dart cyan */
+      --dart2:#0175C2;  /* dart blue */
+      --dart3:#00E5FF;  /* glow accent */
+      --glow: 0 0 16px rgba(0,229,255,.55), 0 0 42px rgba(1,117,194,.35);
+      --radius: 18px;
+      --shadow: 0 16px 40px rgba(0,0,0,.55);
+      --max: 1100px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 15% 10%, rgba(0,229,255,.18), transparent 60%),
+        radial-gradient(1000px 500px at 80% 20%, rgba(1,117,194,.18), transparent 55%),
+        radial-gradient(900px 700px at 60% 90%, rgba(0,196,255,.12), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1));
+      overflow-x:hidden;
+    }
+
+    /* subtle animated glow blobs */
+    .blob{
+      position:absolute; inset:auto;
+      width:520px; height:520px; border-radius:999px;
+      filter: blur(50px);
+      opacity:.35;
+      animation: float 10s ease-in-out infinite;
+      pointer-events:none;
+      mix-blend-mode: screen;
+    }
+    .b1{ top:-160px; left:-140px; background: radial-gradient(circle at 30% 30%, rgba(0,229,255,.9), transparent 60%); }
+    .b2{ top:80px; right:-200px; background: radial-gradient(circle at 35% 35%, rgba(1,117,194,.9), transparent 60%); animation-duration: 12s;}
+    .b3{ bottom:-220px; left:20%; background: radial-gradient(circle at 35% 35%, rgba(0,196,255,.8), transparent 60%); animation-duration: 14s;}
+    @keyframes float{
+      0%,100%{ transform: translate(0,0) scale(1); }
+      50%{ transform: translate(18px,-14px) scale(1.03); }
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{position:relative; max-width:var(--max); margin:0 auto; padding:28px 18px 80px;}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 16px;
+      border:1px solid var(--stroke);
+      background: rgba(7,10,16,.55);
+      backdrop-filter: blur(12px);
+      border-radius: 999px;
+      box-shadow: var(--shadow);
+      position:sticky; top:14px; z-index:5;
+    }
+    .brand{
+      display:flex; gap:10px; align-items:center;
+      font-weight:700; letter-spacing:.3px;
+    }
+    .logo{
+      width:34px; height:34px; border-radius:10px;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(0,229,255,.95), rgba(1,117,194,.45) 55%, rgba(0,0,0,0) 70%),
+        linear-gradient(135deg, rgba(0,196,255,.35), rgba(1,117,194,.25));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: var(--glow);
+    }
+    .nav{display:flex; gap:16px; font-size:14px; color:var(--muted)}
+    .nav a{padding:8px 10px; border-radius:999px}
+    .nav a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.06);
+      box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset;
+    }
+
+    .hero{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:18px;
+      align-items:stretch;
+    }
+    @media (max-width: 860px){ .hero{grid-template-columns:1fr;} .topbar{position:relative; top:0;} }
+
+    .card{
+      border:1px solid var(--stroke);
+      background: var(--card);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .pad{padding:22px;}
+
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      font-size:13px; color:var(--muted);
+      border:1px solid rgba(255,255,255,.10);
+      padding:8px 12px; border-radius:999px;
+      background: rgba(0,0,0,.18);
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: radial-gradient(circle at 30% 30%, var(--dart3), var(--dart2));
+      box-shadow: var(--glow);
+    }
+    h1{margin:14px 0 10px; font-size:44px; line-height:1.05; letter-spacing:-.6px;}
+    @media (max-width: 520px){ h1{font-size:36px;} }
+    .grad{
+      background: linear-gradient(90deg, var(--dart3), var(--dart2));
+      -webkit-background-clip:text; background-clip:text; color:transparent;
+      text-shadow: 0 0 22px rgba(0,229,255,.22);
+    }
+    p{margin:0; color:var(--muted); line-height:1.6}
+
+    .ctaRow{display:flex; gap:12px; margin-top:18px; flex-wrap:wrap;}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:12px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      font-weight:600;
+    }
+    .btn:hover{box-shadow: var(--glow); border-color: rgba(0,229,255,.35); transform: translateY(-1px);}
+    .btnPrimary{
+      background: linear-gradient(135deg, rgba(0,229,255,.22), rgba(1,117,194,.18));
+      border-color: rgba(0,229,255,.25);
+    }
+    .icon{
+      width:18px; height:18px; display:inline-block;
+      background: radial-gradient(circle at 30% 30%, var(--dart3), var(--dart2));
+      border-radius: 6px;
+      box-shadow: 0 0 14px rgba(0,229,255,.45);
+    }
+
+    .preview{
+      position:relative;
+      height:100%;
+      min-height: 260px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+    }
+    .preview .img{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(700px 260px at 50% 15%, rgba(0,229,255,.22), transparent 55%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+    }
+    .previewInner{
+      position:relative;
+      width:100%;
+      padding:18px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .mini{
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:16px;
+      background: rgba(0,0,0,.18);
+      padding:14px;
+    }
+    .mini strong{display:block; margin-bottom:6px;}
+    .pill{
+      display:inline-flex; gap:8px; flex-wrap:wrap; margin-top:8px;
+    }
+    .tag{
+      font-size:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      color:var(--muted);
+    }
+
+    .grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:14px;
+    }
+    @media (max-width: 860px){ .grid{grid-template-columns:1fr;} }
+
+    .sectionTitle{
+      display:flex; align-items:end; justify-content:space-between;
+      gap:14px; margin-top:26px;
+    }
+    h2{margin:0; font-size:18px; letter-spacing:.2px}
+    .small{font-size:13px; color:var(--muted)}
+
+    .project{
+      display:flex; flex-direction:column; gap:10px;
+    }
+    .thumb{
+      height:140px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:
+        radial-gradient(220px 120px at 30% 30%, rgba(0,229,255,.22), transparent 60%),
+        radial-gradient(220px 120px at 80% 70%, rgba(1,117,194,.20), transparent 65%),
+        linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+      position:relative;
+      overflow:hidden;
+    }
+    /* Optional: if you add real images, set them as background-image in .thumb via inline style */
+    .thumb::after{
+      content:"";
+      position:absolute; inset:-2px;
+      border-radius: 16px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.06), var(--glow);
+      opacity:.35;
+      pointer-events:none;
+    }
+
+    footer{
+      margin-top:34px;
+      padding-top:18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color:rgba(234,242,255,.55);
+      font-size:13px;
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <div class="wrap">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>RGsoft</div>
+      </div>
+
+      <nav class="nav">
+        <a href="#work">Work</a>
+        <a href="#links">Links</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main class="hero">
+      <section class="card pad">
+        <div class="kicker"><span class="dot"></span> Dart • Flutter • Mobile Apps</div>
+        <h1>
+          Clean, fast <span class="grad">Flutter</span> apps<br/>
+          for small teams & startups.
+        </h1>
+        <p>
+          I build mobile apps and MVPs with modern UI, solid architecture, and smooth performance.
+          Let’s ship something that looks premium and feels great.
+        </p>
+
+        <div class="ctaRow">
+          <!-- EDIT: Replace email + social links -->
+          <a class="btn btnPrimary" href="#contact"><span class="icon"></span> Contact me</a>
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer"><span class="icon"></span> LinkedIn</a>
+          <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer"><span class="icon"></span> GitHub</a>
+        </div>
+      </section>
+
+      <aside class="card preview">
+        <div class="img" aria-hidden="true"></div>
+        <div class="previewInner">
+          <div class="mini">
+            <strong>What I do</strong>
+            <div class="small">Apps • UI polish • Firebase • REST APIs</div>
+            <div class="pill">
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">iOS/Android</span>
+            </div>
+          </div>
+          <div class="mini">
+            <strong>Typical delivery</strong>
+            <div class="small">Quick MVP → iterate weekly</div>
+            <div class="pill">
+              <span class="tag">Fast</span>
+              <span class="tag">Responsive</span>
+              <span class="tag">Maintainable</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <div class="sectionTitle" id="work">
+      <h2>Selected work</h2>
+      <div class="small">Edit these cards with your projects + screenshots</div>
+    </div>
+
+    <section class="grid">
+      <!-- EDIT: Add your own image by adding style="background-image:url('your-image.jpg')" on .thumb -->
+      <article class="card pad project">
+        <div class="thumb" style=""></div>
+        <div><strong>Project One</strong></div>
+        <div class="small">Short 1-line description (CRM, marketplace, booking, etc.)</div>
+      </article>
+
+      <article class="card pad project">
+        <div class="thumb" style=""></div>
+        <div><strong>Project Two</strong></div>
+        <div class="small">Short 1-line description</div>
+      </article>
+
+      <article class="card pad project">
+        <div class="thumb" style=""></div>
+        <div><strong>Project Three</strong></div>
+        <div class="small">Short 1-line description</div>
+      </article>
+    </section>
+
+    <div class="sectionTitle" id="links">
+      <h2>Links</h2>
+      <div class="small">Keep it simple: 3–5 links max</div>
+    </div>
+
+    <section class="grid">
+      <article class="card pad">
+        <strong>Social</strong>
+        <p style="margin-top:8px">
+          <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a>
+        </p>
+      </article>
+      <article class="card pad">
+        <strong>Apps</strong>
+        <p style="margin-top:8px">
+          <a class="btn" href="#" target="_blank" rel="noreferrer">App Store</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Google Play</a>
+        </p>
+      </article>
+      <article class="card pad">
+        <strong>Docs / Portfolio</strong>
+        <p style="margin-top:8px">
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Case study PDF</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">Notion portfolio</a>
+        </p>
+      </article>
+    </section>
+
+    <div class="sectionTitle" id="contact">
+      <h2>Contact</h2>
+      <div class="small">Simple = higher replies</div>
+    </div>
+
+    <section class="card pad">
+      <!-- EDIT: change email + preset subject -->
+      <p>
+        Email: <a class="btn btnPrimary" href="mailto:hello@rgsoft.org?subject=Project%20inquiry%20—%20RGsoft">hello@rgsoft.org</a>
+      </p>
+      <p style="margin-top:10px">
+        Or message me on <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
+      </p>
+    </section>
+
+    <footer>
+      <div>© <span id="y"></span> RGsoft</div>
+      <div>Built with a Dart-themed glow ✨</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
