@@ -1,0 +1,15 @@
+.tilted-card {
+  width: 100%;
+  height: 100%;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.tilted-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+

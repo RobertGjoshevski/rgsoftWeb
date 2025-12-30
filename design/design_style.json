@@ -1,0 +1,128 @@
+{
+    "name": "Digital Agency Website Design",
+    "source": "Dribbble Inspiration",
+    "style_overview": {
+        "visual_style": "Modern, clean, minimalist with strong typographic hierarchy and generous spacing.",
+        "mood": "Professional, expressive visuals with subtle gradients and vibrant accent colors.",
+        "layout_principles": [
+            "Centered hero with bold headline",
+            "Full-width sections with clear segmentation",
+            "Visual cues for conversion (CTA focused)",
+            "Whitespace to define content blocks"
+        ]
+    },
+    "brand_palette": {
+        "primary": "#030207",
+        "secondary": "#1F1059",
+        "accent_1": "#572E54",
+        "accent_2": "#4828A8",
+        "background_light": "#F4F4F5",
+        "neutral_1": "#A4A4BF",
+        "accent_variant": "#98299E",
+        "accent_variant_2": "#9F4A64"
+    },
+    "typography": {
+        "font_families": [
+            "Sans-serif (e.g., Inter, Helvetica, Poppins)",
+            "Display headers with strong weights (600–800)"
+        ],
+        "scales": {
+            "h1": "48px",
+            "h2": "36px",
+            "h3": "28px",
+            "body": "16px",
+            "small": "14px"
+        },
+        "line_heights": {
+            "header": "1.2",
+            "body": "1.5"
+        },
+        "letter_spacing": {
+            "tight": "-.5px",
+            "normal": "0px"
+        }
+    },
+    "grid": {
+        "type": "Responsive 12-column grid",
+        "gutters": "24px",
+        "margins": {
+            "desktop": "96px",
+            "tablet": "48px",
+            "mobile": "24px"
+        }
+    },
+    "spacing": {
+        "xs": "8px",
+        "sm": "16px",
+        "md": "24px",
+        "lg": "48px",
+        "xl": "96px"
+    },
+    "ui_components": {
+        "button": {
+            "primary": {
+                "background": "#1F1059",
+                "text_color": "#FFFFFF",
+                "border_radius": "8px",
+                "padding": "16px 32px"
+            },
+            "secondary": {
+                "background": "transparent",
+                "text_color": "#1F1059",
+                "border": "2px solid #1F1059",
+                "border_radius": "8px"
+            },
+            "hover_states": {
+                "primary": "lighten(10%)",
+                "secondary": "darken(10%)"
+            }
+        },
+        "input_fields": {
+            "border_radius": "6px",
+            "border_color": "#A4A4BF",
+            "focus_outline": "#572E54"
+        },
+        "cards": {
+            "background": "#FFFFFF",
+            "shadow": "0px 4px 12px rgba(0,0,0,0.06)",
+            "border_radius": "12px"
+        }
+    },
+    "sections": {
+        "hero": {
+            "layout": "Full width, centered headline, large image/illustration on right",
+            "background": "#F4F4F5",
+            "cta_position": "Below headline"
+        },
+        "features": {
+            "layout": "Three to four columns with icons and headline + description",
+            "icon_style": "Line icon with accent color fill"
+        },
+        "services": {
+            "layout": "Two-column alternating content + visuals",
+            "spacing": "lg"
+        },
+        "portfolio": {
+            "layout": "Grid (3 columns desktop, 1–2 mobile)",
+            "hover_effect": "Scale + shadow accent"
+        },
+        "footer": {
+            "layout": "Dark background with light text and social links",
+            "links": "Multi-column list"
+        }
+    },
+    "interaction_patterns": {
+        "hover_effects": "Subtle scale, color shift for interactive elements",
+        "scroll_behaviors": "Sticky navigation, fade/slide section reveal",
+        "mobile_nav": "Hamburger menu with slide overlay"
+    },
+    "responsive_breakpoints": {
+        "mobile": "≤ 640px",
+        "tablet": "641px – 1024px",
+        "desktop": "1025px+"
+    },
+    "accessibility": {
+        "contrast_ratio_min": "4.5:1",
+        "keyboard_navigation": true
+    }
+}
