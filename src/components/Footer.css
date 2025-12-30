@@ -19,13 +19,15 @@
 .footer-brand {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-sm);
 }
 
 .footer-logo {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
+  margin-left: -15px;
+  margin-top: -20px;
 }
 
 .footer-brand h3 {
@@ -44,14 +46,14 @@
 .footer-social h4 {
   color: #FFFFFF;
   font-size: 18px;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
   font-weight: 600;
 }
 
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-ma);
 }
 
 .contact-info {

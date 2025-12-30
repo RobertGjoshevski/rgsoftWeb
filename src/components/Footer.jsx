@@ -74,12 +74,12 @@ const Footer = () => {
     },
     {
       name: 'Facebook',
-      url: 'https://facebook.com/rgsoft',
+      url: 'https://www.facebook.com/profile.php?id=61585767831959',
       color: '#1877F2'
     },
     {
       name: 'Instagram',
-      url: 'https://instagram.com/rgsoft',
+      url: 'https://www.instagram.com/rgsoftmk/',
       color: '#E4405F'
     },
     {
@@ -95,7 +95,6 @@ const Footer = () => {
         <FadeIn direction="up" distance={30} duration={0.6} className="footer-content">
           <div className="footer-brand">
             <img src="/assets/logo.png" alt="RGsoft Logo" className="footer-logo" />
-            <h3>RGsoft</h3>
             <p>Building exceptional Flutter applications for modern businesses</p>
           </div>
 
@@ -123,6 +122,7 @@ const Footer = () => {
               <li><a href="#home">Home</a></li>
               <li><a href="#services">Services</a></li>
               <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#referral">Referral</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>

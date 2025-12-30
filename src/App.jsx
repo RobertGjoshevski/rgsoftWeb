@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import Features from './components/Features'
 import Services from './components/Services'
 import Portfolio from './components/Portfolio'
+import Referral from './components/Referral'
 import Footer from './components/Footer'
 import './App.css'
 
@@ -16,6 +17,7 @@ function App() {
         <Features />
         <Services />
         <Portfolio />
+        <Referral />
       </main>
       <Footer />
     </div>

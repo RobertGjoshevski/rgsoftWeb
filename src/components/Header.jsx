@@ -21,13 +21,13 @@ const Header = () => {
             <span className="logo-text">RGsoft</span>
           </div>
 
-          <a
-            href="mailto:rgsoftmk@gmail.com"
-            className="header-email"
-            aria-label="Contact us via email"
-          >
-            rgsoftmk@gmail.com
-          </a>
+          <nav className="header-nav">
+            <a href="#home" className="nav-link">Home</a>
+            <a href="#services" className="nav-link">Services</a>
+            <a href="#portfolio" className="nav-link">Portfolio</a>
+            <a href="#referral" className="nav-link">Referral</a>
+            <a href="#contact" className="nav-link">Contact</a>
+          </nav>
         </div>
       </div>
     </header>
