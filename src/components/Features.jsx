@@ -1,27 +1,16 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import TiltedCard from './TiltedCard'
+import { TiltedCard, FadeIn } from './reactbits'
 import './Features.css'
 
 const FeatureCard = ({ icon, title, description, index }) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 50 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-    >
-      <TiltedCard className="feature-card" intensity={8}>
+    <FadeIn delay={index * 0.1} duration={0.6} direction="up" distance={50}>
+      <TiltedCard className="feature-card" intensity={20} scale={1.08}>
       <div className="feature-icon">{icon}</div>
       <h3>{title}</h3>
       <p>{description}</p>
       </TiltedCard>
-    </motion.div>
+    </FadeIn>
   )
 }
 
@@ -52,18 +41,14 @@ const Features = () => {
   return (
     <section className="features section">
       <div className="container">
-        <motion.div
-          className="section-header"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <FadeIn direction="up" distance={30} duration={0.6}>
+          <div className="section-header">
           <h2>Why Choose Flutter?</h2>
           <p className="section-description">
             We leverage Flutter's powerful capabilities to deliver exceptional mobile applications
           </p>
-        </motion.div>
+          </div>
+        </FadeIn>
 
         <div className="features-grid">
           {features.map((feature, index) => (

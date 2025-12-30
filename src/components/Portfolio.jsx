@@ -1,22 +1,11 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
-import TiltedCard from './TiltedCard'
+import { TiltedCard, FadeIn } from './reactbits'
 import './Portfolio.css'
 
 const PortfolioItem = ({ image, title, description, index, size = 'medium' }) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
-
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-    >
-      <TiltedCard className={`portfolio-item portfolio-item-${size}`} intensity={10}>
+    <FadeIn delay={index * 0.1} duration={0.5} direction="up" distance={20}>
+      <TiltedCard className={`portfolio-item portfolio-item-${size}`} intensity={25} scale={1.1}>
       <div className="portfolio-image">
         {image ? (
           <img src={image} alt={title} />
@@ -32,7 +21,7 @@ const PortfolioItem = ({ image, title, description, index, size = 'medium' }) =>
         <p>{description}</p>
       </div>
       </TiltedCard>
-    </motion.div>
+    </FadeIn>
   )
 }
 
@@ -81,18 +70,14 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="portfolio section">
       <div className="container">
-        <motion.div
-          className="section-header"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <FadeIn direction="up" distance={30} duration={0.6}>
+          <div className="section-header">
           <h2>Our Portfolio</h2>
           <p className="section-description">
             Showcasing our latest Flutter applications and mobile solutions
           </p>
-        </motion.div>
+          </div>
+        </FadeIn>
 
         <div className="portfolio-grid">
           {portfolioItems.map((item, index) => (

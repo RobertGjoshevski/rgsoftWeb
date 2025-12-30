@@ -1,20 +1,15 @@
 import React from 'react'
-import { motion } from 'framer-motion'
-import { useInView } from 'framer-motion'
-import { useRef } from 'react'
+import { FadeIn } from './reactbits'
 import './Services.css'
 
 const ServiceItem = ({ title, description, features, index, isReversed }) => {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
-
   return (
-    <motion.div
-      ref={ref}
+    <FadeIn 
+      delay={index * 0.2} 
+      duration={0.6} 
+      direction={isReversed ? 'left' : 'right'} 
+      distance={50}
       className={`service-item ${isReversed ? 'reversed' : ''}`}
-      initial={{ opacity: 0, x: isReversed ? -50 : 50 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: isReversed ? -50 : 50 }}
-      transition={{ duration: 0.6, delay: index * 0.2 }}
     >
       <div className="service-content">
         <h3>{title}</h3>
@@ -30,7 +25,7 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
           <div className="service-icon">💼</div>
         </div>
       </div>
-    </motion.div>
+    </FadeIn>
   )
 }
 
@@ -74,18 +69,14 @@ const Services = () => {
   return (
     <section id="services" className="services section">
       <div className="container">
-        <motion.div
-          className="section-header"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <FadeIn direction="up" distance={30} duration={0.6}>
+          <div className="section-header">
           <h2>Our Services</h2>
           <p className="section-description">
             Comprehensive Flutter development services to bring your mobile app vision to life
           </p>
-        </motion.div>
+          </div>
+        </FadeIn>
 
         <div className="services-list">
           {services.map((service, index) => (

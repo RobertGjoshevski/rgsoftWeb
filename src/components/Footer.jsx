@@ -1,5 +1,5 @@
 import React from 'react'
-import { motion } from 'framer-motion'
+import { FadeIn } from './reactbits'
 import './Footer.css'
 
 const Footer = () => {
@@ -39,13 +39,7 @@ const Footer = () => {
   return (
     <footer id="contact" className="footer">
       <div className="container">
-        <motion.div
-          className="footer-content"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+        <FadeIn direction="up" distance={30} duration={0.6} className="footer-content">
           <div className="footer-brand">
             <img src="/assets/logo.png" alt="RGsoft Logo" className="footer-logo" />
             <h3>RGsoft</h3>
@@ -66,38 +60,27 @@ const Footer = () => {
             <h4>Connect With Us</h4>
             <div className="social-links">
               {socialLinks.map((link, index) => (
-                <motion.a
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-link"
-                  whileHover={{ scale: 1.1, y: -5 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  style={{ '--social-color': link.color }}
-                >
-                  <span className="social-icon">{link.icon}</span>
-                  <span className="social-name">{link.name}</span>
-                </motion.a>
+                <FadeIn key={link.name} delay={index * 0.1} direction="up" distance={20} duration={0.4}>
+                  <a
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                    style={{ '--social-color': link.color }}
+                  >
+                    <span className="social-icon">{link.icon}</span>
+                    <span className="social-name">{link.name}</span>
+                  </a>
+                </FadeIn>
               ))}
             </div>
           </div>
-        </motion.div>
+        </FadeIn>
 
-        <motion.div
-          className="footer-bottom"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-        >
+        <FadeIn delay={0.3} duration={0.6} className="footer-bottom">
           <p>&copy; {new Date().getFullYear()} RGsoft. All rights reserved.</p>
           <p>Built with Flutter & React</p>
-        </motion.div>
+        </FadeIn>
       </div>
     </footer>
   )

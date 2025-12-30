@@ -1,8 +1,13 @@
 import React, { useRef, useState } from 'react'
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
-import './TiltedCard.css'
 
-const TiltedCard = ({ children, className = '', intensity = 25, scaleOnHover = 1.08, ...props }) => {
+const TiltedCard = ({ 
+  children, 
+  className = '', 
+  intensity = 25,
+  scale = 1.08,
+  ...props 
+}) => {
   const ref = useRef(null)
   const [isHovered, setIsHovered] = useState(false)
 
@@ -14,7 +19,6 @@ const TiltedCard = ({ children, className = '', intensity = 25, scaleOnHover = 1
 
   const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], [`${intensity}deg`, `-${intensity}deg`])
   const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], [`-${intensity}deg`, `${intensity}deg`])
-  const scale = useTransform(mouseXSpring, [-0.5, 0.5], [scaleOnHover, scaleOnHover])
 
   const handleMouseMove = (e) => {
     if (!ref.current) return
@@ -40,21 +44,25 @@ const TiltedCard = ({ children, className = '', intensity = 25, scaleOnHover = 1
   return (
     <motion.div
       ref={ref}
-      className={`tilted-card ${className}`}
+      className={className}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
       style={{
         rotateX,
         rotateY,
+        scale: isHovered ? scale : 1,
         transformStyle: 'preserve-3d',
+      }}
+      transition={{
+        scale: { duration: 0.3, ease: "easeOut" }
       }}
       {...props}
     >
       <div
-        className="tilted-card-inner"
         style={{
-          transform: isHovered ? 'translateZ(20px)' : 'translateZ(0px)',
+          transform: isHovered ? 'translateZ(30px)' : 'translateZ(0px)',
+          transformStyle: 'preserve-3d',
         }}
       >
         {children}

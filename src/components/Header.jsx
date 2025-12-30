@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { motion } from 'framer-motion'
+import { FadeIn } from './reactbits'
 import './Header.css'
 
 const Header = () => {
@@ -22,37 +22,26 @@ const Header = () => {
   ]
 
   return (
-    <motion.header 
-      className={`header ${isScrolled ? 'scrolled' : ''}`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
+    <FadeIn direction="down" distance={100} duration={0.5} className={`header ${isScrolled ? 'scrolled' : ''}`}>
+      <header>
       <div className="container">
         <div className="header-content">
-          <motion.div 
-            className="logo-container"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 400 }}
-          >
+          <div className="logo-container">
             <img src="/assets/logo.png" alt="RGsoft Logo" className="logo" />
             <span className="logo-text">RGsoft</span>
-          </motion.div>
+          </div>
 
           <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
             {navItems.map((item, index) => (
-              <motion.a
-                key={item.label}
-                href={item.href}
-                className="nav-link"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {item.label}
-              </motion.a>
+              <FadeIn key={item.label} delay={index * 0.1} direction="down" distance={20} duration={0.3}>
+                <a
+                  href={item.href}
+                  className="nav-link"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </a>
+              </FadeIn>
             ))}
           </nav>
 
@@ -67,7 +56,8 @@ const Header = () => {
           </button>
         </div>
       </div>
-    </motion.header>
+      </header>
+    </FadeIn>
   )
 }
 
