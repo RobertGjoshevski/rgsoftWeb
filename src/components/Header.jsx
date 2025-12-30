@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import { FadeIn } from './reactbits'
 import './Header.css'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,16 +12,8 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'Services', href: '#services' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Contact', href: '#contact' }
-  ]
-
   return (
-    <FadeIn direction="down" distance={100} duration={0.5} className={`header ${isScrolled ? 'scrolled' : ''}`}>
-      <header>
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="header-content">
           <div className="logo-container">
@@ -31,33 +21,16 @@ const Header = () => {
             <span className="logo-text">RGsoft</span>
           </div>
 
-          <nav className={`nav ${isMobileMenuOpen ? 'open' : ''}`}>
-            {navItems.map((item, index) => (
-              <FadeIn key={item.label} delay={index * 0.1} direction="down" distance={20} duration={0.3}>
-                <a
-                  href={item.href}
-                  className="nav-link"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              </FadeIn>
-            ))}
-          </nav>
-
-          <button 
-            className="mobile-menu-toggle"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+          <a
+            href="mailto:rgsoftmk@gmail.com"
+            className="header-email"
+            aria-label="Contact us via email"
           >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+            rgsoftmk@gmail.com
+          </a>
         </div>
       </div>
-      </header>
-    </FadeIn>
+    </header>
   )
 }
 

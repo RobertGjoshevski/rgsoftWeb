@@ -2,38 +2,91 @@ import React from 'react'
 import { FadeIn } from './reactbits'
 import './Footer.css'
 
+const SocialIcon = ({ name }) => {
+  const iconProps = {
+    width: '20',
+    height: '20',
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: '1.5',
+    strokeLinecap: 'round',
+    strokeLinejoin: 'round'
+  }
+
+  switch (name) {
+    case 'LinkedIn':
+      return (
+        <img
+          src="/assets/linkedin.png"
+          alt="LinkedIn"
+          className="social-icon-img"
+        />
+      )
+    case 'Facebook':
+      return (
+        <img
+          src="/assets/facebook.png"
+          alt="Facebook"
+          className="social-icon-img"
+        />
+      )
+    case 'Instagram':
+      return (
+        <img
+          src="/assets/instagram.png"
+          alt="Instagram"
+          className="social-icon-img"
+        />
+      )
+    case 'WhatsApp':
+      return (
+        <img
+          src="/assets/whatsapp.png"
+          alt="WhatsApp"
+          className="social-icon-img"
+        />
+      )
+    case 'YouTube':
+      return (
+        <svg {...iconProps} viewBox="0 0 24 24">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z" />
+          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" />
+        </svg>
+      )
+    case 'X':
+      return (
+        <svg {...iconProps} viewBox="0 0 24 24">
+          <path d="M18 6L6 18M6 6l12 12" strokeWidth="2" />
+        </svg>
+      )
+    default:
+      return null
+  }
+}
+
 const Footer = () => {
   const socialLinks = [
     {
-      name: 'Instagram',
-      icon: '📷',
-      url: 'https://instagram.com/rgsoft',
-      color: '#E4405F'
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/company/110668405',
+      color: '#0A66C2'
     },
     {
       name: 'Facebook',
-      icon: '👥',
       url: 'https://facebook.com/rgsoft',
       color: '#1877F2'
     },
     {
-      name: 'LinkedIn',
-      icon: '💼',
-      url: 'https://linkedin.com/company/rgsoft',
-      color: '#0A66C2'
+      name: 'Instagram',
+      url: 'https://instagram.com/rgsoft',
+      color: '#E4405F'
     },
     {
-      name: 'Email',
-      icon: '✉️',
-      url: 'mailto:contact@rgsoft.com',
-      color: '#EA4335'
+      name: 'WhatsApp',
+      url: 'https://wa.me/38979394134',
+      color: '#25D366'
     },
-    {
-      name: 'X (Twitter)',
-      icon: '🐦',
-      url: 'https://twitter.com/rgsoft',
-      color: '#000000'
-    }
   ]
 
   return (
@@ -44,6 +97,24 @@ const Footer = () => {
             <img src="/assets/logo.png" alt="RGsoft Logo" className="footer-logo" />
             <h3>RGsoft</h3>
             <p>Building exceptional Flutter applications for modern businesses</p>
+          </div>
+
+          <div className="footer-contact">
+            <h4>Contact Info</h4>
+            <div className="contact-info">
+              <div className="contact-item">
+                <span className="contact-label">Email:</span>
+                <a href="mailto:rgsoftmk@gmail.com" className="contact-link">rgsoftmk@gmail.com</a>
+              </div>
+              <div className="contact-item">
+                <span className="contact-label">City:</span>
+                <span className="contact-text">Skopje</span>
+              </div>
+              <div className="contact-item">
+                <span className="contact-label">Country:</span>
+                <span className="contact-text">North Macedonia</span>
+              </div>
+            </div>
           </div>
 
           <div className="footer-links">
@@ -68,7 +139,9 @@ const Footer = () => {
                     className="social-link"
                     style={{ '--social-color': link.color }}
                   >
-                    <span className="social-icon">{link.icon}</span>
+                    <span className="social-icon">
+                      <SocialIcon name={link.name} />
+                    </span>
                     <span className="social-name">{link.name}</span>
                   </a>
                 </FadeIn>
