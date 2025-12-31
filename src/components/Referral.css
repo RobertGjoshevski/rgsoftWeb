@@ -5,17 +5,8 @@
 }
 
 .referral-card {
-  background: var(--background-card);
-  border: 1px solid var(--border-color);
-  padding: var(--spacing-xl);
-  border-radius: 16px;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  background-clip: padding-box;
-  will-change: transform;
-  max-width: 800px;
-  margin: 0 auto;
+  /* Styles moved to .tilted-card-wrapper - this class is only used for className targeting */
+  overflow: visible !important;
 }
 
 .referral-card::before {
@@ -38,8 +29,7 @@
 }
 
 .referral-card:hover {
-  box-shadow: 0px 12px 32px rgba(136, 196, 68, 0.4);
-  border-color: var(--secondary);
+  /* Styles moved to .tilted-card-wrapper for 3D transform */
 }
 
 .referral-card .referral-light-rays {

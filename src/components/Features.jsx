@@ -6,7 +6,13 @@ import './Features.css'
 const FeatureCard = ({ icon, title, description, index, speed = 0.4, spread = 1.8, length = 3 }) => {
   return (
     <FadeIn delay={index * 0.1} duration={0.6} direction="up" distance={50}>
-      <TiltedCard className="feature-card" intensity={20} scale={1.08}>
+      <TiltedCard
+        className="feature-card"
+        rotateAmplitude={20}
+        scaleOnHover={1.08}
+        showMobileWarning={false}
+        showTooltip={false}
+      >
         <LightRays
           raysOrigin="top-center"
           raysColor="#88c444"

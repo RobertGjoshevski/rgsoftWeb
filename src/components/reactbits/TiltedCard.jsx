@@ -22,7 +22,9 @@ export default function TiltedCard({
     showTooltip = true,
     overlayContent = null,
     displayOverlayContent = false,
-    backgroundImage = null
+    backgroundImage = null,
+    children = null,
+    className = ''
 }) {
     const ref = useRef(null);
 
@@ -74,13 +76,16 @@ export default function TiltedCard({
         rotateFigcaption.set(0);
     }
 
+    // Determine if we're in wrapper mode (has children, no image)
+    const isWrapperMode = children && !imageSrc && !backgroundImage;
+
     return (
         <figure
             ref={ref}
-            className="tilted-card-figure"
+            className={`tilted-card-figure ${className}`}
             style={{
-                height: containerHeight,
-                width: containerWidth
+                height: isWrapperMode ? '100%' : containerHeight,
+                width: isWrapperMode ? '100%' : containerWidth
             }}
             onMouseMove={handleMouse}
             onMouseEnter={handleMouseEnter}
@@ -90,7 +95,26 @@ export default function TiltedCard({
                 <div className="tilted-card-mobile-alert">This effect is not optimized for mobile. Check on desktop.</div>
             )}
 
-            {(imageSrc || backgroundImage) && (
+            {/* Wrapper mode: render children with tilt animation */}
+            {isWrapperMode && (
+                <motion.div
+                    className="tilted-card-inner tilted-card-wrapper"
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        rotateX,
+                        rotateY,
+                        scale
+                    }}
+                >
+                    <div className="tilted-card-wrapper-content">
+                        {children}
+                    </div>
+                </motion.div>
+            )}
+
+            {/* Image mode: render image with tilt animation */}
+            {(imageSrc || backgroundImage) && !isWrapperMode && (
                 <motion.div
                     className="tilted-card-inner"
                     style={{
