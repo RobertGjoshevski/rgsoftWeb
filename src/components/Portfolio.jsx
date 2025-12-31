@@ -4,7 +4,7 @@ import './Portfolio.css'
 
 const PortfolioItem = ({ image, title, description, index }) => {
   // Use iPhone image as background for Portfolio cards
-  const backgroundImage = '/assets/iphone.png';
+  const backgroundImage = './assets/iphone.png';
 
   // Special handling for Fitness Tracker: use fitness.png in overlayContent for parallax effect
   const isFitnessTracker = title === 'Fitness Tracker';
@@ -49,42 +49,42 @@ const PortfolioItem = ({ image, title, description, index }) => {
         overlayContent={
           isPayment ? (
             <img
-              src="/assets/payment.png"
+              src="./assets/payment.png"
               alt={title}
               className="portfolio-overlay-image"
             />
           ) :
             isFinance ? (
               <img
-                src="/assets/finance.png"
+                src="./assets/finance.png"
                 alt={title}
                 className="portfolio-overlay-image"
               />
             ) :
               isFoodDelivery ? (
                 <img
-                  src="/assets/food.png"
+                  src="./assets/food.png"
                   alt={title}
                   className="portfolio-overlay-image"
                 />
               ) :
                 isECommerce ? (
                   <img
-                    src="/assets/utilityKings.png"
+                    src="./assets/utilityKings.png"
                     alt={title}
                     className="portfolio-overlay-image"
                   />
                 ) :
                   isFitnessTracker ? (
                     <img
-                      src="/assets/fitness.png"
+                      src="./assets/fitness.png"
                       alt={title}
                       className="portfolio-overlay-image"
                     />
                   ) :
                     isSocialMedia ? (
                       <img
-                        src="/assets/game.png"
+                        src="./assets/game.png"
                         alt={title}
                         className="portfolio-overlay-image"
                       />
@@ -104,7 +104,7 @@ const Portfolio = () => {
   // Placeholder portfolio items - user can add their own images
   const portfolioItems = [
     {
-      image: null, // Add image path here, e.g., '/assets/portfolio/app1.png'
+      image: null, // Add image path here, e.g., './assets/portfolio/app1.png'
       title: 'E-Commerce App',
       description: 'A beautiful shopping experience built with Flutter'
     },

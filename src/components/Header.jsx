@@ -17,7 +17,7 @@ const Header = () => {
       <div className="container">
         <div className="header-content">
           <div className="logo-container">
-            <img src="/assets/logo.png" alt="RGsoft Logo" className="logo" />
+            <img src="./assets/logo.png" alt="RGsoft Logo" className="logo" />
             <span className="logo-text">RGsoft</span>
           </div>
 

@@ -18,7 +18,7 @@ const SocialIcon = ({ name }) => {
     case 'LinkedIn':
       return (
         <img
-          src="/assets/linkedin.png"
+          src="./assets/linkedin.png"
           alt="LinkedIn"
           className="social-icon-img"
         />
@@ -26,7 +26,7 @@ const SocialIcon = ({ name }) => {
     case 'Facebook':
       return (
         <img
-          src="/assets/facebook.png"
+          src="./assets/facebook.png"
           alt="Facebook"
           className="social-icon-img"
         />
@@ -34,7 +34,7 @@ const SocialIcon = ({ name }) => {
     case 'Instagram':
       return (
         <img
-          src="/assets/instagram.png"
+          src="./assets/instagram.png"
           alt="Instagram"
           className="social-icon-img"
         />
@@ -42,7 +42,7 @@ const SocialIcon = ({ name }) => {
     case 'WhatsApp':
       return (
         <img
-          src="/assets/whatsapp.png"
+          src="./assets/whatsapp.png"
           alt="WhatsApp"
           className="social-icon-img"
         />
@@ -94,7 +94,7 @@ const Footer = () => {
       <div className="container">
         <FadeIn direction="up" distance={30} duration={0.6} className="footer-content">
           <div className="footer-brand">
-            <img src="/assets/logo.png" alt="RGsoft Logo" className="footer-logo" />
+            <img src="./assets/logo.png" alt="RGsoft Logo" className="footer-logo" />
             <p>Building exceptional Flutter applications for modern businesses</p>
           </div>
 

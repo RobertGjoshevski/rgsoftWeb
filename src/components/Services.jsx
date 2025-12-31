@@ -23,7 +23,7 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
       <div className="service-visual">
         {title === 'Custom Flutter Development' ? (
           <img
-            src="/assets/consulting.png"
+            src="./assets/consulting.png"
             alt="Consulting & Strategy"
             style={{
               float: 'left',
@@ -36,7 +36,7 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
           />
         ) : title === 'App Maintenance & Support' ? (
           <img
-            src="/assets/maintance.png"
+            src="./assets/maintance.png"
             alt="Consulting & Strategy"
             style={{
               float: 'left',
@@ -49,7 +49,7 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
           />
         ) : title === 'Consulting & Strategy' ? (
           <img
-            src="/assets/consulting.png"
+            src="./assets/consulting.png"
             alt="Consulting & Strategy"
             style={{
               float: 'left',
