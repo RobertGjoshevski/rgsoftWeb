@@ -12,22 +12,26 @@ const FeatureCard = ({ icon, title, description, index, speed = 0.4, spread = 1.
         scaleOnHover={1.08}
         showMobileWarning={false}
         showTooltip={false}
-      >
-        <LightRays
-          raysOrigin="top-center"
-          raysColor="#88c444"
-          raysSpeed={speed}
-          lightSpread={spread}
-          rayLength={length}
-          followMouse={true}
-          pulsating={false}
-          fadeDistance={0.8}
-          className="feature-light-rays"
-        />
-        <div className="feature-icon">{icon}</div>
-        <h3>{title}</h3>
-        <p>{description}</p>
-      </TiltedCard>
+        displayOverlayContent={true}
+        overlayContent={
+          <>
+            <LightRays
+              raysOrigin="top-center"
+              raysColor="#88c444"
+              raysSpeed={speed}
+              lightSpread={spread}
+              rayLength={length}
+              followMouse={true}
+              pulsating={false}
+              fadeDistance={0.8}
+              className="feature-light-rays"
+            />
+            <div className="feature-icon">{icon}</div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </>
+        }
+      />
     </FadeIn>
   )
 }

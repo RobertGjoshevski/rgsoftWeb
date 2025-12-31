@@ -76,8 +76,8 @@ export default function TiltedCard({
         rotateFigcaption.set(0);
     }
 
-    // Determine if we're in wrapper mode (has children, no image)
-    const isWrapperMode = children && !imageSrc && !backgroundImage;
+    // Determine if we're in wrapper mode (has children or overlayContent, no image)
+    const isWrapperMode = (children || (displayOverlayContent && overlayContent)) && !imageSrc && !backgroundImage;
 
     return (
         <figure
@@ -95,7 +95,7 @@ export default function TiltedCard({
                 <div className="tilted-card-mobile-alert">This effect is not optimized for mobile. Check on desktop.</div>
             )}
 
-            {/* Wrapper mode: render children with tilt animation */}
+            {/* Wrapper mode: render children or overlayContent with tilt animation */}
             {isWrapperMode && (
                 <motion.div
                     className="tilted-card-inner tilted-card-wrapper"
@@ -108,7 +108,7 @@ export default function TiltedCard({
                     }}
                 >
                     <div className="tilted-card-wrapper-content">
-                        {children}
+                        {displayOverlayContent && overlayContent ? overlayContent : children}
                     </div>
                 </motion.div>
             )}
