@@ -21,9 +21,50 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
         </ul>
       </div>
       <div className="service-visual">
-        <div className="service-placeholder">
-          <div className="service-icon">💼</div>
-        </div>
+        {title === 'Custom Flutter Development' ? (
+          <img
+            src="/assets/consulting.png"
+            alt="Consulting & Strategy"
+            style={{
+              float: 'left',
+              marginRight: '2rem',
+              width: '120%',
+              height: '120%',
+              objectFit: 'contain'
+            }}
+            className="service-image service-image-left"
+          />
+        ) : title === 'App Maintenance & Support' ? (
+          <img
+            src="/assets/maintance.png"
+            alt="Consulting & Strategy"
+            style={{
+              float: 'left',
+              marginLeft: '2rem',
+              width: '120%',
+              height: '120%',
+              objectFit: 'contain'
+            }}
+            className="service-image service-image-left"
+          />
+        ) : title === 'Consulting & Strategy' ? (
+          <img
+            src="/assets/consulting.png"
+            alt="Consulting & Strategy"
+            style={{
+              float: 'left',
+              marginRight: '2rem',
+              width: '120%',
+              height: '120%',
+              objectFit: 'contain'
+            }}
+            className="service-image service-image-left"
+          />
+        ) : (
+          <div className="service-placeholder">
+            <div className="service-icon">💼</div>
+          </div>
+        )}
       </div>
     </FadeIn>
   )
