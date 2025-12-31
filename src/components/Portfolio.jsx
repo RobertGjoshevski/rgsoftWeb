@@ -8,6 +8,15 @@ const PortfolioItem = ({ image, title, description, index }) => {
 
   // Special handling for Fitness Tracker: use fitness.png in overlayContent for parallax effect
   const isFitnessTracker = title === 'Fitness Tracker';
+  const isSocialMedia = title === 'Social Media Platform';
+  const isECommerce = title === 'E-Commerce App';
+  const isFoodDelivery = title === 'Food Delivery';
+  const isFinance = title === 'Finance Manager';
+  const isPayment = title === 'Travel Companion';
+  const isHealthTracker = title === 'Health Tracker';
+  const isWeatherApp = title === 'Weather App';
+  const isNewsApp = title === 'News App';
+  const isMusicApp = title === 'Music App';
 
   // Use the provided image if available, otherwise null
   const imageSrc = image || null;
@@ -36,20 +45,55 @@ const PortfolioItem = ({ image, title, description, index }) => {
         showTooltip={false}
         displayOverlayContent={true}
         backgroundImage={backgroundImage}
-        className={isFitnessTracker ? 'portfolio-phone-content' : ''}
+        className={isFitnessTracker || isSocialMedia || isECommerce || isFoodDelivery || isFinance || isPayment ? 'portfolio-phone-content' : ''}
         overlayContent={
-          isFitnessTracker ? (
-            <img 
-              src="/assets/fitness.png" 
+          isPayment ? (
+            <img
+              src="/assets/payment.png"
               alt={title}
               className="portfolio-overlay-image"
             />
-          ) : (
-            <div className="portfolio-overlay-content">
-              <h3 className="portfolio-overlay-title">{title}</h3>
-              <p className="portfolio-overlay-description">{description}</p>
-            </div>
-          )
+          ) :
+            isFinance ? (
+              <img
+                src="/assets/finance.png"
+                alt={title}
+                className="portfolio-overlay-image"
+              />
+            ) :
+              isFoodDelivery ? (
+                <img
+                  src="/assets/food.png"
+                  alt={title}
+                  className="portfolio-overlay-image"
+                />
+              ) :
+                isECommerce ? (
+                  <img
+                    src="/assets/utilityKings.png"
+                    alt={title}
+                    className="portfolio-overlay-image"
+                  />
+                ) :
+                  isFitnessTracker ? (
+                    <img
+                      src="/assets/fitness.png"
+                      alt={title}
+                      className="portfolio-overlay-image"
+                    />
+                  ) :
+                    isSocialMedia ? (
+                      <img
+                        src="/assets/game.png"
+                        alt={title}
+                        className="portfolio-overlay-image"
+                      />
+                    ) : (
+                      <div className="portfolio-overlay-content">
+                        <h3 className="portfolio-overlay-title">{title}</h3>
+                        <p className="portfolio-overlay-description">{description}</p>
+                      </div>
+                    )
         }
       />
     </FadeIn>
