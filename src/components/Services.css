@@ -54,7 +54,7 @@
   direction: rtl;
 }
 
-.service-item.reversed > * {
+.service-item.reversed>* {
   direction: ltr;
 }
 
@@ -129,4 +129,3 @@
     height: 200px;
   }
 }
-

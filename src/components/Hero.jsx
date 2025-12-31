@@ -39,21 +39,21 @@ const Hero = () => {
             </StaggerItem>
             <StaggerItem direction="up" distance={30} duration={0.6}>
               <p className="hero-description">
-                We specialize in creating high-performance, visually stunning mobile 
-                applications using Flutter. From concept to deployment, we deliver 
+                We specialize in creating high-performance, visually stunning mobile
+                applications using Flutter. From concept to deployment, we deliver
                 cross-platform solutions that work seamlessly on iOS and Android.
               </p>
             </StaggerItem>
             <StaggerItem direction="up" distance={30} duration={0.6}>
               <div className="hero-cta">
-              <a href="#contact" className="btn btn-primary">
-                Get Started
-              </a>
-              <a href="#portfolio" className="btn btn-secondary">
-                View Our Work
-              </a>
-            </div>
-          </StaggerItem>
+                <a href="#contact" className="btn btn-primary">
+                  Get Started
+                </a>
+                <a href="#portfolio" className="btn btn-secondary">
+                  View Our Work
+                </a>
+              </div>
+            </StaggerItem>
           </div>
 
           <StaggerItem direction="right" distance={50} duration={0.8} delay={0.5}>

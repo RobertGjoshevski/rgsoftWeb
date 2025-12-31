@@ -167,15 +167,42 @@
 
 /* When background image is provided, remove border and gradient */
 .tilted-card-background[style*="background-image"] {
-    border: none;
-    background: transparent;
+    border: none !important;
+    background-color: transparent !important;
     background-size: contain !important;
+    box-shadow: none !important;
 }
 
 .tilted-card-inner:hover .tilted-card-background[style*="background-image"] {
-    border: none;
-    background: transparent;
-    box-shadow: 0px 8px 24px rgba(136, 196, 68, 0.3);
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+/* When imageSrc is provided, hide border and background */
+.tilted-card-background.has-image {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.tilted-card-inner:hover .tilted-card-background.has-image {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* When backgroundImage is provided, hide border, background color, and shadow (but keep background-image) */
+.tilted-card-background.has-background-image {
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+.tilted-card-inner:hover .tilted-card-background.has-background-image {
+    border: none !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
 }
 
 .tilted-card-img {

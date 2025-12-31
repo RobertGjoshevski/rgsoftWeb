@@ -4,10 +4,10 @@ import './Services.css'
 
 const ServiceItem = ({ title, description, features, index, isReversed }) => {
   return (
-    <FadeIn 
-      delay={index * 0.2} 
-      duration={0.6} 
-      direction={isReversed ? 'left' : 'right'} 
+    <FadeIn
+      delay={index * 0.2}
+      duration={0.6}
+      direction={isReversed ? 'left' : 'right'}
       distance={50}
       className={`service-item ${isReversed ? 'reversed' : ''}`}
     >
@@ -71,27 +71,27 @@ const Services = () => {
       <div className="section-divider"></div>
       <section id="services" className="services section">
         <div className="container">
-        <FadeIn direction="up" distance={30} duration={0.6}>
-          <div className="section-header">
-          <h2>Our Services</h2>
-          <p className="section-description">
-            Comprehensive Flutter development services to bring your mobile app vision to life
-          </p>
-          </div>
-        </FadeIn>
+          <FadeIn direction="up" distance={30} duration={0.6}>
+            <div className="section-header">
+              <h2>Our Services</h2>
+              <p className="section-description">
+                Comprehensive Flutter development services to bring your mobile app vision to life
+              </p>
+            </div>
+          </FadeIn>
 
-        <div className="services-list">
-          {services.map((service, index) => (
-            <ServiceItem
-              key={service.title}
-              title={service.title}
-              description={service.description}
-              features={service.features}
-              index={index}
-              isReversed={index % 2 === 1}
-            />
-          ))}
-        </div>
+          <div className="services-list">
+            {services.map((service, index) => (
+              <ServiceItem
+                key={service.title}
+                title={service.title}
+                description={service.description}
+                features={service.features}
+                index={index}
+                isReversed={index % 2 === 1}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </>

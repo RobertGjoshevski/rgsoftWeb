@@ -126,7 +126,7 @@ export default function TiltedCard({
                     }}
                 >
                     <div
-                        className="tilted-card-background"
+                        className={`tilted-card-background ${imageSrc ? 'has-image' : ''} ${backgroundImage ? 'has-background-image' : ''}`}
                         style={backgroundImage ? {
                             backgroundImage: `url(${backgroundImage})`,
                             backgroundSize: 'contain',
