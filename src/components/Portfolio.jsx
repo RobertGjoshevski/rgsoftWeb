@@ -1,10 +1,17 @@
 import React from 'react'
 import { TiltedCard, FadeIn } from './reactbits'
 import './Portfolio.css'
+import iphoneImg from '../assets/iphone.png'
+import paymentImg from '../assets/payment.png'
+import financeImg from '../assets/finance.png'
+import foodImg from '../assets/food.png'
+import utilityKingsImg from '../assets/utilityKings.png'
+import fitnessImg from '../assets/fitness.png'
+import gameImg from '../assets/game.png'
 
 const PortfolioItem = ({ image, title, description, index }) => {
   // Use iPhone image as background for Portfolio cards
-  const backgroundImage = './assets/iphone.png';
+  const backgroundImage = iphoneImg;
 
   // Special handling for Fitness Tracker: use fitness.png in overlayContent for parallax effect
   const isFitnessTracker = title === 'Fitness Tracker';
@@ -18,7 +25,7 @@ const PortfolioItem = ({ image, title, description, index }) => {
   const isNewsApp = title === 'News App';
   const isMusicApp = title === 'Music App';
 
-  // Use the provided image if available, otherwise null
+  // If you pass `image`, pass an imported asset (URL string) from the parent
   const imageSrc = image || null;
 
   // iPhone image dimensions: height: 2160, width: 1024
@@ -49,42 +56,42 @@ const PortfolioItem = ({ image, title, description, index }) => {
         overlayContent={
           isPayment ? (
             <img
-              src="./assets/payment.png"
+              src={paymentImg}
               alt={title}
               className="portfolio-overlay-image"
             />
           ) :
             isFinance ? (
               <img
-                src="./assets/finance.png"
+                src={financeImg}
                 alt={title}
                 className="portfolio-overlay-image"
               />
             ) :
               isFoodDelivery ? (
                 <img
-                  src="./assets/food.png"
+                  src={foodImg}
                   alt={title}
                   className="portfolio-overlay-image"
                 />
               ) :
                 isECommerce ? (
                   <img
-                    src="./assets/utilityKings.png"
+                    src={utilityKingsImg}
                     alt={title}
                     className="portfolio-overlay-image"
                   />
                 ) :
                   isFitnessTracker ? (
                     <img
-                      src="./assets/fitness.png"
+                      src={fitnessImg}
                       alt={title}
                       className="portfolio-overlay-image"
                     />
                   ) :
                     isSocialMedia ? (
                       <img
-                        src="./assets/game.png"
+                        src={gameImg}
                         alt={title}
                         className="portfolio-overlay-image"
                       />
@@ -167,4 +174,3 @@ const Portfolio = () => {
 }
 
 export default Portfolio
-

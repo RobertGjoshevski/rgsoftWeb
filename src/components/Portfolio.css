@@ -159,7 +159,7 @@
 /* Ensure background (iPhone frame) is visible - explicitly set background-image */
 .portfolio-phone-content .tilted-card-background.has-background-image {
   z-index: 0 !important;
-  background-image: url('./assets/iphone.png') !important;
+  background-image: url('../assets/iphone.png') !important;
   background-size: contain !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -190,4 +190,3 @@
     justify-content: center;
   }
 }
-

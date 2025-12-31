@@ -1,6 +1,8 @@
 import React from 'react'
 import { FadeIn } from './reactbits'
 import './Services.css'
+import consultingImg from '../assets/consulting.png'
+import maintanceImg from '../assets/maintance.png'
 
 const ServiceItem = ({ title, description, features, index, isReversed }) => {
   return (
@@ -23,7 +25,7 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
       <div className="service-visual">
         {title === 'Custom Flutter Development' ? (
           <img
-            src="./assets/consulting.png"
+            src={consultingImg}
             alt="Consulting & Strategy"
             style={{
               float: 'left',
@@ -36,7 +38,7 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
           />
         ) : title === 'App Maintenance & Support' ? (
           <img
-            src="./assets/maintance.png"
+            src={maintanceImg}
             alt="Consulting & Strategy"
             style={{
               float: 'left',
@@ -49,7 +51,7 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
           />
         ) : title === 'Consulting & Strategy' ? (
           <img
-            src="./assets/consulting.png"
+            src={consultingImg}
             alt="Consulting & Strategy"
             style={{
               float: 'left',
