@@ -6,7 +6,10 @@ const PortfolioItem = ({ image, title, description, index }) => {
   // Use iPhone image as background for Portfolio cards
   const backgroundImage = '/assets/iphone.png';
 
-  // Use the provided image if available, otherwise null (background will show through)
+  // Special handling for Fitness Tracker: use fitness.png in overlayContent for parallax effect
+  const isFitnessTracker = title === 'Fitness Tracker';
+
+  // Use the provided image if available, otherwise null
   const imageSrc = image || null;
 
   // iPhone image dimensions: height: 2160, width: 1024
@@ -33,11 +36,20 @@ const PortfolioItem = ({ image, title, description, index }) => {
         showTooltip={false}
         displayOverlayContent={true}
         backgroundImage={backgroundImage}
+        className={isFitnessTracker ? 'portfolio-phone-content' : ''}
         overlayContent={
-          <div className="portfolio-overlay-content">
-            <h3 className="portfolio-overlay-title">{title}</h3>
-            <p className="portfolio-overlay-description">{description}</p>
-          </div>
+          isFitnessTracker ? (
+            <img 
+              src="/assets/fitness.png" 
+              alt={title}
+              className="portfolio-overlay-image"
+            />
+          ) : (
+            <div className="portfolio-overlay-content">
+              <h3 className="portfolio-overlay-title">{title}</h3>
+              <p className="portfolio-overlay-description">{description}</p>
+            </div>
+          )
         }
       />
     </FadeIn>

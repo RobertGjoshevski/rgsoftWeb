@@ -155,6 +155,28 @@
   margin: 0;
 }
 
+/* Style for content image inside iPhone frame */
+/* Ensure background (iPhone frame) is visible - explicitly set background-image */
+.portfolio-phone-content .tilted-card-background.has-background-image {
+  z-index: 0 !important;
+  background-image: url('/assets/iphone.png') !important;
+  background-size: contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-color: transparent !important;
+}
+
+/* Style the fitness image in overlayContent for parallax effect */
+.portfolio-phone-content .portfolio-overlay-image {
+  object-fit: contain !important;
+  /* Size to fit inside iPhone screen area (accounting for bezels) */
+  width: 88% !important;
+  height: 88% !important;
+  border-radius: 0 !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
 @media (max-width: 1024px) {
   .portfolio-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 250px));

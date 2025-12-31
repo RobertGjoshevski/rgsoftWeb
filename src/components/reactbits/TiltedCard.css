@@ -180,15 +180,36 @@
 }
 
 /* When imageSrc is provided, hide border and background */
-.tilted-card-background.has-image {
+.tilted-card-background.has-image:not(.has-background-image) {
     border: none !important;
     background: transparent !important;
     box-shadow: none !important;
 }
 
-.tilted-card-inner:hover .tilted-card-background.has-image {
+/* Exception: when both imageSrc and backgroundImage are present, preserve background-image */
+.tilted-card-background.has-image.has-background-image {
+    border: none !important;
+    background-color: transparent !important;
+    /* background-image is preserved from inline style - don't override it */
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    box-shadow: none !important;
+}
+
+.tilted-card-inner:hover .tilted-card-background.has-image:not(.has-background-image) {
     border: none !important;
     background: transparent !important;
+    box-shadow: none !important;
+}
+
+.tilted-card-inner:hover .tilted-card-background.has-image.has-background-image {
+    border: none !important;
+    background-color: transparent !important;
+    /* background-image is preserved from inline style - don't override it */
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     box-shadow: none !important;
 }
 
