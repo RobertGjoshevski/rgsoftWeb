@@ -29,7 +29,6 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
             alt="Consulting & Strategy"
             style={{
               float: 'left',
-              marginRight: '2rem',
               width: '120%',
               height: '120%',
               objectFit: 'contain'
