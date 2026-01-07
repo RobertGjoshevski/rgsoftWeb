@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Think Rush...</title>
+    <script>
+        (function() {
+            function detectPlatformAndRedirect() {
+                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                
+                // Check for iOS devices (iPad, iPhone, iPod)
+                const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+                
+                // Check for Android devices
+                const isAndroid = /android/i.test(userAgent);
+                
+                if (isIOS) {
+                    // Redirect to App Store
+                    window.location.href = 'https://apps.apple.com/us/app/think-rush-quiz-rivals/id6746662154';
+                } else if (isAndroid) {
+                    // Redirect to Google Play Store
+                    window.location.href = 'https://play.google.com/store/apps/details?id=org.rgsoft.thinkrush&hl=en';
+                } else {
+                    // Fallback to thinkrush.rgsoft.org
+                    window.location.href = 'https://thinkrush.rgsoft.org';
+                }
+            }
+            
+            // Execute redirect immediately
+            detectPlatformAndRedirect();
+        })();
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .loading {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+        .spinner {
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top: 3px solid white;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loading">
+        <div class="spinner"></div>
+        <p style="margin-top: 1rem;">Redirecting to app store...</p>
+        <p style="font-size: 0.9rem; opacity: 0.8;">If you are not redirected, please wait a moment.</p>
+    </div>
+</body>
+</html>
+
