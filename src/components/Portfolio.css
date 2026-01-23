@@ -167,6 +167,7 @@
 }
 
 @media (max-width: 640px) {
+
   /* Center the background image element on mobile for portfolio items */
   .portfolio-phone-content .tilted-card-background.has-background-image {
     left: 50% !important;
@@ -213,7 +214,7 @@
   }
 
   /* Center portfolio grid items (FadeIn wrappers) on mobile */
-  .portfolio-grid > * {
+  .portfolio-grid>* {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
