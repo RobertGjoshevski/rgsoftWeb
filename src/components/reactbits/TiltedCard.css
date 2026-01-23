@@ -26,6 +26,41 @@
     .tilted-card-caption {
         display: none;
     }
+
+    /* Center the figure container on mobile */
+    .tilted-card-figure {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto !important;
+    }
+
+    /* Center the inner container */
+    .tilted-card-inner {
+        margin: 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+
+    /* Center the background image element on mobile */
+    .tilted-card-background.has-background-image {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) translateZ(0) !important;
+        display: flex !important;
+        text-align: center !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    /* Preserve centering on hover for mobile */
+    .tilted-card-inner:hover .tilted-card-background.has-background-image {
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) translateZ(0) !important;
+    }
 }
 
 .tilted-card-inner {

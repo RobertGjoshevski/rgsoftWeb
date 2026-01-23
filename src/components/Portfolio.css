@@ -166,6 +166,27 @@
   background-color: transparent !important;
 }
 
+@media (max-width: 640px) {
+  /* Center the background image element on mobile for portfolio items */
+  .portfolio-phone-content .tilted-card-background.has-background-image {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) translateZ(0) !important;
+    display: flex !important;
+    text-align: center !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Preserve centering on hover */
+  .portfolio-phone-content .tilted-card-inner:hover .tilted-card-background.has-background-image {
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) translateZ(0) !important;
+  }
+}
+
 /* Style the fitness image in overlayContent for parallax effect */
 .portfolio-phone-content .portfolio-overlay-image {
   object-fit: contain !important;
@@ -188,5 +209,33 @@
   .portfolio-grid {
     grid-template-columns: 1fr;
     justify-content: center;
+    align-items: center;
+  }
+
+  /* Center portfolio grid items (FadeIn wrappers) on mobile */
+  .portfolio-grid > * {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100%;
+    text-align: center;
+    flex-wrap: wrap;
+  }
+
+  /* Ensure the figure container centers its content */
+  .portfolio-grid .tilted-card-figure {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto !important;
+    width: 100%;
+  }
+
+  /* Center the inner container */
+  .portfolio-grid .tilted-card-inner {
+    margin: 0 auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
   }
 }
