@@ -55,22 +55,6 @@ const Hero = () => {
               </div>
             </StaggerItem>
           </div>
-
-          <StaggerItem direction="right" distance={50} duration={0.8} delay={0.5}>
-            <div className="hero-visual">
-              <div className="hero-image-placeholder">
-                <div className="floating-card card-1">
-                  <div className="card-content">📱</div>
-                </div>
-                <div className="floating-card card-2">
-                  <div className="card-content">⚡</div>
-                </div>
-                <div className="floating-card card-3">
-                  <div className="card-content">🎨</div>
-                </div>
-              </div>
-            </div>
-          </StaggerItem>
         </StaggerContainer>
       </div>
     </section>

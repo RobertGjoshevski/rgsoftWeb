@@ -4,6 +4,7 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Services from './components/Services'
+import DesignServices from './components/DesignServices'
 import Portfolio from './components/Portfolio'
 import Referral from './components/Referral'
 import Footer from './components/Footer'
@@ -18,6 +19,7 @@ function HomePage() {
         <Hero />
         <Features />
         <Services />
+        <DesignServices />
         <Portfolio />
         <Referral />
       </main>

@@ -253,6 +253,11 @@
     border: none !important;
     background-color: transparent !important;
     box-shadow: none !important;
+    left: unset;
+    top: unset;
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
 .tilted-card-inner:hover .tilted-card-background.has-background-image {

@@ -4,9 +4,26 @@
   z-index: 1;
 }
 
+.referral-card-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+}
+
 .referral-card {
-  /* Styles moved to .tilted-card-wrapper - this class is only used for className targeting */
-  overflow: visible !important;
+  position: relative;
+  background: var(--background-card);
+  border: 1px solid var(--border-color);
+  padding: var(--spacing-xl);
+  border-radius: 16px;
+  text-align: center;
+  overflow: visible;
+  background-clip: padding-box;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  z-index: 2;
 }
 
 .referral-card::before {
@@ -29,24 +46,28 @@
 }
 
 .referral-card:hover {
-  /* Styles moved to .tilted-card-wrapper for 3D transform */
+  box-shadow: 0px 12px 32px rgba(136, 196, 68, 0.4);
+  border-color: var(--secondary);
+  transform: translateY(-4px);
 }
 
-.referral-card .referral-light-rays {
+.referral-light-rays {
   position: absolute !important;
-  top: calc(-1 * var(--spacing-xl)) !important;
-  left: calc(-1 * var(--spacing-xl)) !important;
-  right: calc(-1 * var(--spacing-xl)) !important;
-  bottom: calc(-1 * var(--spacing-xl)) !important;
-  width: calc(100% + 2 * var(--spacing-xl)) !important;
-  height: calc(100% + 2 * var(--spacing-xl)) !important;
+  top: var(--spacing-md) !important;
+  left: var(--spacing-md) !important;
+  right: var(--spacing-md) !important;
+  bottom: var(--spacing-md) !important;
+  width: calc(100% - 2 * var(--spacing-md)) !important;
+  height: calc(100% - 2 * var(--spacing-md)) !important;
   z-index: 0 !important;
   border-radius: 16px;
+  pointer-events: none;
 }
 
 .referral-content {
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .referral-icon {
@@ -134,21 +155,29 @@
   font-style: italic;
 }
 
+/* Tablet styles */
 @media (max-width: 768px) {
+  .referral-card-wrapper {
+    padding: var(--spacing-sm);
+  }
+
   .referral-card {
     padding: var(--spacing-lg);
   }
 
   .referral-icon {
     font-size: 48px;
+    margin-bottom: var(--spacing-sm);
   }
 
   .referral-card h3 {
     font-size: 24px;
+    margin-bottom: var(--spacing-sm);
   }
 
   .referral-main-text {
     font-size: 18px;
+    margin-bottom: var(--spacing-md);
   }
 
   .referral-main-text strong {
@@ -157,7 +186,9 @@
 
   .referral-details {
     flex-direction: column;
-    gap: var(--spacing-md);
+    gap: var(--spacing-sm);
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-md);
   }
 
   .referral-divider {
@@ -167,24 +198,105 @@
 
   .referral-detail-item {
     min-width: auto;
+    width: 100%;
   }
 
   .referral-percentage {
     font-size: 20px;
   }
+
+  .referral-footer-text {
+    font-size: 14px;
+    margin-top: var(--spacing-sm);
+  }
 }
 
+/* Mobile styles */
 @media (max-width: 640px) {
+  .referral-card-wrapper {
+    padding: var(--spacing-xs);
+  }
+
   .referral-card {
     padding: var(--spacing-md);
   }
 
+  .referral-icon {
+    font-size: 40px;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .referral-card h3 {
+    font-size: 22px;
+    margin-bottom: var(--spacing-xs);
+  }
+
   .referral-main-text {
     font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: var(--spacing-md);
   }
 
   .referral-main-text strong {
     font-size: 18px;
+  }
+
+  .referral-details {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    margin: var(--spacing-md) 0;
+    padding: var(--spacing-sm);
+  }
+
+  .referral-divider {
+    width: 50px;
+    height: 1px;
+  }
+
+  .referral-detail-item {
+    min-width: auto;
+    width: 100%;
+    gap: var(--spacing-xs);
+  }
+
+  .referral-percentage {
+    font-size: 18px;
+  }
+
+  .referral-detail-label {
+    font-size: 12px;
+  }
+
+  .referral-footer-text {
+    font-size: 14px;
+    margin-top: var(--spacing-sm);
+  }
+}
+
+/* Extra small mobile */
+@media (max-width: 480px) {
+  .referral-card-wrapper {
+    padding: var(--spacing-xs);
+  }
+
+  .referral-card {
+    padding: var(--spacing-sm);
+  }
+
+  .referral-icon {
+    font-size: 36px;
+  }
+
+  .referral-card h3 {
+    font-size: 20px;
+  }
+
+  .referral-main-text {
+    font-size: 15px;
+  }
+
+  .referral-main-text strong {
+    font-size: 17px;
   }
 }
 
