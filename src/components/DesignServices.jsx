@@ -2,29 +2,26 @@ import React from 'react'
 import { FadeIn } from './reactbits'
 import './DesignServices.css'
 
-const DesignServiceItem = ({ title, description, features, index, isReversed }) => {
+const DesignServiceCard = ({ title, description, features, index }) => {
   return (
     <FadeIn
-      delay={index * 0.2}
+      delay={index * 0.15}
       duration={0.6}
-      direction={isReversed ? 'left' : 'right'}
-      distance={50}
-      className={`design-service-item ${isReversed ? 'reversed' : ''}`}
+      direction="up"
+      distance={40}
     >
-      <div className="design-service-content">
-        <h3>{title}</h3>
-        <p className="design-service-description">{description}</p>
-        <ul className="design-service-features">
+      <div className="design-service-card">
+        <div className="design-card-header">
+          <h3>{title}</h3>
+        </div>
+        <p className="design-card-description">{description}</p>
+        <div className="design-card-features">
           {features.map((feature, idx) => (
-            <li key={idx}>{feature}</li>
+            <div key={idx} className="design-feature-item">
+              <span className="design-feature-marker"></span>
+              <span>{feature}</span>
+            </div>
           ))}
-        </ul>
-      </div>
-      <div className="design-service-visual">
-        <div className="design-service-placeholder">
-          <div className="design-service-icon">
-            {title === 'Logo Design' ? '🎨' : '🖼️'}
-          </div>
         </div>
       </div>
     </FadeIn>
@@ -71,15 +68,14 @@ const DesignServices = () => {
             </div>
           </FadeIn>
 
-          <div className="design-services-list">
+          <div className="design-services-grid">
             {designServices.map((service, index) => (
-              <DesignServiceItem
+              <DesignServiceCard
                 key={service.title}
                 title={service.title}
                 description={service.description}
                 features={service.features}
                 index={index}
-                isReversed={index % 2 === 1}
               />
             ))}
           </div>
