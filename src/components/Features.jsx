@@ -1,13 +1,15 @@
 import React from 'react'
 import { TiltedCard, FadeIn } from './reactbits'
-import LightRays from './reactbits/LightRays'
+import Hyperspeed from './reactbits/Hyperspeed'
+import LightPillar from './reactbits/LightPillar'
+import Galaxy from './reactbits/Galaxy'
 import './Features.css'
 
-const FeatureCard = ({ icon, title, description, index, speed = 0.4, spread = 1.8, length = 3 }) => {
+const FeatureCard = ({ icon, title, description, index, hasHyperspeed = false, hasLightPillar = false, hasGalaxy = false }) => {
   return (
     <FadeIn delay={index * 0.1} duration={0.6} direction="up" distance={50}>
       <TiltedCard
-        className="feature-card"
+        className={`feature-card ${hasLightPillar ? 'has-light-pillar' : ''} ${hasGalaxy ? 'has-galaxy' : ''}`}
         rotateAmplitude={20}
         scaleOnHover={1.08}
         showMobileWarning={false}
@@ -15,17 +17,47 @@ const FeatureCard = ({ icon, title, description, index, speed = 0.4, spread = 1.
         displayOverlayContent={true}
         overlayContent={
           <>
-            <LightRays
-              raysOrigin="top-center"
-              raysColor="#88c444"
-              raysSpeed={speed}
-              lightSpread={spread}
-              rayLength={length}
-              followMouse={true}
-              pulsating={false}
-              fadeDistance={0.8}
-              className="feature-light-rays"
-            />
+            {hasHyperspeed && (
+              <div className="hyperspeed-background">
+                <Hyperspeed />
+              </div>
+            )}
+            {hasLightPillar && (
+              <div className="light-pillar-background">
+                <LightPillar
+                  topColor="#5227FF"
+                  bottomColor="#FF9FFC"
+                  intensity={1}
+                  rotationSpeed={0.6}
+                  glowAmount={0.003}
+                  pillarWidth={2.8}
+                  pillarHeight={0.4}
+                  noiseIntensity={0.5}
+                  pillarRotation={33}
+                  interactive
+                  mixBlendMode="screen"
+                  quality="high"
+                />
+              </div>
+            )}
+            {hasGalaxy && (
+              <div className="galaxy-background">
+                <Galaxy
+                  mouseRepulsion
+                  mouseInteraction
+                  density={1}
+                  glowIntensity={0.3}
+                  saturation={0}
+                  hueShift={140}
+                  twinkleIntensity={0.3}
+                  rotationSpeed={0.1}
+                  repulsionStrength={2}
+                  autoCenterRepulsion={0}
+                  starSpeed={0.5}
+                  speed={1}
+                />
+              </div>
+            )}
             <div className="feature-icon">{icon}</div>
             <h3>{title}</h3>
             <p>{description}</p>
@@ -41,26 +73,17 @@ const Features = () => {
     {
       icon: '📱',
       title: 'Cross-Platform',
-      description: 'One codebase for iOS and Android, reducing development time and costs.',
-      speed: 0.4,
-      spread: 1.3,
-      length: 2
+      description: 'One codebase for iOS and Android, reducing development time and costs.'
     },
     {
       icon: '🎨',
       title: 'Beautiful UI/UX',
-      description: 'Custom designs that match your brand and provide exceptional user experiences.',
-      speed: 0.5,
-      spread: 1.8,
-      length: 6
+      description: 'Custom designs that match your brand and provide exceptional user experiences.'
     },
     {
       icon: '⚡',
       title: 'High Performance',
-      description: 'Optimized apps that run smoothly with 120fps animations and fast load times.',
-      speed: 0.4,
-      spread: 1.3,
-      length: 2
+      description: 'Optimized apps that run smoothly with 120fps animations and fast load times.'
     }
   ]
 
@@ -86,6 +109,9 @@ const Features = () => {
                 title={feature.title}
                 description={feature.description}
                 index={index}
+                hasHyperspeed={feature.title === 'High Performance'}
+                hasLightPillar={feature.title === 'Beautiful UI/UX'}
+                hasGalaxy={feature.title === 'Cross-Platform'}
               />
             ))}
           </div>
