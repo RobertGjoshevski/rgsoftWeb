@@ -91,9 +91,10 @@
 
 .section-description {
   color: var(--neutral-1);
-  font-size: 18px;
+  font-size: clamp(12px, 2.2vw, 18px);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 .features-grid {
@@ -142,16 +143,18 @@
 }
 
 .tilted-card-wrapper-content h3 {
-  font-size: 24px;
+  font-size: clamp(14px, 3vw, 24px);
   margin-bottom: var(--spacing-sm);
   color: var(--primary);
   position: relative;
   z-index: 2;
+  line-height: 1.2;
 }
 
 .tilted-card-wrapper-content p {
   color: var(--neutral-1);
-  line-height: 1.6;
+  font-size: clamp(11px, 2vw, 16px);
+  line-height: 1.5;
   position: relative;
   z-index: 2;
 }
@@ -172,7 +175,7 @@
 
 @media (max-width: 768px) {
   .section-description {
-    font-size: 16px;
+    font-size: clamp(12px, 2.5vw, 16px);
   }
 
   .section-header {
@@ -180,11 +183,11 @@
   }
 
   .tilted-card-wrapper-content h3 {
-    font-size: 20px;
+    font-size: clamp(16px, 3.5vw, 20px);
   }
 
   .tilted-card-wrapper-content p {
-    font-size: 14px;
+    font-size: clamp(12px, 2.2vw, 14px);
   }
 }
 
@@ -194,7 +197,7 @@
   }
 
   .section-description {
-    font-size: 14px;
+    font-size: clamp(11px, 2.2vw, 14px);
   }
 
   .section-header {
@@ -202,17 +205,53 @@
   }
 
   .tilted-card-wrapper-content .feature-icon {
-    font-size: 40px;
+    font-size: clamp(32px, 8vw, 40px);
     margin-bottom: var(--spacing-sm);
   }
 
   .tilted-card-wrapper-content h3 {
-    font-size: 18px;
+    font-size: clamp(14px, 3.2vw, 18px);
     margin-bottom: var(--spacing-xs);
   }
 
   .tilted-card-wrapper-content p {
-    font-size: 13px;
-    line-height: 1.5;
+    font-size: clamp(11px, 2vw, 13px);
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-description {
+    font-size: clamp(10px, 2vw, 12px);
+  }
+
+  .tilted-card-wrapper-content h3 {
+    font-size: clamp(12px, 2.8vw, 16px);
+  }
+
+  .tilted-card-wrapper-content p {
+    font-size: clamp(10px, 1.8vw, 12px);
+  }
+
+  .tilted-card-wrapper-content .feature-icon {
+    font-size: clamp(28px, 7vw, 36px);
+  }
+}
+
+@media (max-width: 360px) {
+  .section-description {
+    font-size: clamp(9px, 1.8vw, 11px);
+  }
+
+  .tilted-card-wrapper-content h3 {
+    font-size: clamp(11px, 2.5vw, 14px);
+  }
+
+  .tilted-card-wrapper-content p {
+    font-size: clamp(9px, 1.6vw, 11px);
+  }
+
+  .tilted-card-wrapper-content .feature-icon {
+    font-size: clamp(24px, 6vw, 32px);
   }
 }
