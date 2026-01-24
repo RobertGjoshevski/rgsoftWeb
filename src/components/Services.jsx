@@ -5,68 +5,85 @@ import consultingImg from '../assets/consulting.png'
 import maintanceImg from '../assets/maintance.png'
 
 const ServiceItem = ({ title, description, features, index, isReversed }) => {
+  const isOverlayLayout = title === 'Custom Flutter Development' || title === 'App Maintenance & Support' || title === 'Consulting & Strategy'
+  const isRightAligned = title === 'App Maintenance & Support'
+  
+  const getBackgroundImage = () => {
+    if (title === 'App Maintenance & Support') return maintanceImg
+    return consultingImg
+  }
+  
   return (
     <FadeIn
       delay={index * 0.2}
       duration={0.6}
       direction={isReversed ? 'left' : 'right'}
       distance={50}
-      className={`service-item ${isReversed ? 'reversed' : ''}`}
+      className={`service-item ${isReversed ? 'reversed' : ''} ${isOverlayLayout ? 'overlay-layout' : ''} ${isOverlayLayout && !isRightAligned ? 'overlay-left' : ''}`}
     >
-      <div className="service-content">
-        <h3>{title}</h3>
-        <p className="service-description">{description}</p>
-        <ul className="service-features">
-          {features.map((feature, idx) => (
-            <li key={idx}>{feature}</li>
-          ))}
-        </ul>
-      </div>
-      <div className="service-visual">
-        {title === 'Custom Flutter Development' ? (
-          <img
-            src={consultingImg}
-            alt="Consulting & Strategy"
+      {isOverlayLayout ? (
+        <>
+          <div 
+            className="service-background-image"
             style={{
-              float: 'left',
-              width: '120%',
-              height: '120%',
-              objectFit: 'contain'
+              backgroundImage: `url(${getBackgroundImage()})`,
             }}
-            className="service-image service-image-left"
           />
-        ) : title === 'App Maintenance & Support' ? (
-          <img
-            src={maintanceImg}
-            alt="Consulting & Strategy"
-            style={{
-              float: 'left',
-              marginLeft: '2rem',
-              width: '120%',
-              height: '120%',
-              objectFit: 'contain'
-            }}
-            className="service-image service-image-left"
-          />
-        ) : title === 'Consulting & Strategy' ? (
-          <img
-            src={consultingImg}
-            alt="Consulting & Strategy"
-            style={{
-              float: 'left',
-              marginRight: '2rem',
-              width: '120%',
-              height: '120%',
-              objectFit: 'contain'
-            }}
-            className="service-image service-image-left"
-          />
-        ) : (
-          <div className="service-placeholder">
-            <div className="service-icon">💼</div>
+          <div className={`service-content-overlay ${!isRightAligned ? 'overlay-left' : ''}`}>
+            <h3>{title}</h3>
+            <p className="service-description">{description}</p>
+            <ul className="service-features">
+              {features.map((feature, idx) => (
+                <li key={idx}>{feature}</li>
+              ))}
+            </ul>
           </div>
-        )}
-      </div>
+        </>
+      ) : (
+        <>
+          <div className="service-content">
+            <h3>{title}</h3>
+            <p className="service-description">{description}</p>
+            <ul className="service-features">
+              {features.map((feature, idx) => (
+                <li key={idx}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="service-visual">
+            {title === 'Custom Flutter Development' ? (
+              <img
+                src={consultingImg}
+                alt="Consulting & Strategy"
+                style={{
+                  float: 'left',
+                  width: '120%',
+                  height: '120%',
+                  objectFit: 'contain'
+                }}
+                className="service-image service-image-left"
+              />
+            ) : title === 'Consulting & Strategy' ? (
+              <img
+                src={consultingImg}
+                alt="Consulting & Strategy"
+                style={{
+                  float: 'left',
+                  marginRight: '2rem',
+                  width: '120%',
+                  height: '120%',
+                  objectFit: 'contain'
+                }}
+                className="service-image service-image-left"
+              />
+            ) : (
+              <div className="service-placeholder">
+                <div className="service-icon">💼</div>
+              </div>
+            )}
+          </div>
+        </>
+      )}
     </FadeIn>
   )
 }
