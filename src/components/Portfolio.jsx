@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { TiltedCard, FadeIn } from './reactbits'
+import { useDrag } from '@use-gesture/react'
+import { motion, AnimatePresence } from 'framer-motion'
 import './Portfolio.css'
 import iphoneImg from '../assets/iphone.png'
 import paymentImg from '../assets/payment.png'
@@ -108,6 +110,20 @@ const PortfolioItem = ({ image, title, description, index }) => {
 }
 
 const Portfolio = () => {
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
+
+  // Check if screen is mobile size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024) // Use 1024px as breakpoint for carousel
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
   // Placeholder portfolio items - user can add their own images
   const portfolioItems = [
     {
@@ -142,6 +158,50 @@ const Portfolio = () => {
     }
   ]
 
+  // Carousel navigation handlers
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev + 1) % portfolioItems.length)
+  }
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev - 1 + portfolioItems.length) % portfolioItems.length)
+  }
+
+  const goToSlide = (index) => {
+    setCurrentIndex(index)
+  }
+
+  // Drag handler for carousel
+  const carouselRef = React.useRef(null)
+  const hasNavigatedRef = React.useRef(false)
+  
+  const bind = useDrag(
+    ({ direction: [dx], movement: [mx], velocity, last }) => {
+      if (!isMobile) return
+      
+      const threshold = 50
+      const swipeVelocity = 0.5
+
+      // Reset navigation flag when a new drag starts
+      if (Math.abs(mx) < 5) {
+        hasNavigatedRef.current = false
+      }
+
+      // Only navigate when drag ends and we haven't navigated yet
+      if (last && !hasNavigatedRef.current) {
+        if (Math.abs(mx) > threshold || Math.abs(velocity[0]) > swipeVelocity) {
+          hasNavigatedRef.current = true
+          if (dx > 0) {
+            goToPrevious()
+          } else {
+            goToNext()
+          }
+        }
+      }
+    },
+    { axis: 'x', pointer: { touch: true } }
+  )
+
   return (
     <>
       <div className="section-divider"></div>
@@ -156,7 +216,8 @@ const Portfolio = () => {
             </div>
           </FadeIn>
 
-          <div className="portfolio-grid">
+          {/* Desktop Grid Layout */}
+          <div className={`portfolio-grid ${isMobile ? 'portfolio-grid-mobile-hidden' : ''}`}>
             {portfolioItems.map((item, index) => (
               <PortfolioItem
                 key={index}
@@ -167,6 +228,65 @@ const Portfolio = () => {
               />
             ))}
           </div>
+
+          {/* Mobile Carousel Layout */}
+          {isMobile && (
+            <div className="portfolio-carousel-wrapper">
+              <div className="portfolio-carousel" ref={carouselRef} {...bind()}>
+                <AnimatePresence mode="wait" initial={false}>
+                  <motion.div
+                    key={currentIndex}
+                    className="portfolio-carousel-item"
+                    initial={{ opacity: 0, x: 300 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: -300 }}
+                    transition={{ duration: 0.3, ease: 'easeInOut' }}
+                  >
+                    <PortfolioItem
+                      image={portfolioItems[currentIndex].image}
+                      title={portfolioItems[currentIndex].title}
+                      description={portfolioItems[currentIndex].description}
+                      index={currentIndex}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+              </div>
+
+              {/* Carousel Dots Indicator with Navigation */}
+              <div className="portfolio-carousel-controls">
+                <button
+                  className="portfolio-carousel-button portfolio-carousel-button-prev"
+                  onClick={goToPrevious}
+                  aria-label="Previous item"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M15 18l-6-6 6-6" />
+                  </svg>
+                </button>
+                
+                <div className="portfolio-carousel-dots">
+                  {portfolioItems.map((_, index) => (
+                    <button
+                      key={index}
+                      className={`portfolio-carousel-dot ${index === currentIndex ? 'active' : ''}`}
+                      onClick={() => goToSlide(index)}
+                      aria-label={`Go to slide ${index + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  className="portfolio-carousel-button portfolio-carousel-button-next"
+                  onClick={goToNext}
+                  aria-label="Next item"
+                >
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M9 18l6-6-6-6" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </section>
     </>

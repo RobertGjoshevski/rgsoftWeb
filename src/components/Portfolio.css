@@ -210,6 +210,117 @@
   }
 }
 
+/* Mobile Carousel Styles */
+.portfolio-carousel-wrapper {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  /* Hide grid on mobile when carousel is active */
+  .portfolio-grid-mobile-hidden {
+    display: none !important;
+  }
+
+  /* Show carousel wrapper on mobile */
+  .portfolio-carousel-wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 0 var(--spacing-md);
+  }
+
+  .portfolio-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    touch-action: pan-y;
+  }
+
+  .portfolio-carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 400px;
+  }
+
+  /* Make carousel items responsive on mobile */
+  .portfolio-carousel-item .tilted-card-figure {
+    max-width: 100%;
+    width: auto !important;
+  }
+
+  .portfolio-carousel-item .tilted-card-inner {
+    max-width: 100%;
+  }
+
+  /* Carousel Controls Container */
+  .portfolio-carousel-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-top: 8px;
+    margin-bottom: 0;
+    padding: 4px 0 0 0;
+    position: relative;
+  }
+
+  /* Navigation Buttons */
+  .portfolio-carousel-button {
+    background: transparent;
+    border: none;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: var(--secondary);
+    flex-shrink: 0;
+  }
+
+  .portfolio-carousel-button:hover {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+
+  .portfolio-carousel-button:active {
+    transform: scale(0.95);
+  }
+
+  /* Dots Indicator */
+  .portfolio-carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .portfolio-carousel-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+  }
+
+  .portfolio-carousel-dot:hover {
+    background: rgba(136, 196, 68, 0.5);
+    transform: scale(1.2);
+  }
+
+  .portfolio-carousel-dot.active {
+    background: var(--secondary);
+    width: 32px;
+    border-radius: 6px;
+  }
+}
+
 @media (max-width: 640px) {
   .portfolio-grid {
     grid-template-columns: 1fr;
@@ -242,5 +353,31 @@
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
+  }
+
+  /* Carousel adjustments for smaller screens */
+  .portfolio-carousel-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .portfolio-carousel-item {
+    min-height: 350px;
+  }
+
+  /* Adjust card size for smaller mobile screens */
+  .portfolio-carousel-item .tilted-card-figure {
+    width: 90% !important;
+    max-width: 280px;
+  }
+
+  /* Smaller buttons on very small screens */
+  .portfolio-carousel-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .portfolio-carousel-controls {
+    gap: var(--spacing-sm);
   }
 }
