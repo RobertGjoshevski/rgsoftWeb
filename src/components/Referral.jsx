@@ -36,7 +36,9 @@ const Referral = () => {
                                     <div className="referral-icon">💰</div>
                                     <h3>Refer & Earn</h3>
                                     <p className="referral-main-text">
-                                        Know a company that needs an app? Refer them to us and earn <strong>5-10%</strong> of their first invoice!
+                                        Know a company that needs an app?
+                                        <br />
+                                        Refer them to us and earn <strong>5-10%</strong> of their first invoice!
                                     </p>
                                     <div className="referral-details">
                                         <div className="referral-detail-item">
