@@ -1,5 +1,5 @@
 .services {
-  background-color: rgba(5, 5, 16, 0.3);
+  background-color: transparent;
   position: relative;
   z-index: 1;
 }
@@ -272,6 +272,7 @@
 }
 
 @media (max-width: 768px) {
+
   .service-content h3,
   .service-content-overlay h3 {
     font-size: clamp(14px, 3vw, 20px);
@@ -309,6 +310,7 @@
 }
 
 @media (max-width: 640px) {
+
   .service-content h3,
   .service-content-overlay h3 {
     font-size: clamp(12px, 3.5vw, 18px);

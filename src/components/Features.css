@@ -1,4 +1,5 @@
 .features {
+  background-color: transparent;
   position: relative;
   z-index: 1;
   overflow: hidden;

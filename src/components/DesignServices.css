@@ -1,5 +1,5 @@
 .design-services {
-  background: linear-gradient(180deg, rgba(5, 5, 16, 0.2) 0%, rgba(31, 16, 89, 0.15) 100%);
+  background-color: transparent;
   position: relative;
   z-index: 1;
   padding: var(--spacing-lg) 0;
