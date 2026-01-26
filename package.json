@@ -10,6 +10,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@use-gesture/react": "^10.3.1",
     "framer-motion": "^10.16.16",
     "motion": "^12.23.26",
     "ogl": "^1.0.11",
