@@ -2,7 +2,7 @@
   background-color: rgba(10, 10, 15, 0.3);
   position: relative;
   z-index: 1;
-  padding: var(--spacing-xl) 0;
+  padding: var(--spacing-md) 0;
 }
 
 .dome-gallery-wrapper {
@@ -10,7 +10,7 @@
   height: 80vh;
   min-height: 600px;
   max-height: 900px;
-  margin: var(--spacing-xl) auto;
+  margin: var(--spacing-md) auto;
   position: relative;
 }
 
