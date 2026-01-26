@@ -88,6 +88,7 @@ const DomeGallerySection = () => {
                 segments={28}
                 dragDampening={2}
                 grayscale={false}
+                overlayBlurColor="#030207"
                 openedImageWidth={previewSize.width}
                 openedImageHeight={previewSize.height}
               />
