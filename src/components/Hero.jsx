@@ -1,9 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { StaggerContainer, StaggerItem } from './reactbits'
 import LightRays from './reactbits/LightRays'
 import './Hero.css'
 
 const Hero = () => {
+  const { t } = useTranslation()
+
   return (
     <section id="home" className="hero section">
       <div className="hero-background">
@@ -25,32 +28,30 @@ const Hero = () => {
           <div className="hero-text">
             <StaggerItem direction="up" distance={30} duration={0.6}>
               <span className="hero-kicker">
-                Flutter • Dart • Mobile Development
+                {t('hero.kicker')}
               </span>
             </StaggerItem>
             <StaggerItem direction="up" distance={30} duration={0.6}>
               <h1>
-                Building Beautiful
+                {t('hero.titleLine1')}
                 <br />
-                <span className="gradient-text">Flutter Applications</span>
+                <span className="gradient-text">{t('hero.titleHighlight')}</span>
                 <br />
-                for Modern Businesses
+                {t('hero.titleLine2')}
               </h1>
             </StaggerItem>
             <StaggerItem direction="up" distance={30} duration={0.6}>
               <p className="hero-description">
-                We specialize in creating high-performance, visually stunning mobile
-                applications using Flutter. From concept to deployment, we deliver
-                cross-platform solutions that work seamlessly on iOS and Android.
+                {t('hero.description')}
               </p>
             </StaggerItem>
             <StaggerItem direction="up" distance={30} duration={0.6}>
               <div className="hero-cta">
                 <a href="#contact" className="btn btn-primary">
-                  Get Started
+                  {t('hero.ctaGetStarted')}
                 </a>
                 <a href="#portfolio" className="btn btn-secondary">
-                  View Our Work
+                  {t('hero.ctaViewWork')}
                 </a>
               </div>
             </StaggerItem>
@@ -62,4 +63,3 @@ const Hero = () => {
 }
 
 export default Hero
-

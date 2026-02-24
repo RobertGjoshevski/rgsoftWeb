@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { FadeIn } from './reactbits'
 import './DesignServices.css'
 
@@ -29,30 +30,9 @@ const DesignServiceCard = ({ title, description, features, index }) => {
 }
 
 const DesignServices = () => {
-  const designServices = [
-    {
-      title: 'Logo Design',
-      description: 'Create a memorable brand identity with custom logo designs that represent your business values and vision.',
-      features: [
-        'Custom logo concepts',
-        'Multiple design variations',
-        'Brand identity guidelines',
-        'Vector format delivery',
-        'Revisions until satisfaction'
-      ]
-    },
-    {
-      title: 'Store Images',
-      description: 'Professional app store screenshots, icons, and promotional graphics that showcase your app effectively.',
-      features: [
-        'App Store screenshots',
-        'Play Store graphics',
-        'App icons & favicons',
-        'Promotional banners',
-        'Marketing materials'
-      ]
-    }
-  ]
+  const { t } = useTranslation()
+
+  const designServiceKeys = ['logoDesign', 'storeImages']
 
   return (
     <>
@@ -61,20 +41,20 @@ const DesignServices = () => {
         <div className="container">
           <FadeIn direction="up" distance={30} duration={0.6}>
             <div className="section-header">
-              <h2>Design Services</h2>
+              <h2>{t('designServices.title')}</h2>
               <p className="section-description">
-                Professional design solutions to enhance your brand and app presence
+                {t('designServices.description')}
               </p>
             </div>
           </FadeIn>
 
           <div className="design-services-grid">
-            {designServices.map((service, index) => (
+            {designServiceKeys.map((key, index) => (
               <DesignServiceCard
-                key={service.title}
-                title={service.title}
-                description={service.description}
-                features={service.features}
+                key={key}
+                title={t(`designServices.${key}.title`)}
+                description={t(`designServices.${key}.description`)}
+                features={t(`designServices.${key}.features`, { returnObjects: true })}
                 index={index}
               />
             ))}

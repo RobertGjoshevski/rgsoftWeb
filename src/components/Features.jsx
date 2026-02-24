@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { FadeIn } from './reactbits'
 import Hyperspeed from './reactbits/Hyperspeed'
 import LightPillar from './reactbits/LightPillar'
@@ -59,22 +60,12 @@ const FeatureCard = ({ icon, title, description, index, hasHyperspeed = false, h
 }
 
 const Features = () => {
-  const features = [
-    {
-      icon: '📱',
-      title: 'Cross-Platform',
-      description: 'One codebase for iOS and Android, reducing development time and costs.'
-    },
-    {
-      icon: '🎨',
-      title: 'Beautiful UI/UX',
-      description: 'Custom designs that match your brand and provide exceptional user experiences.'
-    },
-    {
-      icon: '⚡',
-      title: 'High Performance',
-      description: 'Optimized apps that run smoothly with 120fps animations and fast load times.'
-    }
+  const { t } = useTranslation()
+
+  const featureKeys = [
+    { key: 'crossPlatform', icon: '📱', hasGalaxy: true },
+    { key: 'beautifulUi', icon: '🎨', hasLightPillar: true },
+    { key: 'highPerformance', icon: '⚡', hasHyperspeed: true }
   ]
 
   return (
@@ -84,24 +75,24 @@ const Features = () => {
         <div className="container">
           <FadeIn direction="up" distance={40} duration={0.6}>
             <div className="section-header">
-              <h2>Why Choose Flutter?</h2>
+              <h2>{t('features.title')}</h2>
               <p className="section-description">
-                We leverage Flutter's powerful capabilities to deliver exceptional mobile applications
+                {t('features.description')}
               </p>
             </div>
           </FadeIn>
 
           <div className="features-grid">
-            {features.map((feature, index) => (
+            {featureKeys.map((item, index) => (
               <FeatureCard
-                key={feature.title}
-                icon={feature.icon}
-                title={feature.title}
-                description={feature.description}
+                key={item.key}
+                icon={item.icon}
+                title={t(`features.${item.key}.title`)}
+                description={t(`features.${item.key}.description`)}
                 index={index}
-                hasHyperspeed={feature.title === 'High Performance'}
-                hasLightPillar={feature.title === 'Beautiful UI/UX'}
-                hasGalaxy={feature.title === 'Cross-Platform'}
+                hasHyperspeed={item.hasHyperspeed}
+                hasLightPillar={item.hasLightPillar}
+                hasGalaxy={item.hasGalaxy}
               />
             ))}
           </div>
@@ -112,4 +103,3 @@ const Features = () => {
 }
 
 export default Features
-

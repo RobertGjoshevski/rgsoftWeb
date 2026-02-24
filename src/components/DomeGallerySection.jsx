@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FadeIn } from './reactbits'
 import DomeGallery from './reactbits/DomeGallery'
 import './DomeGallerySection.css'
 
-// Import all images from assets/posts
 import post1 from '../assets/posts/1 Why flutter.png'
 import post2 from '../assets/posts/2.jpeg'
 import post3 from '../assets/posts/3.png'
@@ -20,33 +20,25 @@ import post14 from '../assets/posts/14.png'
 import post15 from '../assets/posts/15.png'
 
 const DomeGallerySection = () => {
-  // Responsive preview image size based on window width
+  const { t } = useTranslation()
   const [previewSize, setPreviewSize] = useState({ width: '500px', height: '700px' })
 
   useEffect(() => {
     const updatePreviewSize = () => {
       const width = window.innerWidth
       if (width < 640) {
-        // Mobile: smaller preview
         setPreviewSize({ width: '250px', height: '350px' })
       } else if (width < 1024) {
-        // Tablet: medium preview
         setPreviewSize({ width: '350px', height: '500px' })
       } else {
-        // Desktop: larger preview
         setPreviewSize({ width: '500px', height: '700px' })
       }
     }
-
-    // Set initial size
     updatePreviewSize()
-
-    // Update on window resize
     window.addEventListener('resize', updatePreviewSize)
     return () => window.removeEventListener('resize', updatePreviewSize)
   }, [])
 
-  // Prepare images array for DomeGallery
   const galleryImages = [
     { src: post1, alt: 'Why Flutter' },
     { src: post2, alt: 'Post 2' },
@@ -71,9 +63,9 @@ const DomeGallerySection = () => {
         <div className="container">
           <FadeIn direction="up" distance={30} duration={0.6}>
             <div className="section-header">
-              <h2>Our Gallery</h2>
+              <h2>{t('gallery.title')}</h2>
               <p className="section-description">
-                Explore our work in an interactive 3D gallery experience
+                {t('gallery.description')}
               </p>
             </div>
           </FadeIn>

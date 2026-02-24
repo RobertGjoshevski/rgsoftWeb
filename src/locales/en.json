@@ -1,0 +1,163 @@
+{
+  "header": {
+    "logoAlt": "RGsoft Logo",
+    "navHome": "Home",
+    "navServices": "Services",
+    "navPortfolio": "Portfolio",
+    "navReferral": "Referral",
+    "navContact": "Contact"
+  },
+  "hero": {
+    "kicker": "Flutter • Dart • Mobile Development",
+    "titleLine1": "Building Beautiful",
+    "titleHighlight": "Flutter Applications",
+    "titleLine2": "for Modern Businesses",
+    "description": "We specialize in creating high-performance, visually stunning mobile applications using Flutter. From concept to deployment, we deliver cross-platform solutions that work seamlessly on iOS and Android.",
+    "ctaGetStarted": "Get Started",
+    "ctaViewWork": "View Our Work"
+  },
+  "features": {
+    "title": "Why Choose Flutter?",
+    "description": "We leverage Flutter's powerful capabilities to deliver exceptional mobile applications",
+    "crossPlatform": {
+      "title": "Cross-Platform",
+      "description": "One codebase for iOS and Android, reducing development time and costs."
+    },
+    "beautifulUi": {
+      "title": "Beautiful UI/UX",
+      "description": "Custom designs that match your brand and provide exceptional user experiences."
+    },
+    "highPerformance": {
+      "title": "High Performance",
+      "description": "Optimized apps that run smoothly with 120fps animations and fast load times."
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "description": "Comprehensive Flutter development services to bring your mobile app vision to life",
+    "customFlutter": {
+      "title": "Custom Flutter Development",
+      "description": "From concept to deployment, we build custom Flutter applications tailored to your business needs.",
+      "features": [
+        "Custom UI/UX design",
+        "State management implementation",
+        "API integration",
+        "Firebase backend setup",
+        "App Store & Play Store deployment"
+      ]
+    },
+    "maintenance": {
+      "title": "App Maintenance & Support",
+      "description": "Keep your app running smoothly with regular updates, bug fixes, and feature enhancements.",
+      "features": [
+        "Regular updates & patches",
+        "Performance optimization",
+        "Feature additions",
+        "Technical support",
+        "Security updates"
+      ]
+    },
+    "consulting": {
+      "title": "Consulting & Strategy",
+      "description": "Expert guidance on Flutter architecture, best practices, and development strategy.",
+      "features": [
+        "Architecture review",
+        "Code quality assessment",
+        "Performance optimization",
+        "Team training",
+        "Development roadmap"
+      ]
+    }
+  },
+  "designServices": {
+    "title": "Design Services",
+    "description": "Professional design solutions to enhance your brand and app presence",
+    "logoDesign": {
+      "title": "Logo Design",
+      "description": "Create a memorable brand identity with custom logo designs that represent your business values and vision.",
+      "features": [
+        "Custom logo concepts",
+        "Multiple design variations",
+        "Brand identity guidelines",
+        "Vector format delivery",
+        "Revisions until satisfaction"
+      ]
+    },
+    "storeImages": {
+      "title": "Store Images",
+      "description": "Professional app store screenshots, icons, and promotional graphics that showcase your app effectively.",
+      "features": [
+        "App Store screenshots",
+        "Play Store graphics",
+        "App icons & favicons",
+        "Promotional banners",
+        "Marketing materials"
+      ]
+    }
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "description": "Showcasing our latest Flutter applications and mobile solutions",
+    "eCommerce": {
+      "title": "E-Commerce App",
+      "description": "A beautiful shopping experience built with Flutter"
+    },
+    "socialMedia": {
+      "title": "Social Media Platform",
+      "description": "Engaging social features with smooth animations"
+    },
+    "fitnessTracker": {
+      "title": "Fitness Tracker",
+      "description": "Health and wellness app with real-time tracking"
+    },
+    "foodDelivery": {
+      "title": "Food Delivery",
+      "description": "Seamless ordering and delivery experience"
+    },
+    "financeManager": {
+      "title": "Finance Manager",
+      "description": "Secure and intuitive financial management"
+    },
+    "travelCompanion": {
+      "title": "Travel Companion",
+      "description": "Plan and book your next adventure"
+    },
+    "carouselPrev": "Previous item",
+    "carouselNext": "Next item",
+    "carouselGoTo": "Go to slide {{index}}"
+  },
+  "gallery": {
+    "title": "Our Gallery",
+    "description": "Explore our work in an interactive 3D gallery experience"
+  },
+  "referral": {
+    "title": "Referral Program",
+    "description": "Earn money by referring companies that need mobile app development",
+    "cardTitle": "Refer & Earn",
+    "mainText": "Know a company that needs an app?<br />Refer them to us and earn <strong>5-10%</strong> of their first invoice!",
+    "commission": "Commission",
+    "paymentSource": "Payment Source",
+    "process": "Process",
+    "firstInvoice": "1st Invoice",
+    "easy": "Easy",
+    "footerText": "Help businesses grow while earning rewards for yourself"
+  },
+  "footer": {
+    "tagline": "Building exceptional Flutter applications for modern businesses",
+    "contactInfo": "Contact Info",
+    "quickLinks": "Quick Links",
+    "connectWithUs": "Connect With Us",
+    "email": "Email",
+    "city": "City",
+    "country": "Country",
+    "skopje": "Skopje",
+    "northMacedonia": "North Macedonia",
+    "navHome": "Home",
+    "navServices": "Services",
+    "navPortfolio": "Portfolio",
+    "navReferral": "Referral",
+    "navContact": "Contact",
+    "copyright": "© {{year}} RGsoft. All rights reserved.",
+    "builtWith": "Built with Flutter & React"
+  }
+}

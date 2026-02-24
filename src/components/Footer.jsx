@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { FadeIn } from './reactbits'
 import './Footer.css'
 
@@ -66,27 +67,12 @@ const SocialIcon = ({ name }) => {
 }
 
 const Footer = () => {
+  const { t } = useTranslation()
   const socialLinks = [
-    {
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/company/110668405',
-      color: '#0A66C2'
-    },
-    {
-      name: 'Facebook',
-      url: 'https://www.facebook.com/profile.php?id=61585767831959',
-      color: '#1877F2'
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/rgsoftmk/',
-      color: '#E4405F'
-    },
-    {
-      name: 'WhatsApp',
-      url: 'https://wa.me/38979394134',
-      color: '#25D366'
-    },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/110668405', color: '#0A66C2' },
+    { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61585767831959', color: '#1877F2' },
+    { name: 'Instagram', url: 'https://www.instagram.com/rgsoftmk/', color: '#E4405F' },
+    { name: 'WhatsApp', url: 'https://wa.me/38979394134', color: '#25D366' },
   ]
 
   return (
@@ -94,41 +80,41 @@ const Footer = () => {
       <div className="container">
         <FadeIn direction="up" distance={30} duration={0.6} className="footer-content">
           <div className="footer-brand">
-            <img src="./assets/logo.png" alt="RGsoft Logo" className="footer-logo" />
-            <p>Building exceptional Flutter applications for modern businesses</p>
+            <img src="./assets/logo.png" alt={t('header.logoAlt')} className="footer-logo" />
+            <p>{t('footer.tagline')}</p>
           </div>
 
           <div className="footer-contact">
-            <h4>Contact Info</h4>
+            <h4>{t('footer.contactInfo')}</h4>
             <div className="contact-info">
               <div className="contact-item">
-                <span className="contact-label">Email:</span>
+                <span className="contact-label">{t('footer.email')}:</span>
                 <a href="mailto:info@rgsoft.org" className="contact-link">info@rgsoft.org</a>
               </div>
               <div className="contact-item">
-                <span className="contact-label">City:</span>
-                <span className="contact-text">Skopje</span>
+                <span className="contact-label">{t('footer.city')}:</span>
+                <span className="contact-text">{t('footer.skopje')}</span>
               </div>
               <div className="contact-item">
-                <span className="contact-label">Country:</span>
-                <span className="contact-text">North Macedonia</span>
+                <span className="contact-label">{t('footer.country')}:</span>
+                <span className="contact-text">{t('footer.northMacedonia')}</span>
               </div>
             </div>
           </div>
 
           <div className="footer-links">
-            <h4>Quick Links</h4>
+            <h4>{t('footer.quickLinks')}</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#referral">Referral</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="#home">{t('footer.navHome')}</a></li>
+              <li><a href="#services">{t('footer.navServices')}</a></li>
+              <li><a href="#portfolio">{t('footer.navPortfolio')}</a></li>
+              <li><a href="#referral">{t('footer.navReferral')}</a></li>
+              <li><a href="#contact">{t('footer.navContact')}</a></li>
             </ul>
           </div>
 
           <div className="footer-social">
-            <h4>Connect With Us</h4>
+            <h4>{t('footer.connectWithUs')}</h4>
             <div className="social-links">
               {socialLinks.map((link, index) => (
                 <FadeIn key={link.name} delay={index * 0.1} direction="up" distance={20} duration={0.4}>
@@ -151,8 +137,8 @@ const Footer = () => {
         </FadeIn>
 
         <FadeIn delay={0.3} duration={0.6} className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} RGsoft. All rights reserved.</p>
-          <p>Built with Flutter & React</p>
+          <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
+          <p>{t('footer.builtWith')}</p>
         </FadeIn>
       </div>
     </footer>
@@ -160,4 +146,3 @@ const Footer = () => {
 }
 
 export default Footer
-

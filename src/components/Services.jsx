@@ -1,18 +1,19 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { FadeIn } from './reactbits'
 import './Services.css'
 import consultingImg from '../assets/consulting.png'
 import maintanceImg from '../assets/maintance.png'
 
-const ServiceItem = ({ title, description, features, index, isReversed }) => {
-  const isOverlayLayout = title === 'Custom Flutter Development' || title === 'App Maintenance & Support' || title === 'Consulting & Strategy'
-  const isRightAligned = title === 'App Maintenance & Support'
-  
+const ServiceItem = ({ serviceId, title, description, features, index, isReversed }) => {
+  const isOverlayLayout = serviceId === 'customFlutter' || serviceId === 'maintenance' || serviceId === 'consulting'
+  const isRightAligned = serviceId === 'maintenance'
+
   const getBackgroundImage = () => {
-    if (title === 'App Maintenance & Support') return maintanceImg
+    if (serviceId === 'maintenance') return maintanceImg
     return consultingImg
   }
-  
+
   return (
     <FadeIn
       delay={index * 0.2}
@@ -23,7 +24,7 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
     >
       {isOverlayLayout ? (
         <>
-          <div 
+          <div
             className="service-background-image"
             style={{
               backgroundImage: `url(${getBackgroundImage()})`,
@@ -51,10 +52,10 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
             </ul>
           </div>
           <div className="service-visual">
-            {title === 'Custom Flutter Development' ? (
+            {serviceId === 'customFlutter' ? (
               <img
                 src={consultingImg}
-                alt="Consulting & Strategy"
+                alt={title}
                 style={{
                   float: 'left',
                   width: '120%',
@@ -63,10 +64,10 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
                 }}
                 className="service-image service-image-left"
               />
-            ) : title === 'Consulting & Strategy' ? (
+            ) : serviceId === 'consulting' ? (
               <img
                 src={consultingImg}
-                alt="Consulting & Strategy"
+                alt={title}
                 style={{
                   float: 'left',
                   marginRight: '2rem',
@@ -89,40 +90,12 @@ const ServiceItem = ({ title, description, features, index, isReversed }) => {
 }
 
 const Services = () => {
-  const services = [
-    {
-      title: 'Custom Flutter Development',
-      description: 'From concept to deployment, we build custom Flutter applications tailored to your business needs.',
-      features: [
-        'Custom UI/UX design',
-        'State management implementation',
-        'API integration',
-        'Firebase backend setup',
-        'App Store & Play Store deployment'
-      ]
-    },
-    {
-      title: 'App Maintenance & Support',
-      description: 'Keep your app running smoothly with regular updates, bug fixes, and feature enhancements.',
-      features: [
-        'Regular updates & patches',
-        'Performance optimization',
-        'Feature additions',
-        'Technical support',
-        'Security updates'
-      ]
-    },
-    {
-      title: 'Consulting & Strategy',
-      description: 'Expert guidance on Flutter architecture, best practices, and development strategy.',
-      features: [
-        'Architecture review',
-        'Code quality assessment',
-        'Performance optimization',
-        'Team training',
-        'Development roadmap'
-      ]
-    }
+  const { t } = useTranslation()
+
+  const serviceKeys = [
+    { id: 'customFlutter', isReversed: false },
+    { id: 'maintenance', isReversed: true },
+    { id: 'consulting', isReversed: false }
   ]
 
   return (
@@ -132,22 +105,23 @@ const Services = () => {
         <div className="container">
           <FadeIn direction="up" distance={30} duration={0.6}>
             <div className="section-header">
-              <h2>Our Services</h2>
+              <h2>{t('services.title')}</h2>
               <p className="section-description">
-                Comprehensive Flutter development services to bring your mobile app vision to life
+                {t('services.description')}
               </p>
             </div>
           </FadeIn>
 
           <div className="services-list">
-            {services.map((service, index) => (
+            {serviceKeys.map((item, index) => (
               <ServiceItem
-                key={service.title}
-                title={service.title}
-                description={service.description}
-                features={service.features}
+                key={item.id}
+                serviceId={item.id}
+                title={t(`services.${item.id}.title`)}
+                description={t(`services.${item.id}.description`)}
+                features={t(`services.${item.id}.features`, { returnObjects: true })}
                 index={index}
-                isReversed={index % 2 === 1}
+                isReversed={item.isReversed}
               />
             ))}
           </div>
@@ -158,4 +132,3 @@ const Services = () => {
 }
 
 export default Services
-
