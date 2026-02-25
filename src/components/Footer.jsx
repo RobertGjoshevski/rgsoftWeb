@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FadeIn } from './reactbits'
 import './Footer.css'
@@ -105,11 +106,10 @@ const Footer = () => {
           <div className="footer-links">
             <h4>{t('footer.quickLinks')}</h4>
             <ul>
-              <li><a href="#home">{t('footer.navHome')}</a></li>
-              <li><a href="#services">{t('footer.navServices')}</a></li>
-              <li><a href="#portfolio">{t('footer.navPortfolio')}</a></li>
-              <li><a href="#referral">{t('footer.navReferral')}</a></li>
-              <li><a href="#contact">{t('footer.navContact')}</a></li>
+              <li><Link to="/">{t('footer.navHome')}</Link></li>
+              <li><Link to="/app-development">{t('footer.navAppDevelopment')}</Link></li>
+              <li><Link to="/website-development">{t('footer.navWebDevelopment')}</Link></li>
+              <li><Link to="/about">{t('footer.navContact')}</Link></li>
             </ul>
           </div>
 

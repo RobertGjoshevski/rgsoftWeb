@@ -2,10 +2,9 @@
   "header": {
     "logoAlt": "RGsoft Лого",
     "navHome": "Почетна",
-    "navServices": "Услуги",
-    "navPortfolio": "Портфолио",
-    "navReferral": "Препорака",
-    "navContact": "Контакт"
+    "navAppDevelopment": "Развој на апликации",
+    "navWebDevelopment": "Веб развој",
+    "navAbout": "За нас"
   },
   "hero": {
     "kicker": "Flutter • Веб • Мобилни и десктоп",
@@ -15,6 +14,25 @@
     "description": "Специјализирани сме за високо-перформансни Flutter апликации и респонзивен веб дизајн. Од концепт до објавување, испорачуваме мобилни апликации за iOS и Android и модерни веб страници кои беспрекорно работат на сите уреди.",
     "ctaGetStarted": "Започни",
     "ctaViewWork": "Види ги нашите дела"
+  },
+  "home": {
+    "whatWeDo": "Што нудиме",
+    "whatWeDoDescription": "Истражете ги нашите услуги и ставете се во контакт.",
+    "appDevelopmentCard": "Развој на апликации",
+    "appDevelopmentCardDescription": "Flutter апликации, одржување, консултации и дизајн за мобилни.",
+    "websiteDevelopmentCard": "Веб развој",
+    "websiteDevelopmentCardDescription": "Респонзивни веб страници, UI/UX дизајн и современи веб решенија.",
+    "aboutCard": "За нас",
+    "aboutCardDescription": "Контакт информации, локација и како да не контактирате."
+  },
+  "pages": {
+    "appDevelopment": { "title": "Развој на апликации" },
+    "websiteDevelopment": { "title": "Веб развој" },
+    "about": { "title": "За нас", "location": "Локација" }
+  },
+  "about": {
+    "description": "Ние сме RGsoft, тим специјализиран за развој на Flutter апликации и современи веб решенија. Контактирајте не за вашиот следен проект.",
+    "locationText": "Сме со седиште во Скопје, Северна Македонија. Ставете се во контакт преку е-пошта или социјалните линкови погоре."
   },
   "features": {
     "title": "Зошто да изберете Flutter?",
@@ -175,9 +193,8 @@
     "skopje": "Скопје",
     "northMacedonia": "Северна Македонија",
     "navHome": "Почетна",
-    "navServices": "Услуги",
-    "navPortfolio": "Портфолио",
-    "navReferral": "Препорака",
+    "navAppDevelopment": "Развој на апликации",
+    "navWebDevelopment": "Веб развој",
     "navContact": "Контакт",
     "copyright": "© {{year}} RGsoft. Сите права задржани.",
     "builtWith": "Изградено со Flutter, React и современ веб"

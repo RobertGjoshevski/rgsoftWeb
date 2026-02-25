@@ -1,35 +1,13 @@
 import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
-import Hero from './components/Hero'
-import Features from './components/Features'
-import Services from './components/Services'
-import DesignServices from './components/DesignServices'
-import Portfolio from './components/Portfolio'
-import DomeGallerySection from './components/DomeGallerySection'
-import Referral from './components/Referral'
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import Layout from './components/Layout'
+import HomePage from './pages/HomePage'
+import AppDevelopmentPage from './pages/AppDevelopmentPage'
+import WebsiteDevelopmentPage from './pages/WebsiteDevelopmentPage'
+import AboutPage from './pages/AboutPage'
 import AppRedirect from './components/AppRedirect'
 import './App.css'
-
-function HomePage() {
-  return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Features />
-        <Services />
-        <DesignServices />
-        <Portfolio />
-        <DomeGallerySection />
-        <Referral />
-      </main>
-      <Footer />
-    </>
-  )
-}
 
 function App() {
   const { i18n } = useTranslation()
@@ -42,7 +20,13 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/th" element={<AppRedirect />} />
-          <Route path="/" element={<HomePage />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/app-development" element={<AppDevelopmentPage />} />
+            <Route path="/website-development" element={<WebsiteDevelopmentPage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
     </Router>
@@ -50,4 +34,3 @@ function App() {
 }
 
 export default App
-

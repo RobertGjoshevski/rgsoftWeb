@@ -89,15 +89,16 @@ const ServiceItem = ({ serviceId, title, description, features, index, isReverse
   )
 }
 
-const Services = () => {
-  const { t } = useTranslation()
+const DEFAULT_SERVICE_KEYS = [
+  { id: 'customFlutter', isReversed: false },
+  { id: 'maintenance', isReversed: true },
+  { id: 'consulting', isReversed: false },
+  { id: 'webDesign', isReversed: true }
+]
 
-  const serviceKeys = [
-    { id: 'customFlutter', isReversed: false },
-    { id: 'maintenance', isReversed: true },
-    { id: 'consulting', isReversed: false },
-    { id: 'webDesign', isReversed: true }
-  ]
+const Services = ({ serviceKeys: serviceKeysProp = null }) => {
+  const { t } = useTranslation()
+  const serviceKeys = serviceKeysProp ?? DEFAULT_SERVICE_KEYS
 
   return (
     <>

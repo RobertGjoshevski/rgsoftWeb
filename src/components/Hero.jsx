@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { StaggerContainer, StaggerItem } from './reactbits'
 import LightRays from './reactbits/LightRays'
@@ -47,12 +48,12 @@ const Hero = () => {
             </StaggerItem>
             <StaggerItem direction="up" distance={30} duration={0.6}>
               <div className="hero-cta">
-                <a href="#contact" className="btn btn-primary">
+                <Link to="/about" className="btn btn-primary">
                   {t('hero.ctaGetStarted')}
-                </a>
-                <a href="#portfolio" className="btn btn-secondary">
+                </Link>
+                <Link to="/app-development" className="btn btn-secondary">
                   {t('hero.ctaViewWork')}
-                </a>
+                </Link>
               </div>
             </StaggerItem>
           </div>

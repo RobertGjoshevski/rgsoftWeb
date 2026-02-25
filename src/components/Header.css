@@ -79,6 +79,14 @@
   width: 80%;
 }
 
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  width: 80%;
+}
+
 .language-switcher {
   display: flex;
   align-items: center;

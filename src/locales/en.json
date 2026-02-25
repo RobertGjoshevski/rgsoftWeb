@@ -2,10 +2,9 @@
   "header": {
     "logoAlt": "RGsoft Logo",
     "navHome": "Home",
-    "navServices": "Services",
-    "navPortfolio": "Portfolio",
-    "navReferral": "Referral",
-    "navContact": "Contact"
+    "navAppDevelopment": "App Development",
+    "navWebDevelopment": "Website Development",
+    "navAbout": "About"
   },
   "hero": {
     "kicker": "Flutter • Web • Mobile & Desktop",
@@ -15,6 +14,25 @@
     "description": "We specialize in high-performance Flutter apps and responsive web design. From concept to deployment, we deliver mobile applications for iOS and Android and modern websites that work seamlessly across devices.",
     "ctaGetStarted": "Get Started",
     "ctaViewWork": "View Our Work"
+  },
+  "home": {
+    "whatWeDo": "What We Do",
+    "whatWeDoDescription": "Explore our services and get in touch.",
+    "appDevelopmentCard": "App Development",
+    "appDevelopmentCardDescription": "Flutter apps, maintenance, consulting, and design for mobile.",
+    "websiteDevelopmentCard": "Website Development",
+    "websiteDevelopmentCardDescription": "Responsive websites, UI/UX design, and modern web solutions.",
+    "aboutCard": "About Us",
+    "aboutCardDescription": "Contact info, location, and how to reach us."
+  },
+  "pages": {
+    "appDevelopment": { "title": "App Development" },
+    "websiteDevelopment": { "title": "Website Development" },
+    "about": { "title": "About Us", "location": "Location" }
+  },
+  "about": {
+    "description": "We are RGsoft, a team specializing in Flutter app development and modern web solutions. Get in touch for your next project.",
+    "locationText": "We are based in Skopje, North Macedonia. Reach out via email or social links above."
   },
   "features": {
     "title": "Why Choose Flutter?",
@@ -175,9 +193,8 @@
     "skopje": "Skopje",
     "northMacedonia": "North Macedonia",
     "navHome": "Home",
-    "navServices": "Services",
-    "navPortfolio": "Portfolio",
-    "navReferral": "Referral",
+    "navAppDevelopment": "App Development",
+    "navWebDevelopment": "Website Development",
     "navContact": "Contact",
     "copyright": "© {{year}} RGsoft. All rights reserved.",
     "builtWith": "Built with Flutter, React & modern web"

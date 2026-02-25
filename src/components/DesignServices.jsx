@@ -29,10 +29,11 @@ const DesignServiceCard = ({ title, description, features, index }) => {
   )
 }
 
-const DesignServices = () => {
-  const { t } = useTranslation()
+const DEFAULT_DESIGN_SERVICE_KEYS = ['logoDesign', 'storeImages', 'websiteDesign']
 
-  const designServiceKeys = ['logoDesign', 'storeImages', 'websiteDesign']
+const DesignServices = ({ designServiceKeys: designServiceKeysProp = null }) => {
+  const { t } = useTranslation()
+  const designServiceKeys = designServiceKeysProp ?? DEFAULT_DESIGN_SERVICE_KEYS
 
   return (
     <>
