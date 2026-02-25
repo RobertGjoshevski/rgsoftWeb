@@ -32,7 +32,7 @@ const DesignServiceCard = ({ title, description, features, index }) => {
 const DesignServices = () => {
   const { t } = useTranslation()
 
-  const designServiceKeys = ['logoDesign', 'storeImages']
+  const designServiceKeys = ['logoDesign', 'storeImages', 'websiteDesign']
 
   return (
     <>

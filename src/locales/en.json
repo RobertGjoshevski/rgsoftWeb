@@ -8,11 +8,11 @@
     "navContact": "Contact"
   },
   "hero": {
-    "kicker": "Flutter • Dart • Mobile Development",
+    "kicker": "Flutter • Web • Mobile & Desktop",
     "titleLine1": "Building Beautiful",
-    "titleHighlight": "Flutter Applications",
+    "titleHighlight": "Apps & Websites",
     "titleLine2": "for Modern Businesses",
-    "description": "We specialize in creating high-performance, visually stunning mobile applications using Flutter. From concept to deployment, we deliver cross-platform solutions that work seamlessly on iOS and Android.",
+    "description": "We specialize in high-performance Flutter apps and responsive web design. From concept to deployment, we deliver mobile applications for iOS and Android and modern websites that work seamlessly across devices.",
     "ctaGetStarted": "Get Started",
     "ctaViewWork": "View Our Work"
   },
@@ -34,7 +34,7 @@
   },
   "services": {
     "title": "Our Services",
-    "description": "Comprehensive Flutter development services to bring your mobile app vision to life",
+    "description": "Comprehensive Flutter and web development services to bring your mobile app and website vision to life",
     "customFlutter": {
       "title": "Custom Flutter Development",
       "description": "From concept to deployment, we build custom Flutter applications tailored to your business needs.",
@@ -67,6 +67,17 @@
         "Team training",
         "Development roadmap"
       ]
+    },
+    "webDesign": {
+      "title": "Web Design & Development",
+      "description": "Modern, responsive websites and landing pages that align with your brand and deliver a great user experience.",
+      "features": [
+        "Responsive design for all devices",
+        "SEO-friendly structure",
+        "Fast load times & performance",
+        "Optional CMS integration",
+        "Brand-aligned UI/UX"
+      ]
     }
   },
   "designServices": {
@@ -92,6 +103,17 @@
         "App icons & favicons",
         "Promotional banners",
         "Marketing materials"
+      ]
+    },
+    "websiteDesign": {
+      "title": "Website Design",
+      "description": "Website and landing page UI/UX design that converts visitors into customers and strengthens your online presence.",
+      "features": [
+        "Website UI/UX design",
+        "Landing page design",
+        "Design systems & style guides",
+        "Wireframes & prototypes",
+        "Responsive layout design"
       ]
     }
   },
@@ -143,7 +165,7 @@
     "footerText": "Help businesses grow while earning rewards for yourself"
   },
   "footer": {
-    "tagline": "Building exceptional Flutter applications for modern businesses",
+    "tagline": "Building exceptional Flutter applications and websites for modern businesses",
     "contactInfo": "Contact Info",
     "quickLinks": "Quick Links",
     "connectWithUs": "Connect With Us",
@@ -158,6 +180,6 @@
     "navReferral": "Referral",
     "navContact": "Contact",
     "copyright": "© {{year}} RGsoft. All rights reserved.",
-    "builtWith": "Built with Flutter & React"
+    "builtWith": "Built with Flutter, React & modern web"
   }
 }

@@ -6,7 +6,7 @@ import consultingImg from '../assets/consulting.png'
 import maintanceImg from '../assets/maintance.png'
 
 const ServiceItem = ({ serviceId, title, description, features, index, isReversed }) => {
-  const isOverlayLayout = serviceId === 'customFlutter' || serviceId === 'maintenance' || serviceId === 'consulting'
+  const isOverlayLayout = serviceId === 'customFlutter' || serviceId === 'maintenance' || serviceId === 'consulting' || serviceId === 'webDesign'
   const isRightAligned = serviceId === 'maintenance'
 
   const getBackgroundImage = () => {
@@ -95,7 +95,8 @@ const Services = () => {
   const serviceKeys = [
     { id: 'customFlutter', isReversed: false },
     { id: 'maintenance', isReversed: true },
-    { id: 'consulting', isReversed: false }
+    { id: 'consulting', isReversed: false },
+    { id: 'webDesign', isReversed: true }
   ]
 
   return (
