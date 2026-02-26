@@ -7,6 +7,7 @@ const Header = () => {
   const { t, i18n } = useTranslation()
   const location = useLocation()
   const [isScrolled, setIsScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,6 +66,49 @@ const Header = () => {
               </button>
             </div>
           </nav>
+
+          <button
+            type="button"
+            className="header-menu-btn"
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={mobileMenuOpen}
+          >
+            <span className="header-menu-icon" />
+            <span className="header-menu-icon" />
+            <span className="header-menu-icon" />
+          </button>
+        </div>
+
+        <div className={`header-mobile-nav ${mobileMenuOpen ? 'open' : ''}`} aria-hidden={!mobileMenuOpen}>
+          {navLinks.map(({ to, labelKey }) => (
+            <Link
+              key={to}
+              to={to}
+              className={`nav-link ${location.pathname === to ? 'active' : ''}`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {t(labelKey)}
+            </Link>
+          ))}
+          <div className="language-switcher header-mobile-lang" aria-label="Language">
+            <button
+              type="button"
+              className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`}
+              onClick={() => handleLanguageChange('en')}
+              aria-label="English"
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              className={`lang-btn ${i18n.language === 'mk' ? 'active' : ''}`}
+              onClick={() => handleLanguageChange('mk')}
+              aria-label="Macedonian"
+            >
+              MK
+            </button>
+          </div>
         </div>
       </div>
     </header>

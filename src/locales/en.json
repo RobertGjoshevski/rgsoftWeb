@@ -120,7 +120,7 @@
   },
   "designServices": {
     "title": "Design Services",
-    "description": "Professional design solutions to enhance your brand and app presence",
+    "description": "Professional design solutions to strengthen your brand, web presence, and conversion-focused user experiences",
     "logoDesign": {
       "title": "Logo Design",
       "description": "Create a memorable brand identity with custom logo designs that represent your business values and vision.",
@@ -145,13 +145,68 @@
     },
     "websiteDesign": {
       "title": "Website Design",
-      "description": "Website and landing page UI/UX design that converts visitors into customers and strengthens your online presence.",
+      "description": "Full-site and multi-page UI/UX design that aligns with your brand and drives engagement across desktop and mobile.",
       "features": [
         "Website UI/UX design",
-        "Landing page design",
+        "Information architecture",
+        "Responsive layout design",
         "Design systems & style guides",
-        "Wireframes & prototypes",
-        "Responsive layout design"
+        "Handoff to development"
+      ]
+    },
+    "landingPageDesign": {
+      "title": "Landing Page Design",
+      "description": "Conversion-focused landing pages for campaigns, product launches, and lead generation with clear hierarchy and strong CTAs.",
+      "features": [
+        "Conversion-optimized layouts",
+        "Above-the-fold messaging",
+        "CTA and form placement",
+        "A/B-ready structure",
+        "Mobile-first responsive"
+      ]
+    },
+    "uiUxWeb": {
+      "title": "UI/UX for Web Applications",
+      "description": "User-centered interface and experience design for web apps, dashboards, and SaaS products that teams and customers rely on daily.",
+      "features": [
+        "User research & personas",
+        "User flows & task analysis",
+        "Dashboard & data viz design",
+        "Accessibility (WCAG)",
+        "Component & pattern libraries"
+      ]
+    },
+    "designSystems": {
+      "title": "Design Systems & Style Guides",
+      "description": "Consistent, scalable design systems and style guides so your web and brand stay coherent as you grow and ship new features.",
+      "features": [
+        "Color, typography & spacing tokens",
+        "Component documentation",
+        "Usage guidelines",
+        "Figma or code components",
+        "Versioning & governance"
+      ]
+    },
+    "wireframesPrototyping": {
+      "title": "Wireframes & Prototyping",
+      "description": "Structured wireframes and interactive prototypes to validate structure, flows, and interactions before development.",
+      "features": [
+        "Low- and high-fidelity wireframes",
+        "Interactive prototypes",
+        "User flow diagrams",
+        "Stakeholder review sessions",
+        "Developer-ready specs"
+      ]
+    },
+    "brandIdentityWeb": {
+      "title": "Brand Identity for Web",
+      "description": "Web-specific brand application: color palettes, typography, imagery guidelines, and asset kits for a cohesive online presence.",
+      "features": [
+        "Web color & type systems",
+        "Iconography & imagery guidelines",
+        "Favicon & social assets",
+        "Brand usage documentation",
+        "Cross-channel consistency"
       ]
     }
   },

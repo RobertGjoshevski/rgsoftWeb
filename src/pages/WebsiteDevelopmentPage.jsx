@@ -7,7 +7,14 @@ const WEB_SERVICE_KEYS = [
   { id: 'webDesign', isReversed: true }
 ]
 
-const WEB_DESIGN_SERVICE_KEYS = ['websiteDesign']
+const WEB_DESIGN_SERVICE_KEYS = [
+  'websiteDesign',
+  'landingPageDesign',
+  'uiUxWeb',
+  'designSystems',
+  'wireframesPrototyping',
+  'brandIdentityWeb'
+]
 
 const WebsiteDevelopmentPage = () => {
   return (

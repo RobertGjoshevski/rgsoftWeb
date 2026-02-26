@@ -29,7 +29,16 @@ const DesignServiceCard = ({ title, description, features, index }) => {
   )
 }
 
-const DEFAULT_DESIGN_SERVICE_KEYS = ['logoDesign', 'storeImages', 'websiteDesign']
+const DEFAULT_DESIGN_SERVICE_KEYS = [
+  'logoDesign',
+  'storeImages',
+  'websiteDesign',
+  'landingPageDesign',
+  'uiUxWeb',
+  'designSystems',
+  'wireframesPrototyping',
+  'brandIdentityWeb'
+]
 
 const DesignServices = ({ designServiceKeys: designServiceKeysProp = null }) => {
   const { t } = useTranslation()
