@@ -56,45 +56,65 @@
     "customFlutter": {
       "title": "Custom Flutter Development",
       "description": "From concept to deployment, we build custom Flutter applications tailored to your business needs.",
+      "details": [
+        "We work with you from the first idea through design, development, and publishing. Every app is built with clean architecture, scalable state management, and a focus on performance and maintainability.",
+        "Whether you need a consumer app, B2B tool, or internal platform, we deliver production-ready code and clear documentation so your team can own and extend the product long term."
+      ],
       "features": [
         "Custom UI/UX design",
-        "State management implementation",
-        "API integration",
-        "Firebase backend setup",
-        "App Store & Play Store deployment"
+        "State management (Provider, Riverpod, Bloc)",
+        "REST & GraphQL API integration",
+        "Firebase backend setup & auth",
+        "App Store & Play Store deployment",
+        "CI/CD and release automation"
       ]
     },
     "maintenance": {
       "title": "App Maintenance & Support",
       "description": "Keep your app running smoothly with regular updates, bug fixes, and feature enhancements.",
+      "details": [
+        "Ongoing support prevents small issues from becoming costly problems and keeps your app aligned with the latest OS and dependency updates. We offer flexible plans—from ad-hoc fixes to dedicated monthly retainer—so you can choose the level that fits your budget and roadmap.",
+        "Our team handles dependency upgrades, security patches, and performance tuning, and we can add new features or refactor existing code as your requirements evolve."
+      ],
       "features": [
         "Regular updates & patches",
-        "Performance optimization",
-        "Feature additions",
-        "Technical support",
-        "Security updates"
+        "Performance & battery optimization",
+        "New feature development",
+        "Dedicated technical support",
+        "Security & dependency updates",
+        "Crash monitoring & analytics"
       ]
     },
     "consulting": {
       "title": "Consulting & Strategy",
       "description": "Expert guidance on Flutter architecture, best practices, and development strategy.",
+      "details": [
+        "We help teams and stakeholders make informed decisions about stack, architecture, and roadmap. Whether you're starting a new Flutter project, refactoring an existing app, or evaluating Flutter for your organization, we provide clear, actionable recommendations.",
+        "Sessions can cover architecture review, code audits, performance profiling, team onboarding to Flutter, or a phased development roadmap with milestones and estimates."
+      ],
       "features": [
-        "Architecture review",
-        "Code quality assessment",
-        "Performance optimization",
-        "Team training",
-        "Development roadmap"
+        "Architecture & codebase review",
+        "Code quality & best practices assessment",
+        "Performance profiling & optimization",
+        "Flutter team training & workshops",
+        "Development roadmap & estimates",
+        "Technology selection & migration planning"
       ]
     },
     "webDesign": {
       "title": "Web Design & Development",
       "description": "Modern, responsive websites and landing pages that align with your brand and deliver a great user experience.",
+      "details": [
+        "We design and build fast, accessible websites that work across all devices and screen sizes. From marketing sites and landing pages to web apps, we focus on clear structure, strong typography, and performance so your content and conversions don't suffer from slow loads or poor UX.",
+        "Optional CMS integration and SEO setup help you manage content and visibility without depending on developers for every change."
+      ],
       "features": [
         "Responsive design for all devices",
-        "SEO-friendly structure",
-        "Fast load times & performance",
+        "SEO-friendly structure & metadata",
+        "Fast load times & Core Web Vitals",
         "Optional CMS integration",
-        "Brand-aligned UI/UX"
+        "Brand-aligned UI/UX",
+        "Analytics & conversion tracking"
       ]
     }
   },

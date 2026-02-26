@@ -2,89 +2,32 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { FadeIn } from './reactbits'
 import './Services.css'
-import consultingImg from '../assets/consulting.png'
-import maintanceImg from '../assets/maintance.png'
 
-const ServiceItem = ({ serviceId, title, description, features, index, isReversed }) => {
-  const isOverlayLayout = serviceId === 'customFlutter' || serviceId === 'maintenance' || serviceId === 'consulting' || serviceId === 'webDesign'
-  const isRightAligned = serviceId === 'maintenance'
-
-  const getBackgroundImage = () => {
-    if (serviceId === 'maintenance') return maintanceImg
-    return consultingImg
-  }
-
+const ServiceItem = ({ serviceId, title, description, details, features, index, isReversed }) => {
   return (
     <FadeIn
-      delay={index * 0.2}
-      duration={0.6}
+      delay={index * 0.15}
+      duration={0.5}
       direction={isReversed ? 'left' : 'right'}
-      distance={50}
-      className={`service-item ${isReversed ? 'reversed' : ''} ${isOverlayLayout ? 'overlay-layout' : ''} ${isOverlayLayout && !isRightAligned ? 'overlay-left' : ''}`}
+      distance={40}
+      className={`service-item ${isReversed ? 'reversed' : ''}`}
     >
-      {isOverlayLayout ? (
-        <>
-          <div
-            className="service-background-image"
-            style={{
-              backgroundImage: `url(${getBackgroundImage()})`,
-            }}
-          />
-          <div className={`service-content-overlay ${!isRightAligned ? 'overlay-left' : ''}`}>
-            <h3>{title}</h3>
-            <p className="service-description">{description}</p>
-            <ul className="service-features">
-              {features.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
-              ))}
-            </ul>
+      <div className="service-content-full">
+        <h3 className="service-title">{title}</h3>
+        <p className="service-description">{description}</p>
+        {Array.isArray(details) && details.length > 0 && (
+          <div className="service-details">
+            {details.map((paragraph, idx) => (
+              <p key={idx} className="service-detail-paragraph">{paragraph}</p>
+            ))}
           </div>
-        </>
-      ) : (
-        <>
-          <div className="service-content">
-            <h3>{title}</h3>
-            <p className="service-description">{description}</p>
-            <ul className="service-features">
-              {features.map((feature, idx) => (
-                <li key={idx}>{feature}</li>
-              ))}
-            </ul>
-          </div>
-          <div className="service-visual">
-            {serviceId === 'customFlutter' ? (
-              <img
-                src={consultingImg}
-                alt={title}
-                style={{
-                  float: 'left',
-                  width: '120%',
-                  height: '120%',
-                  objectFit: 'contain'
-                }}
-                className="service-image service-image-left"
-              />
-            ) : serviceId === 'consulting' ? (
-              <img
-                src={consultingImg}
-                alt={title}
-                style={{
-                  float: 'left',
-                  marginRight: '2rem',
-                  width: '120%',
-                  height: '120%',
-                  objectFit: 'contain'
-                }}
-                className="service-image service-image-left"
-              />
-            ) : (
-              <div className="service-placeholder">
-                <div className="service-icon">💼</div>
-              </div>
-            )}
-          </div>
-        </>
-      )}
+        )}
+        <ul className="service-features">
+          {features.map((feature, idx) => (
+            <li key={idx}>{feature}</li>
+          ))}
+        </ul>
+      </div>
     </FadeIn>
   )
 }
@@ -121,6 +64,7 @@ const Services = ({ serviceKeys: serviceKeysProp = null }) => {
                 serviceId={item.id}
                 title={t(`services.${item.id}.title`)}
                 description={t(`services.${item.id}.description`)}
+                details={t(`services.${item.id}.details`, { returnObjects: true })}
                 features={t(`services.${item.id}.features`, { returnObjects: true })}
                 index={index}
                 isReversed={item.isReversed}
