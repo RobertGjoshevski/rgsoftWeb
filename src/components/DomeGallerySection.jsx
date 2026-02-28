@@ -13,6 +13,7 @@ const DomeGallerySection = () => {
 
   const galleryImages = useMemo(() => {
     return Object.entries(postModules)
+      .filter(([, mod]) => mod && mod.default)
       .map(([path, mod]) => {
         const filename = path.split('/').pop() || ''
         return { src: mod.default, alt: filename.replace(/\.[^.]+$/, '') }
