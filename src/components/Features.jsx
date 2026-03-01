@@ -65,7 +65,20 @@ const Features = () => {
   const featureKeys = [
     { key: 'crossPlatform', icon: '📱', hasGalaxy: true },
     { key: 'beautifulUi', icon: '🎨', hasLightPillar: true },
-    { key: 'highPerformance', icon: '⚡', hasHyperspeed: true }
+    { key: 'highPerformance', icon: '⚡', hasHyperspeed: true },
+    { key: 'iconDesign', icon: '✨' },
+    { key: 'businessUi', icon: '📊' },
+    { key: 'databases', icon: '🗄️' },
+    { key: 'seo', icon: '🔍' },
+    { key: 'saas', icon: '☁️' },
+    { key: 'apiIntegration', icon: '🔌' },
+    { key: 'ecommerce', icon: '🛒' },
+    { key: 'landingPages', icon: '📄' },
+    { key: 'responsiveWeb', icon: '📐' },
+    { key: 'maintenanceSupport', icon: '🛠️' },
+    { key: 'cmsIntegration', icon: '📝' },
+    { key: 'analyticsTracking', icon: '📈' },
+    { key: 'progressiveWeb', icon: '🌐' }
   ]
 
   return (

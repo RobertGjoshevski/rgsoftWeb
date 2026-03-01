@@ -35,8 +35,8 @@
     "locationText": "We are based in Skopje, North Macedonia. Reach out via email or social links above."
   },
   "features": {
-    "title": "Why Choose Flutter?",
-    "description": "We leverage Flutter for app development and website development, delivering exceptional cross-platform mobile and web experiences.",
+    "title": "What We Do",
+    "description": "From web design and app development to SEO, SaaS, and beyond—we offer a full range of services to build and grow your digital presence.",
     "crossPlatform": {
       "title": "Cross-Platform",
       "description": "One codebase for iOS and Android—cross-platform app development that reduces development time and costs."
@@ -48,6 +48,58 @@
     "highPerformance": {
       "title": "High Performance",
       "description": "Optimized for app and web: 120fps animations and fast load times for every platform."
+    },
+    "iconDesign": {
+      "title": "Icon & Asset Design",
+      "description": "Custom app icons, favicons, and icon sets that strengthen your brand and improve recognition across stores and the web."
+    },
+    "businessUi": {
+      "title": "Business UI & Dashboards",
+      "description": "Data-rich dashboards, admin panels, and business tools with clear information hierarchy and workflows teams rely on daily."
+    },
+    "databases": {
+      "title": "Databases & Backend",
+      "description": "Database design, APIs, and backend services so your app or website has a solid, scalable data layer and integrations."
+    },
+    "seo": {
+      "title": "SEO & Visibility",
+      "description": "SEO-friendly structure, metadata, and performance so your website ranks well and reaches the right audience in search."
+    },
+    "saas": {
+      "title": "SaaS Development",
+      "description": "Subscription-based web apps and platforms—from auth and billing to multi-tenant architecture and scalable infrastructure."
+    },
+    "apiIntegration": {
+      "title": "API & Integrations",
+      "description": "REST, GraphQL, and third-party integrations so your product connects with payment, analytics, and other services."
+    },
+    "ecommerce": {
+      "title": "E-Commerce Solutions",
+      "description": "Online stores, product catalogs, and checkout flows that convert—responsive and secure for web and mobile."
+    },
+    "landingPages": {
+      "title": "Landing Pages",
+      "description": "Conversion-focused landing pages for campaigns, product launches, and lead generation with clear CTAs and fast loads."
+    },
+    "responsiveWeb": {
+      "title": "Responsive Web Design",
+      "description": "Sites and web apps that look and work great on every device—mobile-first layout and touch-friendly interactions."
+    },
+    "maintenanceSupport": {
+      "title": "Maintenance & Support",
+      "description": "Ongoing updates, bug fixes, security patches, and new features to keep your app or website running smoothly."
+    },
+    "cmsIntegration": {
+      "title": "CMS Integration",
+      "description": "Connect your site to a content management system so you can update copy, blog posts, and pages without touching code."
+    },
+    "analyticsTracking": {
+      "title": "Analytics & Tracking",
+      "description": "Set up analytics, conversion tracking, and reporting so you understand how users find and use your app or website."
+    },
+    "progressiveWeb": {
+      "title": "Progressive Web Apps",
+      "description": "Web apps that install like native apps—offline support, push notifications, and a home-screen experience from the browser."
     }
   },
   "services": {
