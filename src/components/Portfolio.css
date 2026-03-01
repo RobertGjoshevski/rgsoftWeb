@@ -59,7 +59,7 @@
 }
 
 .portfolio-item:hover {
-  box-shadow: 0px 8px 24px rgba(136, 196, 68, 0.3);
+  box-shadow: 0px 8px 24px rgba(var(--secondary-rgb), 0.3);
   border-color: var(--secondary);
 }
 
@@ -101,7 +101,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--background-dark), rgba(136, 196, 68, 0.1));
+  background: linear-gradient(135deg, var(--background-dark), rgba(var(--secondary-rgb), 0.1));
   color: var(--neutral-1);
 }
 
@@ -310,7 +310,7 @@
   }
 
   .portfolio-carousel-dot:hover {
-    background: rgba(136, 196, 68, 0.5);
+    background: rgba(var(--secondary-rgb), 0.5);
     transform: scale(1.2);
   }
 

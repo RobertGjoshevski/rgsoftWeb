@@ -25,7 +25,7 @@ const Referral = () => {
             <div className="referral-card-wrapper">
               <LightRays
                 raysOrigin="center"
-                raysColor="#88c444"
+                raysColor="#8B5CF6"
                 raysSpeed={0.3}
                 lightSpread={2}
                 rayLength={4}

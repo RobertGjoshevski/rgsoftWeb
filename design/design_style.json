@@ -12,14 +12,14 @@
         ]
     },
     "brand_palette": {
-        "primary": "#030207",
-        "secondary": "#1F1059",
-        "accent_1": "#572E54",
-        "accent_2": "#4828A8",
+        "primary": "#FFFFFF",
+        "secondary": "#8B5CF6",
+        "accent_1": "#7C3AED",
+        "accent_2": "#C084FC",
         "background_light": "#F4F4F5",
         "neutral_1": "#A4A4BF",
-        "accent_variant": "#98299E",
-        "accent_variant_2": "#9F4A64"
+        "accent_variant": "#8B5CF6",
+        "accent_variant_2": "#7C3AED"
     },
     "typography": {
         "font_families": [
@@ -61,15 +61,15 @@
     "ui_components": {
         "button": {
             "primary": {
-                "background": "#1F1059",
+                "background": "#8B5CF6",
                 "text_color": "#FFFFFF",
                 "border_radius": "8px",
                 "padding": "16px 32px"
             },
             "secondary": {
                 "background": "transparent",
-                "text_color": "#1F1059",
-                "border": "2px solid #1F1059",
+                "text_color": "#8B5CF6",
+                "border": "2px solid #8B5CF6",
                 "border_radius": "8px"
             },
             "hover_states": {
@@ -80,7 +80,7 @@
         "input_fields": {
             "border_radius": "6px",
             "border_color": "#A4A4BF",
-            "focus_outline": "#572E54"
+            "focus_outline": "#8B5CF6"
         },
         "cards": {
             "background": "#FFFFFF",

@@ -62,7 +62,7 @@
 
 .nav-link:hover {
   color: var(--primary);
-  background-color: rgba(136, 196, 68, 0.1);
+  background-color: rgba(var(--secondary-rgb), 0.1);
 }
 
 .nav-link::after {
@@ -111,13 +111,13 @@
 .lang-btn:hover {
   color: var(--primary);
   border-color: var(--primary);
-  background-color: rgba(136, 196, 68, 0.1);
+  background-color: rgba(var(--secondary-rgb), 0.1);
 }
 
 .lang-btn.active {
   color: var(--primary);
   border-color: var(--primary);
-  background-color: rgba(136, 196, 68, 0.15);
+  background-color: rgba(var(--secondary-rgb), 0.15);
 }
 
 .header-email {
@@ -134,7 +134,7 @@
 
 .header-email:hover {
   color: var(--secondary);
-  background-color: rgba(136, 196, 68, 0.15);
+  background-color: rgba(var(--secondary-rgb), 0.15);
 }
 
 @media (max-width: 768px) {
@@ -167,7 +167,7 @@
 
 .header-menu-btn:hover {
   border-color: var(--primary);
-  background-color: rgba(136, 196, 68, 0.1);
+  background-color: rgba(var(--secondary-rgb), 0.1);
 }
 
 .header-menu-icon {

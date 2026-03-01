@@ -13,7 +13,7 @@ const Hero = () => {
       <div className="hero-background">
         <LightRays
           raysOrigin="top-center"
-          raysColor="#88c444"
+          raysColor="#8B5CF6"
           raysSpeed={1.5}
           lightSpread={0.8}
           rayLength={1.2}

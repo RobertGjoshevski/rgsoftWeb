@@ -36,7 +36,7 @@
 
 .faq-item:hover,
 .faq-item.faq-item--open {
-  border-color: rgba(136, 196, 68, 0.35);
+  border-color: rgba(var(--secondary-rgb), 0.35);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
 }
 

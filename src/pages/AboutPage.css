@@ -31,7 +31,7 @@
 }
 
 .about-contact-info .contact-link {
-  color: var(--accent-green, #88c444);
+  color: var(--secondary);
   text-decoration: none;
 }
 
@@ -65,7 +65,7 @@
 
 .about-social-link:hover {
   background: rgba(255, 255, 255, 0.08);
-  border-color: var(--social-color, rgba(136, 196, 68, 0.5));
+  border-color: var(--social-color, rgba(var(--secondary-rgb), 0.5));
 }
 
 .about-social-icon {

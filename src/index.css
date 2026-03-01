@@ -1,17 +1,20 @@
 :root {
   --primary: #FFFFFF;
-  --secondary: #88c444;
-  --accent-1: #6BA030;
-  --accent-2: #A5D66A;
+  --secondary: #8B5CF6;
+  --accent-1: #7C3AED;
+  --accent-2: #C084FC;
   --background-dark: #030207;
   --background-card: #0A0A0F;
   --background-section: #050510;
   --neutral-1: #A4A4BF;
   --neutral-2: #6B7280;
-  --accent-variant: #88c444;
-  --accent-variant-2: #6BA030;
+  --accent-variant: #8B5CF6;
+  --accent-variant-2: #7C3AED;
+  --secondary-rgb: 139, 92, 246;
   --border-color: rgba(255, 255, 255, 0.1);
-  --section-divider: rgba(136, 196, 68, 0.1);
+  --section-divider: rgba(var(--secondary-rgb), 0.12);
+  --gradient-accent: linear-gradient(135deg, var(--secondary), var(--accent-2));
+  --gradient-subtle-bg: linear-gradient(180deg, var(--background-section), transparent);
 
   --spacing-xs: 4px;
   --spacing-sm: 8px;

@@ -118,7 +118,7 @@
 }
 
 .tilted-card-figure.feature-card:hover .tilted-card-wrapper {
-    box-shadow: 0px 8px 24px rgba(136, 196, 68, 0.3);
+    box-shadow: 0px 8px 24px rgba(var(--secondary-rgb), 0.3);
     border-color: var(--secondary);
 }
 
@@ -159,7 +159,7 @@
 }
 
 .tilted-card-figure.referral-card:hover .tilted-card-wrapper {
-    box-shadow: 0px 12px 32px rgba(136, 196, 68, 0.4);
+    box-shadow: 0px 12px 32px rgba(var(--secondary-rgb), 0.4);
     border-color: var(--secondary);
 }
 
@@ -196,8 +196,8 @@
 
 .tilted-card-inner:hover .tilted-card-background {
     border-color: var(--secondary);
-    background: linear-gradient(135deg, rgba(136, 196, 68, 0.1), rgba(107, 160, 48, 0.15));
-    box-shadow: 0px 8px 24px rgba(136, 196, 68, 0.2);
+    background: linear-gradient(135deg, rgba(var(--secondary-rgb), 0.1), rgba(var(--secondary-rgb), 0.15));
+    box-shadow: 0px 8px 24px rgba(var(--secondary-rgb), 0.2);
 }
 
 /* When background image is provided, remove border and gradient */
