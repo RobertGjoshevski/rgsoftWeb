@@ -29,6 +29,21 @@ const AboutPage = () => {
                 <a href="#contact" className="about-cta-link">{t('about.cta')}</a>
               </p>
             </FadeIn>
+
+            <FadeIn delay={0.4} direction="up" distance={30} duration={0.6} className="about-block about-map-block">
+              <h2>{t('pages.about.location')}</h2>
+              <p className="about-map-address">{t('about.mapAddress')}</p>
+              <div className="about-map-wrapper">
+                <iframe
+                  title={t('pages.about.location')}
+                  src="https://maps.google.com/maps?q=Stajkovci,+Skopje,+North+Macedonia&z=14&ie=UTF8&iwloc=&output=embed"
+                  className="about-map-iframe"
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
+              </div>
+            </FadeIn>
           </div>
         </div>
       </section>

@@ -34,7 +34,8 @@
     "description": "We are RGsoft, a dedicated app and website development agency based in Skopje, North Macedonia. Founded in 2022, we help businesses build modern apps, responsive websites, and digital products—with consulting and support every step of the way.",
     "intro": "RGsoft opened in 2022 in Skopje, North Macedonia. We are a dedicated app and website development agency: we build mobile apps, responsive websites, and web applications, and we offer consulting so you can make the right technical and product decisions.",
     "whyUs": "Why choose us? We work fast and keep costs down compared to many agencies—without cutting corners on quality. You get clear communication, modern tech stacks, and delivery you can rely on. We cost like a Balkan agency but deliver like a global agency.",
-    "cta": "Contact details and social links are in the footer. Get in touch when you're ready to start your project."
+    "cta": "Contact details and social links are in the footer. Get in touch when you're ready to start your project.",
+    "mapAddress": "Stajkovci, Skopje, North Macedonia"
   },
   "features": {
     "title": "What We Do",
