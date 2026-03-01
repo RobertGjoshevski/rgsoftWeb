@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FadeIn } from '../components/reactbits'
 import Hero from '../components/Hero'
-import Features from '../components/Features'
+import FAQ from '../components/FAQ'
 import './HomePage.css'
 
 const HomePage = () => {
@@ -12,7 +12,6 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <Features />
       <section className="home-links section">
         <div className="container">
           <FadeIn direction="up" distance={30} duration={0.6}>
@@ -46,6 +45,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      <FAQ />
     </>
   )
 }

@@ -11,7 +11,7 @@
     "titleLine1": "Building Beautiful",
     "titleHighlight": "Apps & Websites",
     "titleLine2": "for Modern Businesses",
-    "description": "We specialize in high-performance Flutter apps and responsive web design. From concept to deployment, we deliver mobile applications for iOS and Android and modern websites that work seamlessly across devices.",
+    "description": "We specialize in cross-platform app development and custom website development. From concept to deployment, we deliver high-performance mobile and web applications for iOS, Android, and the browser—one codebase, seamless experiences.",
     "ctaGetStarted": "Get Started",
     "ctaViewWork": "View Our Work"
   },
@@ -36,18 +36,18 @@
   },
   "features": {
     "title": "Why Choose Flutter?",
-    "description": "We leverage Flutter's powerful capabilities to deliver exceptional mobile applications",
+    "description": "We leverage Flutter for app development and website development, delivering exceptional cross-platform mobile and web experiences.",
     "crossPlatform": {
       "title": "Cross-Platform",
-      "description": "One codebase for iOS and Android, reducing development time and costs."
+      "description": "One codebase for iOS and Android—cross-platform app development that reduces development time and costs."
     },
     "beautifulUi": {
       "title": "Beautiful UI/UX",
-      "description": "Custom designs that match your brand and provide exceptional user experiences."
+      "description": "Custom designs for app development and website development that match your brand and deliver exceptional user experiences."
     },
     "highPerformance": {
       "title": "High Performance",
-      "description": "Optimized apps that run smoothly with 120fps animations and fast load times."
+      "description": "Optimized for app and web: 120fps animations and fast load times for every platform."
     }
   },
   "services": {
@@ -256,6 +256,26 @@
     "firstInvoice": "1st Invoice",
     "easy": "Easy",
     "footerText": "Help businesses grow while earning rewards for yourself"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Quick answers about our app development, website development, and cross-platform services.",
+    "crossPlatformQuestion": "What is cross-platform app development?",
+    "crossPlatformAnswer": "Cross-platform app development means building one app that runs on multiple platforms—such as iOS and Android—from a single codebase. At RGsoft we use Flutter so you get native-quality performance and one codebase to maintain, which reduces cost and time compared to building separate apps for each platform.",
+    "whyFlutterQuestion": "Why choose Flutter for app and website development?",
+    "whyFlutterAnswer": "Flutter lets us build both mobile apps and web from one codebase, with fast performance and consistent UI. We choose Flutter for app development and website development so you get beautiful, responsive experiences on phones, tablets, and desktops without maintaining multiple codebases.",
+    "websitesTooQuestion": "Do you build websites as well as apps?",
+    "websitesTooAnswer": "Yes. We offer full website development—responsive sites, landing pages, and web apps—alongside Flutter app development. Whether you need a marketing site, a web app, or a mobile app, we can deliver. Get in touch to discuss your project.",
+    "processQuestion": "What does your app development process look like?",
+    "processAnswer": "We start with your goals and scope, then move through design, development, testing, and deployment. For app development we use clean architecture and modern state management; for website development we focus on performance and SEO. You get clear milestones and regular updates so the project stays on track.",
+    "howLongQuestion": "How long does a typical app or website project take?",
+    "howLongAnswer": "Timeline depends on scope: a simple landing page or small app might take a few weeks; a full product with custom app development or website development can take several months. We give you an estimate after discussing your requirements and can often phase delivery so you launch sooner.",
+    "maintenanceQuestion": "Do you offer app maintenance and support?",
+    "maintenanceAnswer": "Yes. We offer app maintenance and support including updates, bug fixes, security patches, and new features. This keeps your app or website running smoothly and aligned with the latest platforms. Flexible plans are available from ad-hoc fixes to monthly retainers.",
+    "whatIsWebsiteDevQuestion": "What do you mean by website development?",
+    "whatIsWebsiteDevAnswer": "Website development at RGsoft includes designing and building responsive websites, landing pages, and web applications. We focus on fast load times, clear structure, and SEO so your site works well for users and search engines. We can also integrate CMS or analytics as needed.",
+    "whoNeedsQuestion": "Who is your app and website development for?",
+    "whoNeedsAnswer": "Our app development and website development services are for businesses and teams that need a professional mobile app, a responsive website, or both. We work with startups, SMEs, and larger organizations—from concept and design through to deployment and ongoing support."
   },
   "footer": {
     "tagline": "Building exceptional Flutter applications and websites for modern businesses",
