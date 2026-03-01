@@ -23,7 +23,7 @@
     "websiteDevelopmentCard": "Website Development",
     "websiteDevelopmentCardDescription": "Responsive websites, UI/UX design, and modern web solutions.",
     "aboutCard": "About Us",
-    "aboutCardDescription": "Contact info, location, and how to reach us."
+    "aboutCardDescription": "Our story, what we do, and why choose us."
   },
   "pages": {
     "appDevelopment": { "title": "App Development" },
@@ -31,12 +31,18 @@
     "about": { "title": "About Us", "location": "Location" }
   },
   "about": {
-    "description": "We are RGsoft, a team specializing in Flutter app development and modern web solutions. Get in touch for your next project.",
-    "locationText": "We are based in Skopje, North Macedonia. Reach out via email or social links above."
+    "description": "We are RGsoft, a dedicated app and website development agency based in Skopje, North Macedonia. Founded in 2022, we help businesses build modern apps, responsive websites, and digital products—with consulting and support every step of the way.",
+    "intro": "RGsoft opened in 2022 in Skopje, North Macedonia. We are a dedicated app and website development agency: we build mobile apps, responsive websites, and web applications, and we offer consulting so you can make the right technical and product decisions.",
+    "whyUs": "Why choose us? We work fast and keep costs down compared to many agencies—without cutting corners on quality. You get clear communication, modern tech stacks, and delivery you can rely on. We cost like a Balkan agency but deliver like a global agency.",
+    "cta": "Contact details and social links are in the footer. Get in touch when you're ready to start your project."
   },
   "features": {
     "title": "What We Do",
     "description": "From web design and app development to SEO, SaaS, and beyond—we offer a full range of services to build and grow your digital presence.",
+    "appTitle": "What We Do",
+    "appDescription": "We bring your app idea to life with cross-platform development, design, backend, and ongoing support.",
+    "webTitle": "What We Do",
+    "webDescription": "From responsive design and SEO to SaaS and e-commerce—we build and grow your web presence.",
     "crossPlatform": {
       "title": "Cross-Platform",
       "description": "One codebase for iOS and Android—cross-platform app development that reduces development time and costs."

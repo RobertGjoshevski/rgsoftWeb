@@ -59,27 +59,53 @@ const FeatureCard = ({ icon, title, description, index, hasHyperspeed = false, h
   )
 }
 
-const Features = () => {
+const ALL_FEATURES = [
+  { key: 'crossPlatform', icon: '📱', hasGalaxy: true },
+  { key: 'beautifulUi', icon: '🎨', hasLightPillar: true },
+  { key: 'highPerformance', icon: '⚡', hasHyperspeed: true },
+  { key: 'iconDesign', icon: '✨' },
+  { key: 'businessUi', icon: '📊' },
+  { key: 'databases', icon: '🗄️' },
+  { key: 'seo', icon: '🔍' },
+  { key: 'saas', icon: '☁️' },
+  { key: 'apiIntegration', icon: '🔌' },
+  { key: 'ecommerce', icon: '🛒' },
+  { key: 'landingPages', icon: '📄' },
+  { key: 'responsiveWeb', icon: '📐' },
+  { key: 'maintenanceSupport', icon: '🛠️' },
+  { key: 'cmsIntegration', icon: '📝' },
+  { key: 'analyticsTracking', icon: '📈' },
+  { key: 'progressiveWeb', icon: '🌐' }
+]
+
+const APP_FEATURE_KEYS = [
+  'crossPlatform', 'beautifulUi', 'highPerformance', 'iconDesign',
+  'businessUi', 'databases', 'apiIntegration', 'ecommerce',
+  'maintenanceSupport', 'analyticsTracking'
+]
+
+const WEB_FEATURE_KEYS = [
+  'beautifulUi', 'highPerformance', 'responsiveWeb', 'seo', 'landingPages',
+  'saas', 'ecommerce', 'cmsIntegration', 'progressiveWeb', 'iconDesign',
+  'businessUi', 'maintenanceSupport', 'analyticsTracking'
+]
+
+const Features = ({ scope = 'all' }) => {
   const { t } = useTranslation()
 
-  const featureKeys = [
-    { key: 'crossPlatform', icon: '📱', hasGalaxy: true },
-    { key: 'beautifulUi', icon: '🎨', hasLightPillar: true },
-    { key: 'highPerformance', icon: '⚡', hasHyperspeed: true },
-    { key: 'iconDesign', icon: '✨' },
-    { key: 'businessUi', icon: '📊' },
-    { key: 'databases', icon: '🗄️' },
-    { key: 'seo', icon: '🔍' },
-    { key: 'saas', icon: '☁️' },
-    { key: 'apiIntegration', icon: '🔌' },
-    { key: 'ecommerce', icon: '🛒' },
-    { key: 'landingPages', icon: '📄' },
-    { key: 'responsiveWeb', icon: '📐' },
-    { key: 'maintenanceSupport', icon: '🛠️' },
-    { key: 'cmsIntegration', icon: '📝' },
-    { key: 'analyticsTracking', icon: '📈' },
-    { key: 'progressiveWeb', icon: '🌐' }
-  ]
+  const displayFeatures = scope === 'all'
+    ? ALL_FEATURES
+    : ALL_FEATURES.filter((f) =>
+        scope === 'app' ? APP_FEATURE_KEYS.includes(f.key) : WEB_FEATURE_KEYS.includes(f.key)
+      ).map((f, i) => ({
+        ...f,
+        hasGalaxy: i === 0,
+        hasLightPillar: i === 1,
+        hasHyperspeed: i === 2
+      }))
+
+  const titleKey = scope === 'app' ? 'features.appTitle' : scope === 'web' ? 'features.webTitle' : 'features.title'
+  const descriptionKey = scope === 'app' ? 'features.appDescription' : scope === 'web' ? 'features.webDescription' : 'features.description'
 
   return (
     <>
@@ -88,15 +114,15 @@ const Features = () => {
         <div className="container">
           <FadeIn direction="up" distance={40} duration={0.6}>
             <div className="section-header">
-              <h2>{t('features.title')}</h2>
+              <h2>{t(titleKey)}</h2>
               <p className="section-description">
-                {t('features.description')}
+                {t(descriptionKey)}
               </p>
             </div>
           </FadeIn>
 
           <div className="features-grid">
-            {featureKeys.map((item, index) => (
+            {displayFeatures.map((item, index) => (
               <FeatureCard
                 key={item.key}
                 icon={item.icon}

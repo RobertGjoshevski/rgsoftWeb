@@ -16,7 +16,7 @@ const APP_DESIGN_SERVICE_KEYS = ['logoDesign', 'storeImages']
 const AppDevelopmentPage = () => {
   return (
     <>
-      <Features />
+      <Features scope="app" />
       <Services serviceKeys={APP_SERVICE_KEYS} />
       <DesignServices designServiceKeys={APP_DESIGN_SERVICE_KEYS} />
       <Portfolio />
