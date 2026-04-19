@@ -374,6 +374,7 @@
     "navAppDevelopment": "Развој на апликации",
     "navWebDevelopment": "Веб развој",
     "navContact": "Контакт",
+    "navPrivacy": "Приватност",
     "copyright": "© {{year}} RGsoft. Сите права задржани.",
     "builtWith": "Изградено со Flutter, React и современ веб"
   }

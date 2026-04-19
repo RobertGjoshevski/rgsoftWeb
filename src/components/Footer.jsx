@@ -110,6 +110,7 @@ const Footer = () => {
               <li><Link to="/app-development">{t('footer.navAppDevelopment')}</Link></li>
               <li><Link to="/website-development">{t('footer.navWebDevelopment')}</Link></li>
               <li><Link to="/about">{t('footer.navContact')}</Link></li>
+              <li><Link to="/privacy">{t('footer.navPrivacy')}</Link></li>
             </ul>
           </div>
 

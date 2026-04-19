@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 import AppDevelopmentPage from './pages/AppDevelopmentPage'
 import WebsiteDevelopmentPage from './pages/WebsiteDevelopmentPage'
 import AboutPage from './pages/AboutPage'
+import PrivacyPage from './pages/PrivacyPage'
 import AppRedirect from './components/AppRedirect'
 import './App.css'
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="/app-development" element={<AppDevelopmentPage />} />
             <Route path="/website-development" element={<WebsiteDevelopmentPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

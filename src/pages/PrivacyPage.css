@@ -1,0 +1,42 @@
+.privacy {
+  padding: 4rem 0;
+}
+
+.privacy-updated {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.85;
+  font-size: 0.95rem;
+}
+
+.privacy-content {
+  display: grid;
+  gap: 2.25rem;
+  margin-top: 2.5rem;
+  max-width: 720px;
+}
+
+.privacy-block h2 {
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
+}
+
+.privacy-body {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.privacy-body + .privacy-body {
+  margin-top: 1rem;
+}
+
+.privacy-link {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+}

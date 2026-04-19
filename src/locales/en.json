@@ -374,6 +374,7 @@
     "navAppDevelopment": "App Development",
     "navWebDevelopment": "Website Development",
     "navContact": "Contact",
+    "navPrivacy": "Privacy",
     "copyright": "© {{year}} RGsoft. All rights reserved.",
     "builtWith": "Built with Flutter, React & modern web"
   }
