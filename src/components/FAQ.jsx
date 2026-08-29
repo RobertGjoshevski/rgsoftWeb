@@ -5,6 +5,8 @@ import './FAQ.css'
 
 const FAQ_HOME_KEYS = [
   'whatIsRGsoft',
+  'cheapAndFast',
+  'forIndividuals',
   'howRGsoftWorks',
   'whatDoesRGsoftOffer',
   'whoIsRGsoftFor',

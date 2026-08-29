@@ -7,17 +7,17 @@
     "navAbout": "About"
   },
   "hero": {
-    "kicker": "Flutter • Web • Mobile & Desktop",
+    "kicker": "Cheap & Fast • Flutter • Web • For Business & Individuals",
     "titleLine1": "Building Beautiful",
     "titleHighlight": "Apps & Websites",
-    "titleLine2": "for Modern Businesses",
-    "description": "We specialize in cross-platform app development and custom website development. From concept to deployment, we deliver high-performance mobile and web applications for iOS, Android, and the browser—one codebase, seamless experiences.",
+    "titleLine2": "Fast & Affordable",
+    "description": "RGsoft builds cheap, high-quality websites and cross-platform apps for businesses and individuals. Flutter apps for iOS & Android plus responsive web—delivered fast. Landing pages from $150. App MVPs from $500.",
     "ctaGetStarted": "Get Started",
     "ctaViewWork": "View Our Work"
   },
   "home": {
     "whatWeDo": "What We Do",
-    "whatWeDoDescription": "Explore our services and get in touch.",
+    "whatWeDoDescription": "Explore our services. We build cheap and fast for businesses and individuals.",
     "appDevelopmentCard": "App Development",
     "appDevelopmentCardDescription": "Flutter apps, maintenance, consulting, and design for mobile.",
     "websiteDevelopmentCard": "Website Development",
@@ -31,15 +31,15 @@
     "about": { "title": "About Us", "location": "Location" }
   },
   "about": {
-    "description": "We are RGsoft, a dedicated app and website development agency based in Skopje, North Macedonia. Founded in 2022, we help businesses build modern apps, responsive websites, and digital products—with consulting and support every step of the way.",
-    "intro": "RGsoft opened in 2022 in Skopje, North Macedonia. We are a dedicated app and website development agency: we build mobile apps, responsive websites, and web applications, and we offer consulting so you can make the right technical and product decisions.",
-    "whyUs": "Why choose us? We work fast and keep costs down compared to many agencies—without cutting corners on quality. You get clear communication, modern tech stacks, and delivery you can rely on. We cost like a Balkan agency but deliver like a global agency.",
+    "description": "We are RGsoft, a dedicated app and website development agency based in Skopje, North Macedonia. Founded in 2022, we help businesses and individuals build modern apps, responsive websites, and digital products—cheap, fast, and with support every step of the way.",
+    "intro": "RGsoft opened in 2022 in Skopje, North Macedonia. We are a dedicated app and website development agency: we build mobile apps, responsive websites, and web applications for companies and individuals, and we offer consulting so you can make the right technical and product decisions.",
+    "whyUs": "Why choose us? We work fast and keep costs down compared to many agencies—without cutting corners on quality. You get clear communication, modern tech stacks, and delivery you can rely on. We cost like a Balkan agency but deliver like a global agency. Whether you are a business or an individual with an idea, we build it cheap and ship it fast.",
     "cta": "Contact details and social links are in the footer. Get in touch when you're ready to start your project.",
     "mapAddress": "Stajkovci, Skopje, North Macedonia"
   },
   "features": {
     "title": "What We Do",
-    "description": "From web design and app development to SEO, SaaS, and beyond—we offer a full range of services to build and grow your digital presence.",
+    "description": "From web design and app development to SEO, SaaS, and beyond—we offer a full range of cheap, fast services for businesses and individuals.",
     "appTitle": "What We Do",
     "appDescription": "We bring your app idea to life with cross-platform development, design, backend, and ongoing support.",
     "webTitle": "What We Do",
@@ -326,13 +326,17 @@
     "whatDoesRGsoftOfferQuestion": "What does RGsoft offer?",
     "whatDoesRGsoftOfferAnswer": "We offer app development (cross-platform mobile apps with Flutter), website development (landing pages, responsive sites, web apps), design (UI/UX, logos, store assets), maintenance and support, and consulting. You can hire us for one project or ongoing work—we adapt to your needs.",
     "whoIsRGsoftForQuestion": "Who is RGsoft for?",
-    "whoIsRGsoftForAnswer": "We work with startups, small and medium businesses, and larger organizations that need a professional app, website, or both. Whether you have a clear brief or just an idea, we help you shape the product and deliver it. Our pricing is competitive and we're used to working with teams that want quality without agency-level overhead.",
+    "whoIsRGsoftForAnswer": "We work with startups, small and medium businesses, larger organizations, and individuals. That includes solopreneurs, freelancers, and anyone with a personal app or website idea. Whether you have a clear brief or just an idea, we help you shape the product and deliver it cheap and fast. Our pricing is competitive and we're used to working with people who want quality without agency-level overhead.",
     "howToGetStartedQuestion": "How do I get started with RGsoft?",
-    "howToGetStartedAnswer": "Reach out via the contact link or email in the footer. Tell us about your project—app, website, or both—and what you want to achieve. We'll discuss scope, timeline, and pricing and send you a proposal. No obligation; we're happy to answer questions before you commit.",
+    "howToGetStartedAnswer": "Reach out via email at info@rgsoft.org or WhatsApp at +389 79 394 134. Tell us about your project—app, website, or both—and what you want to achieve. We'll discuss scope, timeline, and pricing and send you a proposal. No obligation; we're happy to answer questions before you commit.",
     "whereIsRGsoftQuestion": "Where is RGsoft located?",
-    "whereIsRGsoftAnswer": "We're based in Skopje, North Macedonia. We work with clients locally and internationally. Most collaboration happens remotely (calls, chat, shared docs), so your location doesn't need to match ours.",
+    "whereIsRGsoftAnswer": "We're based in Stajkovci, Skopje, North Macedonia. We work with clients locally, across the Balkans and Europe, and internationally. Most collaboration happens remotely (calls, chat, shared docs), so your location doesn't need to match ours.",
     "pricingOverviewQuestion": "What about pricing?",
-    "pricingOverviewAnswer": "Pricing depends on the project. For websites, a simple landing page can start from around $150 and go up with complexity. For apps, a simple MVP can start from around $500. For detailed pricing and packages, see our App Development and Website Development pages—each has its own FAQ with pricing and scope details."
+    "pricingOverviewAnswer": "Pricing depends on the project. For websites, a simple landing page can start from around $150 and go up with complexity. For apps, a simple MVP can start from around $500. We keep work cheap and fast for both businesses and individuals. For detailed pricing and packages, see our App Development and Website Development pages—each has its own FAQ with pricing and scope details.",
+    "cheapAndFastQuestion": "Do you build apps and websites cheap and fast?",
+    "cheapAndFastAnswer": "Yes. Affordable pricing and fast delivery are how we work. A simple landing page can start from around $150. A simple app MVP can start from around $500. We use one Flutter codebase for iOS and Android so you don't pay to build two separate apps, and we ship in phases so you can launch sooner.",
+    "forIndividualsQuestion": "Do you work with individuals or only companies?",
+    "forIndividualsAnswer": "Both. We build for companies and for individuals—personal brands, side projects, local shops, startups, and SMEs. If you need a professional website or cross-platform app on a realistic budget, RGsoft is a good fit."
   },
   "faqApp": {
     "title": "App Development FAQ",
@@ -361,7 +365,7 @@
     "websitePricingAnswer": "Website pricing depends on scope and complexity. A simple landing page can start from around $150 and go up with more pages, design work, and features (e.g. forms, CMS, integrations). Multi-page sites and web apps are quoted individually. We keep pricing competitive and transparent—contact us with your needs for a detailed quote."
   },
   "footer": {
-    "tagline": "Building exceptional Flutter applications and websites for modern businesses",
+    "tagline": "Cheap, fast Flutter apps and websites for businesses and individuals",
     "contactInfo": "Contact Info",
     "quickLinks": "Quick Links",
     "connectWithUs": "Connect With Us",

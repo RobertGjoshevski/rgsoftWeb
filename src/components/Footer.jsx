@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { FadeIn } from './reactbits'
+import { getLangFromPath, localizePath } from '../seo/paths'
 import './Footer.css'
 
 const SocialIcon = ({ name }) => {
@@ -20,7 +21,7 @@ const SocialIcon = ({ name }) => {
     case 'LinkedIn':
       return (
         <img
-          src="./assets/linkedin.png"
+          src="/assets/linkedin.png"
           alt="LinkedIn"
           className="social-icon-img"
         />
@@ -28,7 +29,7 @@ const SocialIcon = ({ name }) => {
     case 'Facebook':
       return (
         <img
-          src="./assets/facebook.png"
+          src="/assets/facebook.png"
           alt="Facebook"
           className="social-icon-img"
         />
@@ -36,7 +37,7 @@ const SocialIcon = ({ name }) => {
     case 'Instagram':
       return (
         <img
-          src="./assets/instagram.png"
+          src="/assets/instagram.png"
           alt="Instagram"
           className="social-icon-img"
         />
@@ -44,7 +45,7 @@ const SocialIcon = ({ name }) => {
     case 'WhatsApp':
       return (
         <img
-          src="./assets/whatsapp.png"
+          src="/assets/whatsapp.png"
           alt="WhatsApp"
           className="social-icon-img"
         />
@@ -69,6 +70,9 @@ const SocialIcon = ({ name }) => {
 
 const Footer = () => {
   const { t } = useTranslation()
+  const location = useLocation()
+  const lang = getLangFromPath(location.pathname)
+  const to = (path) => localizePath(path, lang)
   const socialLinks = [
     { name: 'LinkedIn', url: 'https://www.linkedin.com/company/110668405', color: '#0A66C2' },
     { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61585767831959', color: '#1877F2' },
@@ -81,7 +85,7 @@ const Footer = () => {
       <div className="container">
         <FadeIn direction="up" distance={30} duration={0.6} className="footer-content">
           <div className="footer-brand">
-            <img src="./assets/logo.png" alt={t('header.logoAlt')} className="footer-logo" />
+            <img src="/assets/logo.png" alt={t('header.logoAlt')} className="footer-logo" />
             <p>{t('footer.tagline')}</p>
           </div>
 
@@ -106,11 +110,11 @@ const Footer = () => {
           <div className="footer-links">
             <h4>{t('footer.quickLinks')}</h4>
             <ul>
-              <li><Link to="/">{t('footer.navHome')}</Link></li>
-              <li><Link to="/app-development">{t('footer.navAppDevelopment')}</Link></li>
-              <li><Link to="/website-development">{t('footer.navWebDevelopment')}</Link></li>
-              <li><Link to="/about">{t('footer.navContact')}</Link></li>
-              <li><Link to="/privacy">{t('footer.navPrivacy')}</Link></li>
+              <li><Link to={to('/')}>{t('footer.navHome')}</Link></li>
+              <li><Link to={to('/app-development')}>{t('footer.navAppDevelopment')}</Link></li>
+              <li><Link to={to('/website-development')}>{t('footer.navWebDevelopment')}</Link></li>
+              <li><Link to={to('/about')}>{t('footer.navContact')}</Link></li>
+              <li><Link to={to('/privacy')}>{t('footer.navPrivacy')}</Link></li>
             </ul>
           </div>
 

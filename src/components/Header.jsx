@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { getLangFromPath, localizePath, stripLangPrefix } from '../seo/paths'
 import './Header.css'
 
 const Header = () => {
   const { t, i18n } = useTranslation()
   const location = useLocation()
+  const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const lang = getLangFromPath(location.pathname)
+  const currentBare = stripLangPrefix(location.pathname)
+  const activeLang = lang === 'mk' ? 'mk' : 'en'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,31 +23,36 @@ const Header = () => {
   }, [])
 
   const handleLanguageChange = (lng) => {
+    const next = localizePath(location.pathname, lng)
     i18n.changeLanguage(lng)
+    const current = location.pathname.replace(/\/+$/, '') || '/'
+    if (next !== current) {
+      navigate(next)
+    }
   }
 
   const navLinks = [
-    { to: '/', labelKey: 'header.navHome' },
-    { to: '/app-development', labelKey: 'header.navAppDevelopment' },
-    { to: '/website-development', labelKey: 'header.navWebDevelopment' },
-    { to: '/about', labelKey: 'header.navAbout' }
+    { to: localizePath('/', lang), labelKey: 'header.navHome', bare: '/' },
+    { to: localizePath('/app-development', lang), labelKey: 'header.navAppDevelopment', bare: '/app-development' },
+    { to: localizePath('/website-development', lang), labelKey: 'header.navWebDevelopment', bare: '/website-development' },
+    { to: localizePath('/about', lang), labelKey: 'header.navAbout', bare: '/about' }
   ]
 
   return (
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="header-content">
-          <Link to="/" className="logo-container">
-            <img src="./assets/logo.png" alt={t('header.logoAlt')} className="logo" />
+          <Link to={localizePath('/', lang)} className="logo-container">
+            <img src="/assets/logo.png" alt={t('header.logoAlt')} className="logo" />
             <span className="logo-text">RGsoft</span>
           </Link>
 
           <nav className="header-nav">
-            {navLinks.map(({ to, labelKey }) => (
+            {navLinks.map(({ to, labelKey, bare }) => (
               <Link
                 key={to}
                 to={to}
-                className={`nav-link ${location.pathname === to ? 'active' : ''}`}
+                className={`nav-link ${currentBare === bare ? 'active' : ''}`}
               >
                 {t(labelKey)}
               </Link>
@@ -50,7 +60,7 @@ const Header = () => {
             <div className="language-switcher" aria-label="Language">
               <button
                 type="button"
-                className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`}
+                className={`lang-btn ${activeLang === 'en' ? 'active' : ''}`}
                 onClick={() => handleLanguageChange('en')}
                 aria-label="English"
               >
@@ -58,7 +68,7 @@ const Header = () => {
               </button>
               <button
                 type="button"
-                className={`lang-btn ${i18n.language === 'mk' ? 'active' : ''}`}
+                className={`lang-btn ${activeLang === 'mk' ? 'active' : ''}`}
                 onClick={() => handleLanguageChange('mk')}
                 aria-label="Macedonian"
               >
@@ -81,11 +91,11 @@ const Header = () => {
         </div>
 
         <div className={`header-mobile-nav ${mobileMenuOpen ? 'open' : ''}`} aria-hidden={!mobileMenuOpen}>
-          {navLinks.map(({ to, labelKey }) => (
+          {navLinks.map(({ to, labelKey, bare }) => (
             <Link
               key={to}
               to={to}
-              className={`nav-link ${location.pathname === to ? 'active' : ''}`}
+              className={`nav-link ${currentBare === bare ? 'active' : ''}`}
               onClick={() => setMobileMenuOpen(false)}
             >
               {t(labelKey)}
@@ -94,7 +104,7 @@ const Header = () => {
           <div className="language-switcher header-mobile-lang" aria-label="Language">
             <button
               type="button"
-              className={`lang-btn ${i18n.language === 'en' ? 'active' : ''}`}
+              className={`lang-btn ${activeLang === 'en' ? 'active' : ''}`}
               onClick={() => handleLanguageChange('en')}
               aria-label="English"
             >
@@ -102,7 +112,7 @@ const Header = () => {
             </button>
             <button
               type="button"
-              className={`lang-btn ${i18n.language === 'mk' ? 'active' : ''}`}
+              className={`lang-btn ${activeLang === 'mk' ? 'active' : ''}`}
               onClick={() => handleLanguageChange('mk')}
               aria-label="Macedonian"
             >

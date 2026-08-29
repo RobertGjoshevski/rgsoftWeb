@@ -1,12 +1,16 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { StaggerContainer, StaggerItem } from './reactbits'
 import LightRays from './reactbits/LightRays'
+import { getLangFromPath, localizePath } from '../seo/paths'
 import './Hero.css'
 
 const Hero = () => {
   const { t } = useTranslation()
+  const location = useLocation()
+  const lang = getLangFromPath(location.pathname)
+  const to = (path) => localizePath(path, lang)
 
   return (
     <section id="home" className="hero section">
@@ -48,10 +52,10 @@ const Hero = () => {
             </StaggerItem>
             <StaggerItem direction="up" distance={30} duration={0.6}>
               <div className="hero-cta">
-                <Link to="/about" className="btn btn-primary">
+                <Link to={to('/about')} className="btn btn-primary">
                   {t('hero.ctaGetStarted')}
                 </Link>
-                <Link to="/app-development" className="btn btn-secondary">
+                <Link to={to('/app-development')} className="btn btn-secondary">
                   {t('hero.ctaViewWork')}
                 </Link>
               </div>
